@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ArticleDisplayerController</class>
+ <widget class="QWidget" name="ArticleDisplayerController">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>700</width>
+    <height>41</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout">
+   <item>
+    <spacer name="horizontalSpacer">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>40</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item>
+    <widget class="QPushButton" name="firstPageBtn">
+     <property name="text">
+      <string>First</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="prevPageBtn">
+     <property name="text">
+      <string>Prev</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLineEdit" name="lineEdit"/>
+   </item>
+   <item>
+    <widget class="QPushButton" name="nextPageBtn">
+     <property name="text">
+      <string>Next</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="lastPageBtn">
+     <property name="text">
+      <string>Last</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="zoomInBtn">
+     <property name="text">
+      <string>ZoomIn</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="zoomOutBtn">
+     <property name="text">
+      <string>ZoomOut</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QComboBox" name="comboBox">
+     <item>
+      <property name="text">
+       <string>50%</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>100%</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>150%</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>200%</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item>
+    <spacer name="horizontalSpacer_2">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>40</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

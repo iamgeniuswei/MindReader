@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/img">
+        <file>img/add_disable.png</file>
+        <file>img/add_enter.png</file>
+        <file>img/add_normal.png</file>
+        <file>img/add_press.png</file>
+        <file alias="pdf">img/pdf.png</file>
+        <file alias="files">img/files.png</file>
+    </qresource>
+</RCC>

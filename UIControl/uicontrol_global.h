@@ -1,0 +1,12 @@
+#ifndef UICONTROL_GLOBAL_H
+#define UICONTROL_GLOBAL_H
+
+#include <QtCore/qglobal.h>
+
+#if defined(UICONTROL_LIBRARY)
+#  define UICONTROLSHARED_EXPORT Q_DECL_EXPORT
+#else
+#  define UICONTROLSHARED_EXPORT Q_DECL_IMPORT
+#endif
+
+#endif // UICONTROL_GLOBAL_H
