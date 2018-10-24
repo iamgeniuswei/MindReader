@@ -39,7 +39,9 @@ SOURCES += \
     articlepagerender.cpp \
     articledisplayercontroller.cpp \
     notecard.cpp \
-    notedisplayer.cpp
+    notedisplayer.cpp \
+    widgetinterface.cpp \
+    readerwithnote.cpp
 
 HEADERS += \
         window.h \
@@ -54,7 +56,9 @@ HEADERS += \
     articlepagerender.h \
     articledisplayercontroller.h \
     notecard.h \
-    notedisplayer.h
+    notedisplayer.h \
+    widgetinterface.h \
+    readerwithnote.h
 
 unix {
     target.path = /usr/lib

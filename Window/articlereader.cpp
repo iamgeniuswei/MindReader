@@ -9,6 +9,11 @@ ArticleReader::ArticleReader(QWidget *parent) : QWidget(parent)
     layout->addWidget (displayer, 1);
     layout->addWidget (controller, 0, Qt::AlignBottom);
     setLayout (layout);
+//    horizontalLayout = new QHBoxLayout(this);
+//    noteDisplayer = new NoteDisplayer(this);
+//    horizontalLayout->addLayout (layout, 1);
+//    horizontalLayout->addWidget (noteDisplayer);
+//    setLayout (horizontalLayout);
     initializeSignals ();
 }
 
@@ -26,4 +31,8 @@ void ArticleReader::initializeSignals()
              displayer, &ArticleDisplayer::zoomInPage);
     connect (controller, &ArticleDisplayerController::zoomOutClicked,
              displayer, &ArticleDisplayer::zoomOutPage);
+    connect (displayer, &ArticleDisplayer::selectionReady,
+             this, &ArticleReader::selectionReady);
+    connect (displayer, &ArticleDisplayer::textReady,
+             this, &ArticleReader::textReady);
 }

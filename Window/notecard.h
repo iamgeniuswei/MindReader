@@ -14,6 +14,10 @@ class WINDOWSHARED_EXPORT NoteCard : public QWidget
 public:
     explicit NoteCard(QWidget *parent = nullptr);
     ~NoteCard();
+    void setTitle(const QString& title);
+    void setText(const QString& text);
+    void setIndex(int index);
+    void setPixmap(const QPixmap& pixmap);
 protected:
     virtual void mousePressEvent(QMouseEvent *event);
     virtual void mouseReleaseEvent(QMouseEvent *event);

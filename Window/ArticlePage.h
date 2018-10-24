@@ -35,10 +35,14 @@ protected:
     virtual void mouseReleaseEvent(QMouseEvent* event) override;
     virtual void paintEvent(QPaintEvent* event) override;
 
+signals:
+    void selectionReady(int page, const QPixmap& pixmap);
+    void textReady(int page, const QString& text);
+
 public:
 //    virtual QSize sizeHint() const override;
     void setImage(const QImage &img);
-    void highlightSelection();
+    QString highlightSelection();
     QRectF calculateSelectionRect();
 
 

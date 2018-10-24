@@ -6,7 +6,10 @@
 #include <QGraphicsScene>
 #include "notecard.h"
 #include "window_global.h"
-class WINDOWSHARED_EXPORT NoteDisplayer : public QGraphicsView
+#include <QScrollArea>
+#include <QVBoxLayout>
+#include "widgetinterface.h"
+class WINDOWSHARED_EXPORT NoteDisplayer : public QScrollArea, public WidgetInterface
 {
     Q_OBJECT
 public:
@@ -15,10 +18,22 @@ public:
 signals:
 
 public slots:
+    void addCard(int index,
+                 const QString &text,
+                 const QString &title = QString()
+                 );
+    void addTextCard(int index,
+                     const QString& text);
+    void addPixmapCard(int index,
+                 const QPixmap &pixmap );
+protected:
+    void initializeUI();
+    void initializeSignal();
 
 private:
-    QGraphicsScene *scene = nullptr;
-
+    QVBoxLayout *layout = nullptr;
+    QWidget *container = nullptr;
+    QList<NoteCard*> cards;
 };
 
 #endif // NOTEDISPLAYER_H

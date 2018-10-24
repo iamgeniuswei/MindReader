@@ -38,6 +38,9 @@ protected:
 protected:
     void initializeSignals();
 
+signals:
+    void selectionReady(int page, const QPixmap& pixmap);
+    void textReady(int page, const QString& text);
 public slots:
     void displayFirstPage();
     void displayPrevPage();

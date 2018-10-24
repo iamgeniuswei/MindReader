@@ -11,6 +11,7 @@
 #include "articlereader.h"
 #include "notecard.h"
 #include "notedisplayer.h"
+#include "readerwithnote.h"
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
@@ -43,9 +44,11 @@ int main(int argc, char *argv[])
 //    ArticleDisplayer w;
 //    w.setAlignment (Qt::AlignHCenter);
 //    ArticlePage w;
-    ArticleReader w;
+//    ArticleReader w;
 //    NoteCard w;
 //    NoteDisplayer w;
+
+    ReaderWithNote w;
 
     w.show();
     qDebug() << "w:" << w.size ();

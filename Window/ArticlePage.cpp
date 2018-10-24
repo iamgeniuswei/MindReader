@@ -22,7 +22,7 @@ ArticlePage::ArticlePage(QWidget *parent)
     :QLabel(parent)
 {
     setScaledContents (true);
-    setCursor (Qt::IBeamCursor);
+//    setCursor (Qt::IBeamCursor);
 }
 
 ArticlePage::~ArticlePage()
@@ -65,9 +65,23 @@ void ArticlePage::mouseReleaseEvent(QMouseEvent* event)
 //    QPainter painter(this);
 //    painter.drawEllipse (pressPoint.x (), pressPoint.y (), point.x ()-pressPoint.x (),point.y ()-pressPoint.y ());
     endPoint = event->localPos ();
-    if(this->cursor () == Qt::IBeamCursor)
+    if(this->cursor () == Qt::ArrowCursor)
     {
-        highlightSelection ();
+        QString str = highlightSelection ();
+        qDebug() << str;
+//        str.replace ("\r", "");
+//        qDebug() << str;
+        if(!str.isEmpty ())
+            emit textReady (currentPageIndex, str);
+    }
+    else if (this->cursor () == Qt::ArrowCursor)
+    {
+        int x = startPoint.x();
+        int y = startPoint.y ();
+        int width = endPoint.x () - startPoint.x ();
+        int height = endPoint.y () - startPoint.y ();
+        QPixmap p = this->grab(QRect(x, y, width, height));
+        emit selectionReady (currentPageIndex, p);
     }
 
     repaint ();
@@ -112,23 +126,24 @@ void ArticlePage::setImage(const QImage &img)
     update ();
 }
 
-void ArticlePage::highlightSelection()
+QString ArticlePage::highlightSelection()
 {
     if (nullptr == page) {
-        return;
+        return QString();
     }
 
     QRectF rect = calculateSelectionRect ();
     rect = mapToOrigin (rect, scaleX, scaleY, rotation);
     fz_quad quads[200];
     int num = 0;
-    qDebug() << page->getSelection (rect, quads, num);
+    QString str = page->getSelection (rect, quads, num);
     for(int i=0; i<num; i++)
     {
         quads_list << quads[i];
     }
 
     draw = true;
+    return str;
 }
 
 QRectF ArticlePage::calculateSelectionRect()

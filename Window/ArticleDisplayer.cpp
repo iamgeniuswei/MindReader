@@ -27,7 +27,7 @@ ArticleDisplayer::ArticleDisplayer(QWidget *parent)
 {
     initializeUI();
     PDFDocument *pdf = new PDFDocument();
-    pdf->openDocument("D:\\Article\\12.pdf");
+    pdf->openDocument("D:\\Article\\56.pdf");
 
 //    setWidget(container);
 //    delete pdf;
@@ -158,6 +158,10 @@ void ArticleDisplayer::initializeSignals()
 {
     connect (render, &ArticlePageRender::pageReady,
              this, &ArticleDisplayer::displayPage);
+    connect(content, &ArticlePage::selectionReady,
+            this, &ArticleDisplayer::selectionReady);
+    connect(content, &ArticlePage::textReady,
+            this, &ArticleDisplayer::textReady);
 }
 
 void ArticleDisplayer::displayFirstPage()
