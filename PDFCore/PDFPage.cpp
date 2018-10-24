@@ -18,7 +18,7 @@
 #include <iostream>
 #include <QRect>
 #include <QPointF>
-
+#include <QDebug>
 static inline void imageCleanupHandler(void *data)
 {
     unsigned char *samples = static_cast<unsigned char *> (data);
@@ -127,6 +127,13 @@ QString PDFPage::text(const QRectF& rect) const
         if (!fz_is_infinite_rect(r))
         {
             str = fz_copy_selection(d->context, d->textPage, top_left, bottom_right, 1);
+            fz_quad quads[4800];
+            int num = fz_highlight_selection (d->context,
+                                              d->textPage,
+                                              top_left,
+                                              bottom_right,
+                                              quads,
+                                              4800);
             ret = QString::fromUtf8(str);
             free(str);
         }
@@ -136,7 +143,47 @@ QString PDFPage::text(const QRectF& rect) const
     {
         std::cerr << fz_caught_message(d->context);
     }
+    return ret;
+}
 
+QString PDFPage::getSelection(const QRectF &rect, fz_quad *quads, int &num)
+{
+    QString ret;
+    fz_rect r;
+    fz_point top_left;
+    fz_point bottom_right;
+    char *str;
 
+    // build fz_rect
+    top_left.x = r.x0 = rect.left();
+    top_left.y = r.y0 = rect.top();
+    bottom_right.x = r.x1 = rect.right();
+    bottom_right.y = r.y1 = rect.bottom();
+
+    std::cerr << d->context << std::endl;
+    std::cerr << d->textPage << std::endl;
+    // get text
+
+    fz_try(d->context)
+    {
+        if (!fz_is_infinite_rect(r))
+        {
+            str = fz_copy_selection(d->context, d->textPage, top_left, bottom_right, 1);
+
+            num = fz_highlight_selection (d->context,
+                                              d->textPage,
+                                              top_left,
+                                              bottom_right,
+                                              quads,
+                                              200);
+            ret = QString::fromUtf8(str);
+            free(str);
+        }
+    }
+
+    fz_catch(d->context)
+    {
+        std::cerr << fz_caught_message(d->context);
+    }
     return ret;
 }

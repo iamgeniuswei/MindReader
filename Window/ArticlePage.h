@@ -16,9 +16,13 @@
 
 #include <QLabel>
 #include "window_global.h"
+//#include "mupdf/fitz.h"
+//#include "mupdf/pdf/annot.h"
+#include "mupdf/fitz.h"
 class PDFPage;
 class WINDOWSHARED_EXPORT ArticlePage : public QLabel
 {
+    enum STATE{READ, SELECTION};
     Q_OBJECT
 public:
     ArticlePage(QWidget *parent = nullptr);
@@ -30,8 +34,12 @@ protected:
     virtual void mousePressEvent(QMouseEvent* ev) override;
     virtual void mouseReleaseEvent(QMouseEvent* event) override;
     virtual void paintEvent(QPaintEvent* event) override;
+
 public:
-    virtual QSize sizeHint() const override;
+//    virtual QSize sizeHint() const override;
+    void setImage(const QImage &img);
+    void highlightSelection();
+    QRectF calculateSelectionRect();
 
 
         
@@ -42,7 +50,8 @@ public:
     void setScaleY(float value);
 
 private:
-    QPointF pressPoint;
+    QPointF startPoint;
+    QPointF endPoint;
     PDFPage *page = nullptr;
     QImage img;
     bool first = true;
@@ -50,6 +59,8 @@ private:
     float scaleX = 1.0;
     float scaleY = 1.0;
     float rotation = 0.0;
+    bool draw = false;
+    QList<fz_quad> quads_list;
 };
 
 #endif /* _ARTICLEPAGE_H */

@@ -5,6 +5,7 @@
 #include <QThread>
 #include <QImage>
 class PDFDocument;
+class PDFPage;
 class ArticlePageRender : public QThread
 {
     Q_OBJECT
@@ -16,7 +17,7 @@ public:
     void requestPage(int page, float scaleX, float scaleY, float rotation);
     void setPDFDocument(PDFDocument *document = nullptr);
 signals:
-    void pageReady(float scaleX, float scaleY, float rotation, int index, QImage img);
+    void pageReady(float scaleX, float scaleY, float rotation, int index, QImage img, PDFPage *src);
 
 public slots:
 

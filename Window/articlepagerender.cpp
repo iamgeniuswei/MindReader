@@ -13,7 +13,7 @@ void ArticlePageRender::run()
         return;
     PDFPage *page = doc->page (pageIndex);
     const QImage &img = page->renderPage (scaleX, scaleY, rotation);
-    emit pageReady (scaleX, scaleY, rotation, pageIndex, img);
+    emit pageReady (scaleX, scaleY, rotation, pageIndex, img, page);
 }
 
 void ArticlePageRender::requestPage(int page, float scaleX, float scaleY, float rotaion)

@@ -18,7 +18,7 @@
 #include "pdfcore_global.h"
 PDFCORESHARED_EXPORT QRectF mapToOrigin(const QRectF &rect, float scaleX, float scaleY, float rotation);
 
-
+PDFCORESHARED_EXPORT QRectF mapFromOrigin(const QRectF &rect, float scaleX, float scaleY, float rotation);
 
 #endif /* PDFUTIL_H */
 

@@ -16,6 +16,7 @@
 #include <QImage>
 #include <QString>
 #include "pdfcore_global.h"
+#include "mupdf/fitz.h"
 class PDFDocument;
 class PDFPagePrivate;
 class PDFCORESHARED_EXPORT PDFPage {
@@ -25,6 +26,7 @@ public:
     virtual ~PDFPage();
     QImage renderPage(float scaleX, float scaleY, float rotation);
     QString text(const QRectF& rect) const;
+    QString getSelection(const QRectF& rect, fz_quad *quads, int& num);
 private:
     PDFPagePrivate *d;
 };

@@ -37,7 +37,9 @@ SOURCES += \
     ArticleDisplayer.cpp \
     ArticlePage.cpp \
     articlepagerender.cpp \
-    articledisplayercontroller.cpp
+    articledisplayercontroller.cpp \
+    notecard.cpp \
+    notedisplayer.cpp
 
 HEADERS += \
         window.h \
@@ -50,7 +52,9 @@ HEADERS += \
     ArticleDisplayer.h \
     ArticlePage.h \
     articlepagerender.h \
-    articledisplayercontroller.h
+    articledisplayercontroller.h \
+    notecard.h \
+    notedisplayer.h
 
 unix {
     target.path = /usr/lib
@@ -71,7 +75,8 @@ DEPENDPATH += $$PWD/../UIControl
 
 FORMS += \
     mainwindow.ui \
-    articledisplayercontroller.ui
+    articledisplayercontroller.ui \
+    notecard.ui
 
 win32:CONFIG(release, debug|release): LIBS += -L../ -lPDFCore
 else:win32:CONFIG(debug, debug|release): LIBS += -L../ -lPDFCore

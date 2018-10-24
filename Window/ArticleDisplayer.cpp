@@ -46,14 +46,18 @@ ArticleDisplayer::~ArticleDisplayer()
 
 void ArticleDisplayer::initializeUI()
 {
-    setAlignment(Qt::AlignHCenter);
+    setAlignment (Qt::AlignCenter);
+//    setAlignment(Qt::AlignHCenter);
 //    setWidgetResizable (true);
-    setBackgroundRole(QPalette::Dark);
-    container = new QWidget(this);
+//    setBackgroundRole(QPalette::Dark);
+//    container = new QWidget(this);
     content = new ArticlePage(this);
-    layout = new QVBoxLayout(container);
-    layout->addWidget (content, 1, Qt::AlignCenter);
-    container->setLayout(layout);
+//    layout = new QVBoxLayout(container);
+//    layout->addWidget (content);
+//    container->setLayout(layout);
+//    setWidget (container);
+    setWidget (content);
+    qDebug() << verticalScrollBar ()->maximum ();
 }
 
 void ArticleDisplayer::setPDFDocument(const PDFDocument* doc)
@@ -64,7 +68,7 @@ void ArticleDisplayer::setPDFDocument(const PDFDocument* doc)
     content->setPDFPage (page);
 //    label->resize (532, 648);
 //    content->setPixmap(QPixmap::fromImage(page->renderPage(2, 2, 0)));
-    setWidget (container);
+
     render->requestPage (0, 1.0,1.0, 0.0);
 //    label->setPDFPage (page);//
 //    layout->addWidget (label);
@@ -141,6 +145,7 @@ void ArticleDisplayer::wheelEvent(QWheelEvent *event)
     if(height >= verticalScrollBar ()->maximum ())
     {
         displayNextPage ();
+
     }
     else if(height == 0)
     {
@@ -209,16 +214,22 @@ void ArticleDisplayer::zoomOutPage()
     render->requestPage (current, scaleX, scaleY, 0.0);
 }
 
-void ArticleDisplayer::displayPage(float scaleX, float scaleY, float rotation, int page, QImage img)
+void ArticleDisplayer::displayPage(float scaleX, float scaleY, float rotation, int page, QImage img, PDFPage *src)
 {
     if(content)
     {
         img.save ("D:\\34.png");
         content->setPixmap (QPixmap::fromImage (img));
+        content->setImage (img);
+//        content->setScaledContents (true);
+        content->resize (content->sizeHint ());
         content->setCurrentPageIndex (page);
         content->setScaleX (scaleX);
         content->setScaleY (scaleY);
+        content->setPDFPage (src);
+        verticalScrollBar ()->setValue (0);
     }
+    qDebug() <<content->size () << ":::" <<content->sizeHint ();
 }
 
 //void ArticleDisplayer::paintEvent(QPaintEvent *event)

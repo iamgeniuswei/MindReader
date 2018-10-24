@@ -22,7 +22,7 @@
 #include "ArticlePage.h"
 #include "articlepagerender.h"
 class PDFDocument;
-
+class PDFPage;
 class WINDOWSHARED_EXPORT ArticleDisplayer : public QScrollArea
 {
     Q_OBJECT
@@ -45,12 +45,12 @@ public slots:
     void displayLastPage();
     void zoomInPage();
     void zoomOutPage();
-    void displayPage(float scaleX, float scaleY, float rotation, int page, QImage img);
+    void displayPage(float scaleX, float scaleY, float rotation, int page, QImage img, PDFPage *src);
 
 
 private:
     void initializeUI();
-    QWidget *container = nullptr;
+    QScrollArea *container = nullptr;
     QVBoxLayout *layout = nullptr;
     const PDFDocument *pdf = nullptr;
     ArticlePage *content = nullptr;

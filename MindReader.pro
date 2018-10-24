@@ -5,3 +5,5 @@ SUBDIRS += \
     UIControl \
     Window \
     MindReader \
+    Note \
+

@@ -55,3 +55,4 @@ DEPENDPATH += $$PWD/../Window
 
 RESOURCES += \
     res/resource.qrc
+INCLUDEPATH += D:\Project\mupdf\include
