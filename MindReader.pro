@@ -6,4 +6,5 @@ SUBDIRS += \
     Window \
     MindReader \
     Note \
+    Utility
 

@@ -32,7 +32,6 @@ SOURCES += \
     articleshelf.cpp \
     articleitem.cpp \
     articlescanner.cpp \
-    mainwindow.cpp \
     articlereader.cpp \
     ArticleDisplayer.cpp \
     ArticlePage.cpp \
@@ -41,7 +40,11 @@ SOURCES += \
     notecard.cpp \
     notedisplayer.cpp \
     widgetinterface.cpp \
-    readerwithnote.cpp
+    readerwithnote.cpp \
+    mrworkdirsettingwindow.cpp \
+    mrmainwindow.cpp \
+    mrlibrarytoolbar.cpp \
+    mrlibrary.cpp
 
 HEADERS += \
         window.h \
@@ -49,7 +52,6 @@ HEADERS += \
     articleshelf.h \
     articleitem.h \
     articlescanner.h \
-    mainwindow.h \
     articlereader.h \
     ArticleDisplayer.h \
     ArticlePage.h \
@@ -58,7 +60,11 @@ HEADERS += \
     notecard.h \
     notedisplayer.h \
     widgetinterface.h \
-    readerwithnote.h
+    readerwithnote.h \
+    mrworkdirsettingwindow.h \
+    mrmainwindow.h \
+    mrlibrarytoolbar.h \
+    mrlibrary.h
 
 unix {
     target.path = /usr/lib
@@ -78,9 +84,11 @@ INCLUDEPATH += $$PWD/../UIControl
 DEPENDPATH += $$PWD/../UIControl
 
 FORMS += \
-    mainwindow.ui \
     articledisplayercontroller.ui \
-    notecard.ui
+    notecard.ui \
+    mrworkdirsettingwindow.ui \
+    mrmainwindow.ui \
+    mrlibrarytoolbar.ui
 
 win32:CONFIG(release, debug|release): LIBS += -L../ -lPDFCore
 else:win32:CONFIG(debug, debug|release): LIBS += -L../ -lPDFCore
@@ -89,3 +97,10 @@ else:unix: LIBS += -L../ -lPDFCore
 INCLUDEPATH += $$PWD/../PDFCore
 DEPENDPATH += $$PWD/../PDFCore
 INCLUDEPATH += D:\Project\mupdf\include
+
+win32:CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/../Utility/release/ -lUtility
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../Utility/debug/ -lUtility
+else:unix: LIBS += -L$$OUT_PWD/../Utility/ -lUtility
+
+INCLUDEPATH += $$PWD/../Utility
+DEPENDPATH += $$PWD/../Utility

@@ -6,5 +6,16 @@
         <file>img/add_press.png</file>
         <file alias="pdf">img/pdf.png</file>
         <file alias="files">img/files.png</file>
+        <file alias="browser">img/browser.png</file>
+        <file alias="background">img/background.jpg</file>
+        <file alias="later">img/later.png</file>
+        <file alias="ok">img/ok.png</file>
+        <file alias="close">img/close.png</file>
+        <file alias="search">img/search.png</file>
+        <file alias="grid">img/grid.png</file>
+        <file alias="list">img/list.png</file>
+    </qresource>
+    <qresource prefix="/qss">
+        <file alias="default">qss/default.qss</file>
     </qresource>
 </RCC>

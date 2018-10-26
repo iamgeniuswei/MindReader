@@ -56,3 +56,10 @@ DEPENDPATH += $$PWD/../Window
 RESOURCES += \
     res/resource.qrc
 INCLUDEPATH += D:\Project\mupdf\include
+
+win32:CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/../Utility/release/ -lUtility
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../Utility/debug/ -lUtility
+else:unix: LIBS += -L$$OUT_PWD/../Utility/ -lUtility
+
+INCLUDEPATH += $$PWD/../Utility
+DEPENDPATH += $$PWD/../Utility

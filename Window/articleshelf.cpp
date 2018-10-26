@@ -5,6 +5,7 @@
 #include <QDropEvent>
 #include <QDebug>
 #include "articlescanner.h"
+#include "articleitem.h"
 ArticleShelf::ArticleShelf(QWidget *parent) : QListWidget(parent)
 {
 //    setMaximumSize (200,200);
@@ -55,7 +56,7 @@ ArticleShelf::ArticleShelf(QWidget *parent) : QListWidget(parent)
 
 void ArticleShelf::addArticle (const QString &text)
 {
-    QImageTextWidget *w = new QImageTextWidget(this);
+    QImageTextWidget *w = new ArticleItem (this);
     w->setImage (":img/pdf");
     w->setText (text);
     QListWidgetItem *it = new QListWidgetItem(this);
@@ -63,7 +64,11 @@ void ArticleShelf::addArticle (const QString &text)
     it->setSizeHint (w->sizeHint ());
     this->addItem (it);
     this->setItemWidget (it, w);
+    connect (w, &QImageTextWidget::clicked,
+             this, &ArticleShelf::articleClicked);
 }
+
+
 
 //void ArticleShelf::dropEvent(QDropEvent *event)
 //{

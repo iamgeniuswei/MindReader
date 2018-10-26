@@ -22,9 +22,11 @@ public:
 //    void removeWidgets();
 
 signals:
-    void articleClicked();
+//    void articleClicked();
+    void articleClicked(const QString& text);
 public slots:
     void addArticle(const QString& text);
+
 
 private:
 //    QGridLayout *layout = nullptr;

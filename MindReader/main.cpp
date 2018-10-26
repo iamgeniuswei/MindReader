@@ -1,10 +1,10 @@
-#include "mainwindow.h"
+//#include "mainwindow.h"
 #include <QApplication>
 #include "articleshelf.h"
 #include "qimagetextwidget.h"
 #include <QListWidget>
 #include <QListWidgetItem>
-#include "mainwindow.h"
+#include "mrmainwindow.h"
 #include "ArticleDisplayer.h"
 #include <QDebug>
 #include "ArticlePage.h"
@@ -12,12 +12,46 @@
 #include "notecard.h"
 #include "notedisplayer.h"
 #include "readerwithnote.h"
+#include <QFile>
+#include "mrsetting.h"
+#include "mrworkdirsettingwindow.h"
+#include "mrlibrarytoolbar.h"
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+
+    MRSetting set;
+    set.initializeSetting ("config.ini");
+    QString qss = set.getStyleSheet ();
+    if(!qss.isEmpty ())
+    {
+        qss.insert (0, ":/qss/");
+        QFile qssFile(qss);
+        qssFile.open (QFile::ReadOnly);
+        qApp->setStyleSheet (qssFile.readAll ());
+        qssFile.close ();
+    }
+    QString isNew = set.getFirstUseage ();
+    QWidget *w = nullptr;
+    qDebug() << set.getWorkDirectory ();
+
+    if(isNew == "true")
+    {
+        w = new MRWorkDirSettingWindow;
+        w->show ();
+    }
+    else
+    {
+//        w = new ArticleShelf;
+        w = new MRMainWindow;
+//        w = new MRLibraryToolBar;
+        w->show ();
+    }
+
 //    MainWindow w;
 
 //    ArticleShelf w;
+//    MRWorkDirSettingWindow w;
 //    QImageTextWidget w;
 //    w.setImage (":/img/pdf");
 //    w.setText ("DFDSFSDFSDF");
@@ -48,9 +82,9 @@ int main(int argc, char *argv[])
 //    NoteCard w;
 //    NoteDisplayer w;
 
-    ReaderWithNote w;
+//    ReaderWithNote w;
 
-    w.show();
-    qDebug() << "w:" << w.size ();
+//    w.show();
+//    qDebug() << "w:" << w.size ();
     return a.exec();
 }

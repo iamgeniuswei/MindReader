@@ -16,7 +16,7 @@ public:
     ~QImageTextWidget();
     void setImage(const QString& path);
     void setImageSize(int w, int h, bool keepAspectRatio);
-    void setText(const QString& text);
+    virtual void setText(const QString& text);
     virtual QSize sizeHit() const;
 protected:
     virtual void dragEnterEvent(QDragEnterEvent *event);

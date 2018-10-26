@@ -27,7 +27,7 @@ ArticleDisplayer::ArticleDisplayer(QWidget *parent)
 {
     initializeUI();
     PDFDocument *pdf = new PDFDocument();
-    pdf->openDocument("D:\\Article\\56.pdf");
+    pdf->openDocument("D:/Article/56.pdf");
 
 //    setWidget(container);
 //    delete pdf;
