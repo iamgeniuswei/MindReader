@@ -1,9 +1,10 @@
 #include "articlereader.h"
 #include "ArticleDisplayer.h"
 #include "articledisplayercontroller.h"
-ArticleReader::ArticleReader(QWidget *parent) : QWidget(parent)
+ArticleReader::ArticleReader(QWidget *parent) : UIWidget(parent)
 {
     layout = new QVBoxLayout(this);
+    layout->setMargin (0);
     displayer = new ArticleDisplayer(this);
     controller = new ArticleDisplayerController(this);
     layout->addWidget (displayer, 1);
@@ -35,4 +36,22 @@ void ArticleReader::initializeSignals()
              this, &ArticleReader::selectionReady);
     connect (displayer, &ArticleDisplayer::textReady,
              this, &ArticleReader::textReady);
+    connect (this, &ArticleReader::cursorType,
+             displayer, &ArticleDisplayer::cursorType);
+}
+
+void ArticleReader::setArticle(std::shared_ptr<MRArticleMetaData> article)
+{
+    if(displayer)
+    {
+        displayer->setArticle (article);
+        article_ = article;
+
+    }
+
+}
+
+std::shared_ptr<MRArticleMetaData> ArticleReader::article() const
+{
+    return article_;
 }

@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/" >
+        <file>label.png</file>
+
+    </qresource>
+</RCC>

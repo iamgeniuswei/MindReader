@@ -2,11 +2,18 @@
 #include "ui_articledisplayercontroller.h"
 
 ArticleDisplayerController::ArticleDisplayerController(QWidget *parent) :
-    QWidget(parent),
+    UIWidget(parent),
     ui(new Ui::ArticleDisplayerController)
 {
     ui->setupUi(this);
     initializeSignals ();
+    setObjectName ("whiteWidget");
+    ui->firstPageBtn->setObjectName ("controlButton");
+    ui->prevPageBtn->setObjectName ("controlButton");
+    ui->nextPageBtn->setObjectName ("controlButton");
+    ui->lastPageBtn->setObjectName ("controlButton");
+    ui->zoomInBtn->setObjectName ("controlButton");
+    ui->zoomOutBtn->setObjectName ("controlButton");
 }
 
 ArticleDisplayerController::~ArticleDisplayerController()

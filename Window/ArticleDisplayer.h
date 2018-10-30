@@ -21,8 +21,10 @@
 #include <QLabel>
 #include "ArticlePage.h"
 #include "articlepagerender.h"
+#include "mrwindowutility.h"
 class PDFDocument;
 class PDFPage;
+class MRArticleMetaData;
 class WINDOWSHARED_EXPORT ArticleDisplayer : public QScrollArea
 {
     Q_OBJECT
@@ -30,7 +32,7 @@ public:
     ArticleDisplayer(QWidget *parent = nullptr);
     virtual ~ArticleDisplayer();
     void setPDFDocument(const PDFDocument *doc);
-
+    void setArticle(std::shared_ptr<MRArticleMetaData> article);
 protected:
     virtual void wheelEvent(QWheelEvent *event);
 //    virtual void paintEvent(QPaintEvent * event);
@@ -41,6 +43,7 @@ protected:
 signals:
     void selectionReady(int page, const QPixmap& pixmap);
     void textReady(int page, const QString& text);
+    void cursorType(CURSOR cursor);
 public slots:
     void displayFirstPage();
     void displayPrevPage();

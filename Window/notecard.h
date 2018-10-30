@@ -2,12 +2,15 @@
 #define NOTECARD_H
 
 #include <QWidget>
+#include "uiwidget.h"
+#include <memory>
 #include "window_global.h"
 namespace Ui {
 class NoteCard;
 }
-
-class WINDOWSHARED_EXPORT NoteCard : public QWidget
+class MRNoteData;
+class MRArticleMetaData;
+class WINDOWSHARED_EXPORT NoteCard : public UIWidget
 {
     Q_OBJECT
 
@@ -18,6 +21,10 @@ public:
     void setText(const QString& text);
     void setIndex(int index);
     void setPixmap(const QPixmap& pixmap);
+    void setArticle(std::shared_ptr<MRArticleMetaData> article);
+
+public slots:
+    void test();
 protected:
     virtual void mousePressEvent(QMouseEvent *event);
     virtual void mouseReleaseEvent(QMouseEvent *event);
@@ -28,6 +35,7 @@ private:
     QPoint startPoint;
     QPoint endPoint;
     QPoint distance;
+    std::shared_ptr<MRNoteData> data;
 };
 
 #endif // NOTECARD_H

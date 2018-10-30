@@ -30,45 +30,125 @@
    <item>
     <widget class="QPushButton" name="firstPageBtn">
      <property name="text">
-      <string>First</string>
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="../MindReader/res/resource.qrc">
+       <normaloff>:/img/first</normaloff>:/img/first</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>24</width>
+       <height>24</height>
+      </size>
      </property>
     </widget>
    </item>
    <item>
     <widget class="QPushButton" name="prevPageBtn">
      <property name="text">
-      <string>Prev</string>
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="../MindReader/res/resource.qrc">
+       <normaloff>:/img/backward</normaloff>:/img/backward</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>24</width>
+       <height>24</height>
+      </size>
      </property>
     </widget>
    </item>
    <item>
-    <widget class="QLineEdit" name="lineEdit"/>
+    <widget class="QLineEdit" name="lineEdit">
+     <property name="minimumSize">
+      <size>
+       <width>100</width>
+       <height>0</height>
+      </size>
+     </property>
+    </widget>
    </item>
    <item>
     <widget class="QPushButton" name="nextPageBtn">
      <property name="text">
-      <string>Next</string>
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="../MindReader/res/resource.qrc">
+       <normaloff>:/img/forward</normaloff>:/img/forward</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>24</width>
+       <height>24</height>
+      </size>
      </property>
     </widget>
    </item>
    <item>
     <widget class="QPushButton" name="lastPageBtn">
      <property name="text">
-      <string>Last</string>
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="../MindReader/res/resource.qrc">
+       <normaloff>:/img/last</normaloff>:/img/last</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>24</width>
+       <height>24</height>
+      </size>
      </property>
     </widget>
    </item>
    <item>
+    <spacer name="horizontalSpacer_2">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>40</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item>
     <widget class="QPushButton" name="zoomInBtn">
      <property name="text">
-      <string>ZoomIn</string>
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="../MindReader/res/resource.qrc">
+       <normaloff>:/img/zoomIn</normaloff>:/img/zoomIn</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>24</width>
+       <height>24</height>
+      </size>
      </property>
     </widget>
    </item>
    <item>
     <widget class="QPushButton" name="zoomOutBtn">
      <property name="text">
-      <string>ZoomOut</string>
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="../MindReader/res/resource.qrc">
+       <normaloff>:/img/zoomOut</normaloff>:/img/zoomOut</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>24</width>
+       <height>24</height>
+      </size>
      </property>
     </widget>
    </item>
@@ -96,21 +176,10 @@
      </item>
     </widget>
    </item>
-   <item>
-    <spacer name="horizontalSpacer_2">
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>40</width>
-       <height>20</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="../MindReader/res/resource.qrc"/>
+ </resources>
  <connections/>
 </ui>

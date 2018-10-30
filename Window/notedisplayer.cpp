@@ -1,5 +1,6 @@
 #include "notedisplayer.h"
 #include <QDebug>
+#include "mrnotedata.h"
 NoteDisplayer::NoteDisplayer(QWidget *parent) : QScrollArea (parent)
 {
     initializeUI ();
@@ -10,11 +11,17 @@ NoteDisplayer::NoteDisplayer(QWidget *parent) : QScrollArea (parent)
 
 }
 
+void NoteDisplayer::setArticle(std::shared_ptr<MRArticleMetaData> article_)
+{
+    article = article_;
+}
+
 void NoteDisplayer::addCard(int index, const QString &text, const QString &title)
 {
     if(container && layout)
     {
         NoteCard *card = new (std::nothrow) NoteCard(this);
+        card->setArticle (article);
         if(card == nullptr)
         {
             qDebug() << "error!";
@@ -34,6 +41,7 @@ void NoteDisplayer::addTextCard(int index, const QString &text)
     if(container && layout)
     {
         NoteCard *card = new (std::nothrow) NoteCard(this);
+        card->setArticle (article);
         if(card == nullptr)
         {
             qDebug() << "error!";
@@ -44,7 +52,7 @@ void NoteDisplayer::addTextCard(int index, const QString &text)
         layout->addWidget (card);
     }
 //    show();
-    setWidget (container);
+//    setWidget (container);
 }
 
 void NoteDisplayer::addPixmapCard(int index, const QPixmap &pixmap)
@@ -67,12 +75,13 @@ void NoteDisplayer::addPixmapCard(int index, const QPixmap &pixmap)
 
 void NoteDisplayer::initializeUI()
 {
-    setMinimumWidth (448);
+    setMinimumWidth (340);
+//    setWidgetResizable (true);
     container = new QWidget(this);
     layout = new QVBoxLayout(container);
     layout->setSizeConstraint (QLayout::SetMinAndMaxSize);
     container->setLayout (layout);
-//    setWidget (container);
+    setWidget (container);
 
 }
 

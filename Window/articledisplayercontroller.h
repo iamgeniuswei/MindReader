@@ -2,12 +2,12 @@
 #define ARTICLEDISPLAYERCONTROLLER_H
 
 #include <QWidget>
-
+#include "uiwidget.h"
 namespace Ui {
 class ArticleDisplayerController;
 }
 
-class ArticleDisplayerController : public QWidget
+class ArticleDisplayerController : public UIWidget
 {
     Q_OBJECT
 

@@ -4,7 +4,9 @@
 #include <QWidget>
 #include "mrlibrarytoolbar.h"
 #include <QVBoxLayout>
+#include <memory>
 #include "articleshelf.h"
+#include "mrarticlemetadata.h"
 class MRLibrary : public QWidget
 {
     Q_OBJECT
@@ -12,7 +14,7 @@ public:
     explicit MRLibrary(QWidget *parent = nullptr);
 
 signals:
-    void articleClicked(const QString& text);
+    void articleClicked(std::shared_ptr<MRArticleMetaData> article);
 public slots:
 
 private:

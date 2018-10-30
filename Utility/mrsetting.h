@@ -18,6 +18,7 @@ public:
     void setWorkDirectory(const QString& dir);
     QString getFirstUseage();
     void setFirstUseage();
+    QString getDatabaseName();
 
 private:
     QSettings *setting = nullptr;

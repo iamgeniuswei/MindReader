@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MRReaderToolBar</class>
+ <widget class="QWidget" name="MRReaderToolBar">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>648</width>
+    <height>44</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout">
+   <property name="topMargin">
+    <number>2</number>
+   </property>
+   <property name="bottomMargin">
+    <number>2</number>
+   </property>
+   <item>
+    <widget class="QPushButton" name="library">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>36</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>图书馆</string>
+     </property>
+     <property name="icon">
+      <iconset resource="../MindReader/res/resource.qrc">
+       <normaloff>:/img/library</normaloff>:/img/library</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>32</width>
+       <height>32</height>
+      </size>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="Line" name="sep_1">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="save">
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="../MindReader/res/resource.qrc">
+       <normaloff>:/img/save</normaloff>:/img/save</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>32</width>
+       <height>32</height>
+      </size>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="hand">
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="../MindReader/res/resource.qrc">
+       <normaloff>:/img/hand</normaloff>:/img/hand</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>24</width>
+       <height>24</height>
+      </size>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="select">
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="../MindReader/res/resource.qrc">
+       <normaloff>:/img/select</normaloff>:/img/select</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>24</width>
+       <height>24</height>
+      </size>
+     </property>
+     <property name="checkable">
+      <bool>true</bool>
+     </property>
+     <property name="checked">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="line">
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="../MindReader/res/resource.qrc">
+       <normaloff>:/img/line</normaloff>:/img/line</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>24</width>
+       <height>24</height>
+      </size>
+     </property>
+     <property name="checkable">
+      <bool>true</bool>
+     </property>
+     <property name="checked">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="rectangle">
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="../MindReader/res/resource.qrc">
+       <normaloff>:/img/rectangle</normaloff>:/img/rectangle</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>24</width>
+       <height>24</height>
+      </size>
+     </property>
+     <property name="checkable">
+      <bool>true</bool>
+     </property>
+     <property name="checked">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="text">
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="../MindReader/res/resource.qrc">
+       <normaloff>:/img/text</normaloff>:/img/text</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>24</width>
+       <height>24</height>
+      </size>
+     </property>
+     <property name="checkable">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <spacer name="horizontalSpacer">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>173</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item>
+    <widget class="QPushButton" name="note">
+     <property name="text">
+      <string>隐藏笔记本</string>
+     </property>
+     <property name="icon">
+      <iconset resource="../MindReader/res/resource.qrc">
+       <normaloff>:/img/notes</normaloff>:/img/notes</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>32</width>
+       <height>32</height>
+      </size>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="exportNote">
+     <property name="text">
+      <string>导出思维导图</string>
+     </property>
+     <property name="icon">
+      <iconset resource="../MindReader/res/resource.qrc">
+       <normaloff>:/img/export</normaloff>:/img/export</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>32</width>
+       <height>32</height>
+      </size>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="../MindReader/res/resource.qrc"/>
+ </resources>
+ <connections/>
+</ui>

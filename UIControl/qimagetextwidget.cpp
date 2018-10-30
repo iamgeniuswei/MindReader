@@ -82,11 +82,11 @@ void QImageTextWidget::mousePressEvent(QMouseEvent *event)
 
 
 
-void QImageTextWidget::mouseDoubleClickEvent(QMouseEvent *event)
-{
-    qDebug() << "mouseDoubleClickEvent";
-    qDebug() << ui->lbText->text ();
-    emit clicked (ui->lbText->text ());
-}
+//void QImageTextWidget::mouseDoubleClickEvent(QMouseEvent *event)
+//{
+//    qDebug() << "mouseDoubleClickEvent";
+//    qDebug() << ui->lbText->text ();
+//    emit clicked (ui->lbText->text ());
+//}
 
 

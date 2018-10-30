@@ -3,7 +3,7 @@
 
 #include <QObject>
 #include <QThread>
-
+#include "mrarticlemetadata.h"
 class ArticleScanner : public QThread
 {
     Q_OBJECT
@@ -12,8 +12,14 @@ public:
     virtual void run();
 
 signals:
-    void itemReady(const QString& text);
+    void itemReady(std::shared_ptr<MRArticleMetaData> aritcle);
 public slots:
+
+private:
+    void scanDirsRecurSively(const QString& root);
+    void scanFilesInDir();
+    void handleArticleMetaData(const QString &file_name);
+    void handleFolderMetaData(const QString &folder_name);
 };
 
 #endif // ARTICLESCANNER_H

@@ -16,9 +16,14 @@
 #include "mrsetting.h"
 #include "mrworkdirsettingwindow.h"
 #include "mrlibrarytoolbar.h"
+#include "ORMHelper.h"
+#include "memory"
+#include "mrarticlemetadata.h"
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+
+    qRegisterMetaType<std::shared_ptr<MRArticleMetaData>>("std::shared_ptr<MRArticleMetaData>");
 
     MRSetting set;
     set.initializeSetting ("config.ini");
@@ -33,17 +38,26 @@ int main(int argc, char *argv[])
     }
     QString isNew = set.getFirstUseage ();
     QWidget *w = nullptr;
+//    NoteCard *w = nullptr;
     qDebug() << set.getWorkDirectory ();
+
+    QString dbname = set.getDatabaseName ();
+    QString sqlite_path = set.getWorkDirectory () + "/" + dbname;
+    ORMHelper::initializeSqlite (sqlite_path.toStdString ());
+    ORMHelper::initializeTables ();
 
     if(isNew == "true")
     {
-        w = new MRWorkDirSettingWindow;
+//        w = new MRWorkDirSettingWindow;
         w->show ();
     }
     else
     {
 //        w = new ArticleShelf;
         w = new MRMainWindow;
+        QString str = "是否大是大非阿瑟费达斯蒂夫啊飒飒的发生地方阿斯顿发生的发色阿斯顿发生的发生的撒旦发生的发生地方阿瑟费达斯蒂夫是否大是大非阿瑟费达斯蒂夫啊飒飒的发生地方阿斯顿发生的发色阿斯顿发生的发生的撒旦发生的发生地方阿瑟费达斯蒂夫是否大是大非阿瑟费达斯蒂夫啊飒飒的发生地方阿斯顿发生的发色阿斯顿发生的发生的撒旦发生的发生地方阿瑟费达斯蒂夫是否大是大非阿瑟费达斯蒂夫啊飒飒的发生地方阿斯顿发生的发色阿斯顿发生的发生的撒旦发生的发生地方阿瑟费达斯蒂夫是否大是大非阿瑟费达斯蒂夫啊飒飒的发生地方阿斯顿发生的发色阿斯顿发生的发生的撒旦发生的发生地方阿瑟费达斯蒂夫是否大是大非阿瑟费达斯蒂夫啊飒飒的发生地方阿斯顿发生的发色阿斯顿发生的发生的撒旦发生的发生地方阿瑟费达斯蒂夫是否大是大非阿瑟费达斯蒂夫啊飒飒的发生地方阿斯顿发生的发色阿斯顿发生的发生的撒旦发生的发生地方阿瑟费达斯蒂夫";
+//        w = new NoteCard;
+//        w->setText(str);
 //        w = new MRLibraryToolBar;
         w->show ();
     }

@@ -22,22 +22,26 @@
 #include <QWheelEvent>
 #include <QPainter>
 #include "articledisplayercontroller.h"
+#include "mrarticlemetadata.h"
+#include "mrsetting.h"
+#include <QString>
+#include "mupdf/pdf.h"
 ArticleDisplayer::ArticleDisplayer(QWidget *parent)
 : QScrollArea(parent)
 {
     initializeUI();
-    PDFDocument *pdf = new PDFDocument();
-    pdf->openDocument("D:/Article/56.pdf");
+//    PDFDocument *pdf = new PDFDocument();
+//    pdf->openDocument("D:/Article/56.pdf");
 
-//    setWidget(container);
-//    delete pdf;
+////    setWidget(container);
+////    delete pdf;
 
 
-//    setWidget(label);
-    render = new ArticlePageRender(this);
-    render->setPDFDocument (pdf);
+////    setWidget(label);
+//    render = new ArticlePageRender(this);
+//    render->setPDFDocument (pdf);
     initializeSignals ();
-    setPDFDocument (pdf);
+//    setPDFDocument (pdf);
 }
 
 ArticleDisplayer::~ArticleDisplayer()
@@ -49,7 +53,7 @@ void ArticleDisplayer::initializeUI()
     setAlignment (Qt::AlignCenter);
 //    setAlignment(Qt::AlignHCenter);
 //    setWidgetResizable (true);
-//    setBackgroundRole(QPalette::Dark);
+    setBackgroundRole(QPalette::Dark);
 //    container = new QWidget(this);
     content = new ArticlePage(this);
 //    layout = new QVBoxLayout(container);
@@ -121,7 +125,28 @@ void ArticleDisplayer::setPDFDocument(const PDFDocument* doc)
 //    setViewport(container);
 //    qDebug() << label->size () << ":::" <<label->sizeHint ();
 //     qDebug() << "area size" << this->width ()<<" "<<this->height ();
-//     verticalScrollBar ()->setMaximum (100*648);
+    //     verticalScrollBar ()->setMaximum (100*648);
+}
+
+void ArticleDisplayer::setArticle(std::shared_ptr<MRArticleMetaData> article)
+{
+    MRSetting set;
+    set.initializeSetting ("config.ini");
+//    std::string working_dir = QString::toStdString (set.getWorkDirectory ());
+    std::string path;
+    if(!article->relative_path ().empty ())
+        path = set.getWorkDirectory ().toStdString () + "/" + article->relative_path () + "/" + article->title ();
+    else
+        path = set.getWorkDirectory ().toStdString () + "/" + article->title ();
+    PDFDocument *pdf = new PDFDocument();
+    pdf->openDocument(QString::fromStdString (path));
+
+    render = new ArticlePageRender(this);
+    connect (render, &ArticlePageRender::pageReady,
+             this, &ArticleDisplayer::displayPage);
+    render->setPDFDocument (pdf);
+    setPDFDocument (pdf);
+
 }
 
 void ArticleDisplayer::wheelEvent(QWheelEvent *event)
@@ -156,12 +181,13 @@ void ArticleDisplayer::wheelEvent(QWheelEvent *event)
 
 void ArticleDisplayer::initializeSignals()
 {
-    connect (render, &ArticlePageRender::pageReady,
-             this, &ArticleDisplayer::displayPage);
+
     connect(content, &ArticlePage::selectionReady,
             this, &ArticleDisplayer::selectionReady);
     connect(content, &ArticlePage::textReady,
             this, &ArticleDisplayer::textReady);
+    connect (this, &ArticleDisplayer::cursorType,
+             content, &ArticlePage::handleCursorType);
 }
 
 void ArticleDisplayer::displayFirstPage()

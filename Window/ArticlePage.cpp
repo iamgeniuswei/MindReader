@@ -18,10 +18,15 @@
 #include <QDebug>
 #include <QPainter>
 #include <QPaintEngine>
+#include "mupdf/pdf.h"
+#include "mupdf/fitz.h"
+#include <QKeyEvent>
 ArticlePage::ArticlePage(QWidget *parent)
     :QLabel(parent)
 {
     setScaledContents (true);
+    setMouseTracking (true);
+    grabKeyboard ();
 //    setCursor (Qt::IBeamCursor);
 }
 
@@ -33,6 +38,14 @@ void ArticlePage::setPDFPage(PDFPage* src)
 {
     page = src;
 //    img = this->pixmap ()->toImage ();
+    fz_annot *annot = fz_first_annot (page->context (), page->page ());
+    if(annot)
+    {
+        pdf_annot *pdf_an = (pdf_annot*)annot;
+        qDebug() << annot;
+        qDebug() << pdf_annot_contents (page->context (),
+                                        pdf_an);    }
+
 
 }
 
@@ -52,56 +65,121 @@ void ArticlePage::setCurrentPageIndex(int index)
 
 void ArticlePage::mousePressEvent(QMouseEvent* ev)
 {
-    startPoint = ev->localPos();
+//    startPoint = ev->localPos();
+    startPoint = ev->pos ();
+    draw = true;
     qDebug() << startPoint;
     qDebug()  << this->cursor ();
 }
 
+void ArticlePage::mouseMoveEvent(QMouseEvent *event)
+{
+    endPoint = event->pos ();
+    if(shift)
+    {
+        endPoint.setY (startPoint.y ());
+    }
+    update ();
+}
+
 void ArticlePage::mouseReleaseEvent(QMouseEvent* event)
 {
+    draw = false;
+    if(cursor_ == LINE)
+    {
+        MRAnnotaion annotation;
+        annotation.setType (MRAnnotaion::ANNOTATION::LINE);
+        annotation.setStart (startPoint);
+        annotation.setEnd (endPoint);
+        annotations.append (annotation);
+    }
+
+
 //    QPointF point;
 //    point = event->localPos ();
 
 //    QPainter painter(this);
 //    painter.drawEllipse (pressPoint.x (), pressPoint.y (), point.x ()-pressPoint.x (),point.y ()-pressPoint.y ());
-    endPoint = event->localPos ();
-    if(this->cursor () == Qt::ArrowCursor)
-    {
-        QString str = highlightSelection ();
-        qDebug() << str;
-//        str.replace ("\r", "");
+//    endPoint = event->localPos ();
+    endPoint = event->pos ();
+//    if(this->cursor () == Qt::ArrowCursor)
+//    {
+//        QString str = highlightSelection ();
 //        qDebug() << str;
-        if(!str.isEmpty ())
-            emit textReady (currentPageIndex, str);
-    }
-    else if (this->cursor () == Qt::ArrowCursor)
-    {
-        int x = startPoint.x();
-        int y = startPoint.y ();
-        int width = endPoint.x () - startPoint.x ();
-        int height = endPoint.y () - startPoint.y ();
-        QPixmap p = this->grab(QRect(x, y, width, height));
-        emit selectionReady (currentPageIndex, p);
-    }
+////        str.replace ("\r", "");
+////        qDebug() << str;
+//        if(!str.isEmpty ())
+//            emit textReady (currentPageIndex, str);
+//    }
+//    else if (this->cursor () == Qt::ArrowCursor)
+//    {
+//        int x = startPoint.x();
+//        int y = startPoint.y ();
+//        int width = endPoint.x () - startPoint.x ();
+//        int height = endPoint.y () - startPoint.y ();
+//        QPixmap p = this->grab(QRect(x, y, width, height));
+//        emit selectionReady (currentPageIndex, p);
+//    }
 
-    repaint ();
+//    repaint ();
+//    qDebug() << page->context ();
+//    qDebug() << page->document ();
+////    pdf_document * doc = pdf_document_from_fz_document (page->context (), page->document ());
+//    pdf_document *doc = (pdf_document*)(page->document ());
+////    pdf_page * pdfPage = pdf_page_from_fz_page(page->context (), page->page ());
+
+//    pdf_page *pdfPage = pdf_load_page (page->context (),
+//                             doc,
+//                             currentPageIndex);
+
+//    pdf_annot *annot = pdf_create_annot (page->context (),
+//                                         pdfPage,
+//                                         PDF_ANNOT_HIGHLIGHT);
+//    pdf_add_annot_quad_point (page->context (),
+//                              annot,
+//                              quads_list.at (0));
+
+//    pdf_set_annot_contents (page->context (),
+//                            annot,
+//                            "THIS is annotation");
+
+//    pdf_save_document(page->context (), doc,
+//                      "D:/Article/testan.pdf",NULL);
+
+
 }
 
 void ArticlePage::paintEvent(QPaintEvent *event)
 {
     QLabel::paintEvent (event);
-    if(draw)
+
+    if(cursor_ == LINE && draw)
     {
-        QPainter painter(this);
-        for(int i=0; i<quads_list.size (); i++)
-        {
-            fz_quad quad = quads_list.at (i);
-            QRectF rect = QRectF(quad.ul.x, quad.ul.y, quad.lr.x - quad.ll.x, quad.lr.y - quad.ul.y);
-            rect = mapFromOrigin (rect, scaleX, scaleY, rotation);
-            painter.fillRect (rect,
-                              QColor(100,100,100,80));
-        }
+        drawLine ();
     }
+
+    for(int i=0; i<annotations.size (); i++)
+    {
+        MRAnnotaion tmp = annotations.at (i);
+        if(tmp.getType () == MRAnnotaion::ANNOTATION::LINE)
+        {
+            drawLine (tmp.getStart (), tmp.getEnd ());
+        }
+
+    }
+
+//    if(draw)
+//    {
+//        QPainter painter(this);
+//        for(int i=0; i<quads_list.size (); i++)
+//        {
+//            fz_quad quad = quads_list.at (i);
+//            QRectF rect = QRectF(quad.ul.x, quad.ul.y, quad.lr.x - quad.ll.x, quad.lr.y - quad.ul.y);
+//            rect = mapFromOrigin (rect, scaleX, scaleY, rotation);
+//            painter.fillRect (rect,
+//                              QColor(100,100,100,80));
+//        }
+//    }
 //
 //    QLineF line(10.0, 80.0, 90.0, 20.0);
 
@@ -117,6 +195,54 @@ void ArticlePage::paintEvent(QPaintEvent *event)
 
 //    painter.drawLine(line);
 
+}
+
+void ArticlePage::keyPressEvent(QKeyEvent *event)
+{
+
+    if(event->modifiers () == Qt::ShiftModifier)
+    {
+        shift = true;
+        qDebug() << "shift Pressed";
+    }
+}
+
+void ArticlePage::keyReleaseEvent(QKeyEvent *event)
+{
+    Q_UNUSED (event);
+    shift = false;
+}
+
+void ArticlePage::drawLine()
+{
+    QPainter painter(this);
+    painter.begin (this);
+    QPen pen(Qt::red, 2);
+    painter.setPen (pen);
+    painter.setRenderHint (QPainter::Antialiasing);
+    painter.drawLine (startPoint, endPoint);
+    painter.end ();
+}
+
+void ArticlePage::drawLine(QPoint start, QPoint end)
+{
+    QPainter painter(this);
+    painter.begin (this);
+    QPen pen(Qt::red, 2);
+    painter.setPen (pen);
+    painter.setRenderHint (QPainter::Antialiasing);
+    painter.drawLine (start, end);
+    painter.end ();
+}
+
+void ArticlePage::handleCursorType(CURSOR cursor)
+{
+    cursor_ = cursor;
+    if(cursor_ == HAND)
+        setCursor (Qt::OpenHandCursor);
+    else if (cursor == LINE) {
+        setCursor (Qt::CrossCursor);
+    }
 }
 
 void ArticlePage::setImage(const QImage &img)

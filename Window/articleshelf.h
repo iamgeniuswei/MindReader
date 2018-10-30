@@ -3,6 +3,8 @@
 
 #include <QWidget>
 #include <QListWidget>
+#include "mrarticlemetadata.h"
+#include <memory>
 #include "window_global.h"
 class QGridLayout;
 class QImageTextWidget;
@@ -23,9 +25,9 @@ public:
 
 signals:
 //    void articleClicked();
-    void articleClicked(const QString& text);
+    void articleClicked(std::shared_ptr<MRArticleMetaData> article);
 public slots:
-    void addArticle(const QString& text);
+    void addArticle(std::shared_ptr<MRArticleMetaData> article);
 
 
 private:

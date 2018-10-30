@@ -27,7 +27,9 @@ SOURCES += \
         uicontrol.cpp \
     QIconButton.cpp \
     QImageTextItem.cpp \
-    qimagetextwidget.cpp
+    qimagetextwidget.cpp \
+    uiwidget.cpp \
+    uilabel.cpp
 
 HEADERS += \
         uicontrol.h \
@@ -35,7 +37,9 @@ HEADERS += \
     QIconButton.h \
     QImageTextItem.h \
     private/QIconButton_p.h \
-    qimagetextwidget.h
+    qimagetextwidget.h \
+    uiwidget.h \
+    uilabel.h
 
 unix {
     target.path = /usr/lib

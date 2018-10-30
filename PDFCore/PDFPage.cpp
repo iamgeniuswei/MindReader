@@ -187,3 +187,18 @@ QString PDFPage::getSelection(const QRectF &rect, fz_quad *quads, int &num)
     }
     return ret;
 }
+
+fz_context *PDFPage::context() const
+{
+    return d->context;
+}
+
+fz_document *PDFPage::document() const
+{
+    return d->document;
+}
+
+fz_page *PDFPage::page() const
+{
+    return d->page;
+}

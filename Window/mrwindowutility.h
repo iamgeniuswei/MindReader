@@ -1,0 +1,12 @@
+#ifndef MRWINDOWUTILITY_H
+#define MRWINDOWUTILITY_H
+enum CURSOR
+{
+    HAND,
+    SELECT,
+    LINE,
+    RECTANGLE,
+    TEXT
+};
+
+#endif // MRWINDOWUTILITY_H

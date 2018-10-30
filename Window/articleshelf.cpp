@@ -54,17 +54,19 @@ ArticleShelf::ArticleShelf(QWidget *parent) : QListWidget(parent)
     scanner->start ();
 }
 
-void ArticleShelf::addArticle (const QString &text)
+void ArticleShelf::addArticle (std::shared_ptr<MRArticleMetaData> article)
 {
-    QImageTextWidget *w = new ArticleItem (this);
+    ArticleItem *w = new ArticleItem (this);
     w->setImage (":img/pdf");
-    w->setText (text);
+    w->setText (QString::fromStdString (article->title ()));
+    w->setArticle (article);
+
     QListWidgetItem *it = new QListWidgetItem(this);
     qDebug() <<"widget size:" << w->sizeHint ();
     it->setSizeHint (w->sizeHint ());
     this->addItem (it);
     this->setItemWidget (it, w);
-    connect (w, &QImageTextWidget::clicked,
+    connect (w, &ArticleItem::articleClicked,
              this, &ArticleShelf::articleClicked);
 }
 

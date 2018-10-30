@@ -19,6 +19,8 @@
 //#include "mupdf/fitz.h"
 //#include "mupdf/pdf/annot.h"
 #include "mupdf/fitz.h"
+#include "mrwindowutility.h"
+#include "mrannotaion.h"
 class PDFPage;
 class WINDOWSHARED_EXPORT ArticlePage : public QLabel
 {
@@ -32,8 +34,16 @@ public:
     void setCurrentPageIndex(int index);
 protected:
     virtual void mousePressEvent(QMouseEvent* ev) override;
+    virtual void mouseMoveEvent(QMouseEvent* event) override;
     virtual void mouseReleaseEvent(QMouseEvent* event) override;
     virtual void paintEvent(QPaintEvent* event) override;
+    virtual void keyPressEvent(QKeyEvent *event) override;
+    virtual void keyReleaseEvent(QKeyEvent *event) override;
+    void drawLine();
+    void drawLine(QPoint start, QPoint end);
+
+public slots:
+    void handleCursorType(CURSOR cursor );
 
 signals:
     void selectionReady(int page, const QPixmap& pixmap);
@@ -54,8 +64,8 @@ public:
     void setScaleY(float value);
 
 private:
-    QPointF startPoint;
-    QPointF endPoint;
+    QPoint startPoint;
+    QPoint endPoint;
     PDFPage *page = nullptr;
     QImage img;
     bool first = true;
@@ -65,6 +75,9 @@ private:
     float rotation = 0.0;
     bool draw = false;
     QList<fz_quad> quads_list;
+    QList<MRAnnotaion> annotations;
+    CURSOR cursor_;
+    bool shift = false;
 };
 
 #endif /* _ARTICLEPAGE_H */

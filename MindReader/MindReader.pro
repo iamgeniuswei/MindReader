@@ -63,3 +63,16 @@ else:unix: LIBS += -L$$OUT_PWD/../Utility/ -lUtility
 
 INCLUDEPATH += $$PWD/../Utility
 DEPENDPATH += $$PWD/../Utility
+win32:CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/../MRData/release/ -lMRData
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../MRData/debug/ -lMRData
+else:unix: LIBS += -L$$OUT_PWD/../MRData/ -lMRData
+
+INCLUDEPATH += $$PWD/../MRData
+DEPENDPATH += $$PWD/../MRData
+
+#INCLUDEPATH += D:\Project\MindReader\UIControls
+#LIBS += D:\lib\uilabelplugin.lib
+
+INCLUDEPATH += D:\lib\odb\include
+LIBS += D:\lib\odb\lib\odb-d.lib
+LIBS += D:\lib\odb\lib\odb-sqlite-d.lib

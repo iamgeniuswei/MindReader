@@ -1,19 +1,20 @@
 /**QLineEdit**/
 
-QLineEdit
+QLineEdit#note
 {
     border-radius: 4px;
-    height: 25px;
+    height: 32px;
     border: 1px solid rgb(100, 100, 100);
-    background: rgb(72, 72, 73);
+    border:none;
+/*    background: rgb(72, 72, 73);*/
 }
-QLineEdit:enabled {
-        color: rgb(175, 175, 175);
+QLineEdit#note:enabled {
+        color: black;
 }
-QLineEdit:enabled:hover, QLineEdit:enabled:focus {
+QLineEdit#note:enabled:hover, QLineEdit:enabled:focus {
         color: rgb(230, 230, 230);
 }
-QLineEdit:!enabled {
+QLineEdit#note:!enabled {
         color: rgb(155, 155, 155);
 }
 
@@ -25,9 +26,207 @@ QLineEdit#search
     background: rgb(72, 72, 73);
 }
 
+QLineEdit#title
+{
+    border-radius: 4px;
+    height: 28px;
+    border: 1px solid rgb(100, 100, 100);
+    border:none;
+    color: rgb(141, 141, 141);
+}
+QLineEdit#title:enabled {
+        color: rgb(141, 141, 141);
+/*        background: rgb(72, 72, 73);*/
+}
+QLineEdit#title:enabled:hover, QLineEdit:enabled:focus {
+        color: rgb(141, 141, 141);
+        border: 1px solid rgb(155, 155, 155);
+        background: rgb(238, 238, 238);
+}
+QLineEdit#title:!enabled {
+        color: rgb(155, 155, 155);
+}
+
 QLabel
 {
     background:transparent;
+}
+
+QLabel#index
+{
+    background:transparent;
+/*    background-color:rgb(0,0,0, 0);*/
+
+    border:2px rgb(18, 150, 219, 100);
+
+    border-style: solid;
+
+    border-radius: 14px;
+}
+
+QPushButton#toolButton{
+        border-radius: 4px;
+        border: none;
+        width:100px;
+        height:36px;
+}
+
+QPushButton#toolButton:hover
+{
+        background: rgb(200, 200, 200);
+}
+QPushButton#toolButton:pressed
+{
+        background: rgb(80, 80, 80);
+}
+
+QPushButton#save{
+        border-radius: 4px;
+        border: none;
+        width:36px;
+        height:36px;
+}
+
+QPushButton#save:hover
+{
+        background: rgb(200, 200, 200);
+}
+QPushButton#save:pressed
+{
+        background: rgb(80, 80, 80);
+}
+
+QPushButton#select{
+        border-radius: 4px;
+        border: none;
+        width:28px;
+        height:28px;
+}
+
+QPushButton#select:hover
+{
+        background: rgb(200, 200, 200);
+}
+QPushButton#select:pressed
+{
+        background: rgb(80, 80, 80);
+}
+QPushButton#select:checked
+{
+        background: rgb(80, 80, 80);
+}
+
+QPushButton#line{
+        border-radius: 4px;
+        border: none;
+        width:28px;
+        height:28px;
+}
+
+QPushButton#line:hover
+{
+        background: rgb(200, 200, 200);
+}
+QPushButton#line:pressed
+{
+        background: rgb(80, 80, 80);
+}
+QPushButton#line:checked
+{
+        background: rgb(80, 80, 80);
+}
+
+QPushButton#rectangle{
+        border-radius: 4px;
+        border: none;
+        width:28px;
+        height:28px;
+}
+
+QPushButton#rectangle:hover
+{
+        background: rgb(200, 200, 200);
+}
+QPushButton#rectangle:pressed
+{
+        background: rgb(80, 80, 80);
+}
+QPushButton#rectangle:checked
+{
+        background: rgb(80, 80, 80);
+}
+QPushButton#text{
+        border-radius: 4px;
+        border: none;
+        width:28px;
+        height:28px;
+}
+
+QPushButton#text:hover
+{
+        background: rgb(200, 200, 200);
+}
+QPushButton#text:pressed
+{
+        background: rgb(80, 80, 80);
+}
+QPushButton#text:checked
+{
+        background: rgb(80, 80, 80);
+}
+
+QPushButton#hand{
+        border-radius: 4px;
+        border: none;
+        width:28px;
+        height:28px;
+}
+
+QPushButton#hand:hover
+{
+        background: rgb(200, 200, 200);
+}
+QPushButton#hand:pressed
+{
+        background: rgb(80, 80, 80);
+}
+QPushButton#hand:checked
+{
+        background: rgb(80, 80, 80);
+}
+
+QPushButton#controlButton{
+        border-radius: 4px;
+        border: none;
+        width:28px;
+        height:28px;
+}
+
+QPushButton#controlButton:hover
+{
+        background: rgb(200, 200, 200);
+}
+
+QPushButton#controlButton:pressed
+{
+        background: rgb(80, 80, 80);
+}
+
+QPushButton#trash{
+        border-radius: 4px;
+        border: none;
+        width:24px;
+        height:24px;
+}
+
+QPushButton#trash:hover
+{
+        background: rgb(200, 200, 200);
+}
+
+QPushButton#trash:pressed
+{
+        background: rgb(80, 80, 80);
 }
 
 QPushButton#browser{
@@ -47,18 +246,32 @@ QPushButton#test{
         width:100px;
         height:32px;
 }
-QPushButton:hover
+/*QPushButton:hover
 {
         background: rgb(200, 200, 200);
 }
 QPushButton:pressed
 {
         background: rgb(80, 80, 80);
-}
+}*/
+
+
 
 QWidget#mw
 {
     background:white;
     border-image:":/img/background";
+/*    border-color:red;*/
+}
+
+QWidget#whiteWidget
+{
+    background:white;
+/*    border-color:red;*/
+}
+
+UIWidget
+{
+    background:white;
 /*    border-color:red;*/
 }

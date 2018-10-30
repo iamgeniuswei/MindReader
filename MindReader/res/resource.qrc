@@ -14,6 +14,22 @@
         <file alias="search">img/search.png</file>
         <file alias="grid">img/grid.png</file>
         <file alias="list">img/list.png</file>
+        <file alias="library">img/library.png</file>
+        <file alias="notes">img/notes.png</file>
+        <file alias="backward">img/backword.png</file>
+        <file alias="first">img/first.png</file>
+        <file alias="forward">img/forward.png</file>
+        <file alias="last">img/last.png</file>
+        <file alias="zoomIn">img/zoom-in.png</file>
+        <file alias="zoomOut">img/zoom-out.png</file>
+        <file alias="delete">img/delete.png</file>
+        <file alias="save">img/save.png</file>
+        <file alias="line">img/line (1).png</file>
+        <file alias="rectangle">img/rectangle.png</file>
+        <file alias="select">img/select.png</file>
+        <file alias="text">img/text.png</file>
+        <file alias="export">img/export.png</file>
+        <file alias="hand">img/hand.png</file>
     </qresource>
     <qresource prefix="/qss">
         <file alias="default">qss/default.qss</file>

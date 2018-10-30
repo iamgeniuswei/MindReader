@@ -27,6 +27,9 @@ public:
     QImage renderPage(float scaleX, float scaleY, float rotation);
     QString text(const QRectF& rect) const;
     QString getSelection(const QRectF& rect, fz_quad *quads, int& num);
+    fz_context* context() const;
+    fz_document* document() const;
+    fz_page* page() const;
 private:
     PDFPagePrivate *d;
 };

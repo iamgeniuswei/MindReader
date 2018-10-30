@@ -79,3 +79,8 @@ void MRSetting::setFirstUseage()
 {
     setValue ("firstuse", "value", "false");
 }
+
+QString MRSetting::getDatabaseName()
+{
+    return getValue ("database", "sqlite");
+}

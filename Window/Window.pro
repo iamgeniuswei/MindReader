@@ -44,7 +44,10 @@ SOURCES += \
     mrworkdirsettingwindow.cpp \
     mrmainwindow.cpp \
     mrlibrarytoolbar.cpp \
-    mrlibrary.cpp
+    mrlibrary.cpp \
+    mrreadertoolbar.cpp \
+    mrarticlereader.cpp \
+    mrannotaion.cpp
 
 HEADERS += \
         window.h \
@@ -64,7 +67,11 @@ HEADERS += \
     mrworkdirsettingwindow.h \
     mrmainwindow.h \
     mrlibrarytoolbar.h \
-    mrlibrary.h
+    mrlibrary.h \
+    mrreadertoolbar.h \
+    mrarticlereader.h \
+    mrwindowutility.h \
+    mrannotaion.h
 
 unix {
     target.path = /usr/lib
@@ -88,7 +95,8 @@ FORMS += \
     notecard.ui \
     mrworkdirsettingwindow.ui \
     mrmainwindow.ui \
-    mrlibrarytoolbar.ui
+    mrlibrarytoolbar.ui \
+    mrreadertoolbar.ui
 
 win32:CONFIG(release, debug|release): LIBS += -L../ -lPDFCore
 else:win32:CONFIG(debug, debug|release): LIBS += -L../ -lPDFCore
@@ -104,3 +112,21 @@ else:unix: LIBS += -L$$OUT_PWD/../Utility/ -lUtility
 
 INCLUDEPATH += $$PWD/../Utility
 DEPENDPATH += $$PWD/../Utility
+
+win32:CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/../MRData/release/ -lMRData
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../MRData/debug/ -lMRData
+else:unix: LIBS += -L$$OUT_PWD/../MRData/ -lMRData
+
+INCLUDEPATH += $$PWD/../MRData
+DEPENDPATH += $$PWD/../MRData
+
+#INCLUDEPATH += D:\Project\MindReader\UIControls
+#LIBS += D:\lib\uilabelplugin.lib
+
+INCLUDEPATH += D:\lib\odb\include
+LIBS += D:\lib\odb\lib\odb-d.lib
+LIBS += D:\lib\odb\lib\odb-sqlite-d.lib
+INCLUDEPATH += D:\Project\mupdf\include
+LIBS += D:\Project\mupdf\lib\libmupdf.lib
+LIBS += D:\Project\mupdf\lib\libthirdparty.lib
+LIBS += D:\Project\mupdf\lib\libresources.lib

@@ -6,5 +6,8 @@ SUBDIRS += \
     Window \
     MindReader \
     Note \
-    Utility
+    Utility \
+    MRData \
+    UIControls \
+    untitled
 
