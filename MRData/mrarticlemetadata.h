@@ -15,6 +15,7 @@ private:
     unsigned long long _id = 0;
     unsigned int _pages = 0;
     std::string _title;
+#pragma db unique
     std::string _relative_path;
     std::string _author;
     std::string _publisher;
@@ -22,6 +23,8 @@ private:
     std::string _year;
 public:
     unsigned long long persist();
+    bool exist(const std::string &tilte, const std::string &dir);
+    bool query();
     unsigned int pages() const;
     void setPages(unsigned int pages);
     std::string title() const;

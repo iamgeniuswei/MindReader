@@ -47,7 +47,7 @@ void MRReaderToolBar::on_hand_clicked()
     {
         ui->text->setChecked (false);
     }
-    emit cursorType (HAND);
+    emit cursorType (CURSOR::HAND);
 }
 
 void MRReaderToolBar::on_select_clicked()
@@ -55,7 +55,7 @@ void MRReaderToolBar::on_select_clicked()
     if(ui->select->isChecked ())
     {
         qDebug() << "selectPressed";
-        emit cursorType (SELECT);
+        emit cursorType (CURSOR::SELECT);
     }
 }
 
@@ -64,7 +64,7 @@ void MRReaderToolBar::on_line_clicked()
     if(ui->line->isChecked ())
     {
         qDebug() << "linePressed";
-        emit cursorType (LINE);
+        emit cursorType (CURSOR::LINE);
     }
 }
 
@@ -73,7 +73,7 @@ void MRReaderToolBar::on_rectangle_clicked()
     if(ui->rectangle->isChecked ())
     {
         qDebug() << "rectanglePressed";
-        emit cursorType (RECTANGLE);
+        emit cursorType (CURSOR::RECTANGLE);
     }
 }
 
@@ -82,6 +82,6 @@ void MRReaderToolBar::on_text_clicked()
     if(ui->text->isChecked ())
     {
         qDebug() << "textPressed";
-        emit cursorType (TEXT);
+        emit cursorType (CURSOR::TEXT);
     }
 }

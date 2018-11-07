@@ -3,7 +3,7 @@
 ReaderWithNote::ReaderWithNote(QWidget *parent) : QWidget(parent)
 {
     layout = new QHBoxLayout(this);
-    reader = new ArticleReader(this);
+    reader = new MRArticleReader(this);
     note = new NoteDisplayer(this);
     layout->addWidget (reader, 1);
     layout->addWidget (note);
@@ -13,8 +13,8 @@ ReaderWithNote::ReaderWithNote(QWidget *parent) : QWidget(parent)
 
 void ReaderWithNote::initializeSignal()
 {
-    connect (reader, &ArticleReader::selectionReady,
+    connect (reader, &MRArticleReader::selectionReady,
              note, &NoteDisplayer::addPixmapCard);
-    connect (reader, &ArticleReader::textReady,
+    connect (reader, &MRArticleReader::textReady,
              note, &NoteDisplayer::addTextCard);
 }

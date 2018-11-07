@@ -1,13 +1,12 @@
 TEMPLATE = subdirs
 CONFIG += ordered
 SUBDIRS += \    
-    PDFCore \
+    MREngine \
     UIControl \
     Window \
     MindReader \
     Note \
     Utility \
     MRData \
-    UIControls \
-    untitled
+    UIControls
 

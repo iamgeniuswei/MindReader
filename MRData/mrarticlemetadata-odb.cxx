@@ -1046,6 +1046,8 @@ namespace odb
                       "  \"publisher\" TEXT NOT NULL,\n"
                       "  \"isbn\" TEXT NOT NULL,\n"
                       "  \"year\" TEXT NOT NULL)");
+          db.execute ("CREATE UNIQUE INDEX \"MRArticleMetaData_relative_path_i\"\n"
+                      "  ON \"MRArticleMetaData\" (\"relative_path\")");
           return false;
         }
       }

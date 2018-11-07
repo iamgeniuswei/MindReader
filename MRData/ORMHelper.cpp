@@ -61,15 +61,19 @@ void ORMHelper::initializeSqlite(const std::string &sqlite_name)
 
 void ORMHelper::initializeTables()
 {
+    initializeTable ("MRArticleMetaData");
+    initializeTable ("MRNoteData");
+}
+
+void ORMHelper::initializeTable(const std::string &schema_name)
+{
     try {
         odb::transaction t(_db->begin ());
-        odb::schema_catalog::create_schema (*_db, "MRArticleMetaData", false);
-        odb::schema_catalog::create_schema (*_db, "MRNoteData", false);
+        odb::schema_catalog::create_schema (*_db, schema_name, false);
         t.commit ();
     } catch (std::exception &e) {
         qDebug() << e.what ();
     }
-
 }
 
 std::shared_ptr<database> ORMHelper::db() 

@@ -30,6 +30,13 @@
         <file alias="text">img/text.png</file>
         <file alias="export">img/export.png</file>
         <file alias="hand">img/hand.png</file>
+        <file alias="refresh">img/refresh.png</file>
+        <file alias="error">img/error.png</file>
+        <file alias="info">img/info.png</file>
+        <file alias="warn">img/warn.png</file>
+        <file alias="pdf_t">img/pdf_t.png</file>
+        <file alias="confirm">img/confirm.png</file>
+        <file alias="pdf_s">img/pdf_s.png</file>
     </qresource>
     <qresource prefix="/qss">
         <file alias="default">qss/default.qss</file>

@@ -1,6 +1,7 @@
 #include "mrarticlemetadata.h"
 #include "ORMHelper.h"
 #include "mrarticlemetadata-odb.hxx"
+#include <QDebug>
 MRArticleMetaData::MRArticleMetaData()
 {
 
@@ -81,4 +82,62 @@ unsigned long long MRArticleMetaData::persist()
     unsigned long long id =0;
     id = ORMHelper::persist<MRArticleMetaData*>(this);
     return id;
+}
+
+bool MRArticleMetaData::exist(const std::string& title,
+                              const std::string& dir)
+{
+    try
+    {
+        std::shared_ptr<database> db = ORMHelper::db ();
+        Q_ASSERT (db != nullptr );
+        typedef odb::query<MRArticleMetaData> query;
+        typedef odb::result<MRArticleMetaData> result;
+        odb::transaction t(db->begin ());
+        result r(db->query<MRArticleMetaData> (
+                     query::title == title && query::relative_path == dir
+                     ));
+        qDebug() << "r.empty: " << r.empty ();
+        t.commit ();
+
+
+    } catch (std::exception &e)
+    {
+        qDebug() << e.what ();
+        return  false;
+    }
+    return  true;
+}
+
+bool MRArticleMetaData::query()
+{
+    try
+    {
+        std::shared_ptr<database> db = ORMHelper::db ();
+        Q_ASSERT (db != nullptr );
+        typedef odb::query<MRArticleMetaData> query;
+        typedef odb::result<MRArticleMetaData> result;
+        odb::transaction t(db->begin ());
+        result r(db->query<MRArticleMetaData> (
+                     query::relative_path == _relative_path
+                     ));
+        if(!r.empty ())
+        {
+            result::iterator i(r.begin ());
+            this->_id = i.id ();
+            this->_pages = i->pages ();
+            this->_author = i->author ();
+            this->_publisher = i->publisher ();
+            this->_isbn = i->isbn ();
+            this->_year = i->year ();
+        }
+        t.commit ();
+
+
+    } catch (std::exception &e)
+    {
+        qDebug() << e.what ();
+        return  false;
+    }
+    return  true;
 }

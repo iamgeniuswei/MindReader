@@ -5,7 +5,7 @@
 #include <QFileDialog>
 #include <QMouseEvent>
 #include "mrsetting.h"
-#include "articleshelf.h"
+#include "mrarticleshelf.h"
 MRWorkDirSettingWindow::MRWorkDirSettingWindow(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::MRWorkDirSettingWindow)
@@ -69,14 +69,14 @@ void MRWorkDirSettingWindow::on_confirm_clicked()
         set.setWorkDirectory (ui->lineEdit->text ());
         set.setFirstUseage ();
     }
-    ArticleShelf *w = new ArticleShelf;
+    MRArticleShelf *w = new MRArticleShelf;
     w->show ();
     this->close ();
 }
 
 void MRWorkDirSettingWindow::on_ignore_clicked()
 {
-    ArticleShelf *w = new ArticleShelf;
+    MRArticleShelf *w = new MRArticleShelf;
     w->show ();
     this->close ();
 }

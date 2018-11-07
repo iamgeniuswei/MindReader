@@ -2,7 +2,7 @@
 #define READERWITHNOTE_H
 
 #include <QWidget>
-#include "articlereader.h"
+#include "mrarticlereader.h"
 #include "notedisplayer.h"
 #include <QHBoxLayout>
 #include "window_global.h"
@@ -18,7 +18,7 @@ signals:
 public slots:
 private:
     QHBoxLayout *layout = nullptr;
-    ArticleReader *reader = nullptr;
+    MRArticleReader *reader = nullptr;
     NoteDisplayer *note = nullptr;
 };
 

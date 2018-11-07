@@ -29,12 +29,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         window.cpp \
-    articleshelf.cpp \
     articleitem.cpp \
-    articlescanner.cpp \
-    articlereader.cpp \
-    ArticleDisplayer.cpp \
-    ArticlePage.cpp \
     articlepagerender.cpp \
     articledisplayercontroller.cpp \
     notecard.cpp \
@@ -46,18 +41,22 @@ SOURCES += \
     mrlibrarytoolbar.cpp \
     mrlibrary.cpp \
     mrreadertoolbar.cpp \
+    mrlibrarytree.cpp \
+    mrarticlescanner.cpp \
+    mrmessagebox.cpp \
+    mrarticleitem.cpp \
+    mrwindowutility.cpp \
+    mrarticleshelf.cpp \
+    mrarticlepagedisplayer.cpp \
+    MRArticleDisplayer.cpp \
     mrarticlereader.cpp \
-    mrannotaion.cpp
+    mrcursor.cpp \
+    mrarticlepagepainter.cpp
 
 HEADERS += \
         window.h \
         window_global.h \ 
-    articleshelf.h \
     articleitem.h \
-    articlescanner.h \
-    articlereader.h \
-    ArticleDisplayer.h \
-    ArticlePage.h \
     articlepagerender.h \
     articledisplayercontroller.h \
     notecard.h \
@@ -69,9 +68,18 @@ HEADERS += \
     mrlibrarytoolbar.h \
     mrlibrary.h \
     mrreadertoolbar.h \
-    mrarticlereader.h \
     mrwindowutility.h \
-    mrannotaion.h
+    mrlibrarytree.h \
+    mrarticlescanner.h \
+    mrmessagebox.h \
+    mrarticleitem.h \
+    mrarticleshelf.h \
+    mrarticlepagedisplayer.h \
+    MRArticleDisplayer.h \
+    mrarticlereader.h \
+    private/mrarticlepagedisplayer_p.h \
+    mrcursor.h \
+    mrarticlepagepainter.h
 
 unix {
     target.path = /usr/lib
@@ -96,14 +104,13 @@ FORMS += \
     mrworkdirsettingwindow.ui \
     mrmainwindow.ui \
     mrlibrarytoolbar.ui \
-    mrreadertoolbar.ui
+    mrreadertoolbar.ui \
+    mrlibrarytree.ui \
+    mrmessagebox.ui \
+    mrarticleitem.ui
 
-win32:CONFIG(release, debug|release): LIBS += -L../ -lPDFCore
-else:win32:CONFIG(debug, debug|release): LIBS += -L../ -lPDFCore
-else:unix: LIBS += -L../ -lPDFCore
 
-INCLUDEPATH += $$PWD/../PDFCore
-DEPENDPATH += $$PWD/../PDFCore
+
 INCLUDEPATH += D:\Project\mupdf\include
 
 win32:CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/../Utility/release/ -lUtility
@@ -130,3 +137,10 @@ INCLUDEPATH += D:\Project\mupdf\include
 LIBS += D:\Project\mupdf\lib\libmupdf.lib
 LIBS += D:\Project\mupdf\lib\libthirdparty.lib
 LIBS += D:\Project\mupdf\lib\libresources.lib
+
+win32:CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/../MREngine/release/ -lMREngine
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../MREngine/debug/ -lMREngine
+else:unix: LIBS += -L$$OUT_PWD/../MREngine/ -lMREngine
+
+INCLUDEPATH += $$PWD/../MREngine
+DEPENDPATH += $$PWD/../MREngine

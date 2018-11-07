@@ -76,3 +76,10 @@ DEPENDPATH += $$PWD/../MRData
 INCLUDEPATH += D:\lib\odb\include
 LIBS += D:\lib\odb\lib\odb-d.lib
 LIBS += D:\lib\odb\lib\odb-sqlite-d.lib
+
+win32:CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/../MREngine/release/ -lMREngine
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../MREngine/debug/ -lMREngine
+else:unix: LIBS += -L$$OUT_PWD/../MREngine/ -lMREngine
+
+INCLUDEPATH += $$PWD/../MREngine
+DEPENDPATH += $$PWD/../MREngine

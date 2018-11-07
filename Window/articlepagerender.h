@@ -4,8 +4,9 @@
 #include <QObject>
 #include <QThread>
 #include <QImage>
-class PDFDocument;
-class PDFPage;
+#include <memory>
+class MRDocument;
+class MRPage;
 class ArticlePageRender : public QThread
 {
     Q_OBJECT
@@ -15,9 +16,15 @@ public:
 
 public:
     void requestPage(int page, float scaleX, float scaleY, float rotation);
-    void setPDFDocument(PDFDocument *document = nullptr);
+    void setPDFDocument(std::shared_ptr<MRDocument> document = nullptr);
+    void retDocument();
 signals:
-    void pageReady(float scaleX, float scaleY, float rotation, int index, QImage img, PDFPage *src);
+    void pageReady(float scaleX,
+                   float scaleY,
+                   float rotation,
+                   int index,
+                   QImage img,
+                   std::shared_ptr<MRPage> page);
 
 public slots:
 
@@ -25,7 +32,7 @@ private:
     float scaleX = 1.0;
     float scaleY = 1.0;
     float rotation = 0.0;
-    PDFDocument *doc = nullptr;
+    std::shared_ptr<MRDocument> doc = nullptr;
     int pageIndex = 0;
 };
 

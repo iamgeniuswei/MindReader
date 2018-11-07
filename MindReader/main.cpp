@@ -1,14 +1,14 @@
 //#include "mainwindow.h"
 #include <QApplication>
-#include "articleshelf.h"
+#include "mrarticleshelf.h"
 #include "qimagetextwidget.h"
 #include <QListWidget>
 #include <QListWidgetItem>
 #include "mrmainwindow.h"
-#include "ArticleDisplayer.h"
+#include "MRArticleDisplayer.h"
 #include <QDebug>
-#include "ArticlePage.h"
-#include "articlereader.h"
+//#include "ArticlePage.h"
+#include "mrarticlereader.h"
 #include "notecard.h"
 #include "notedisplayer.h"
 #include "readerwithnote.h"
@@ -19,11 +19,14 @@
 #include "ORMHelper.h"
 #include "memory"
 #include "mrarticlemetadata.h"
+#include "mrarticleitem.h"
+#include "MRPage.h"
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
     qRegisterMetaType<std::shared_ptr<MRArticleMetaData>>("std::shared_ptr<MRArticleMetaData>");
+    qRegisterMetaType<std::shared_ptr<MRPage>>("std::shared_ptr<MRPage>");
 
     MRSetting set;
     set.initializeSetting ("config.ini");
@@ -48,57 +51,15 @@ int main(int argc, char *argv[])
 
     if(isNew == "true")
     {
-//        w = new MRWorkDirSettingWindow;
+        w = new MRWorkDirSettingWindow;
         w->show ();
     }
     else
     {
-//        w = new ArticleShelf;
+//        w = new MRArticleItem;
         w = new MRMainWindow;
-        QString str = "是否大是大非阿瑟费达斯蒂夫啊飒飒的发生地方阿斯顿发生的发色阿斯顿发生的发生的撒旦发生的发生地方阿瑟费达斯蒂夫是否大是大非阿瑟费达斯蒂夫啊飒飒的发生地方阿斯顿发生的发色阿斯顿发生的发生的撒旦发生的发生地方阿瑟费达斯蒂夫是否大是大非阿瑟费达斯蒂夫啊飒飒的发生地方阿斯顿发生的发色阿斯顿发生的发生的撒旦发生的发生地方阿瑟费达斯蒂夫是否大是大非阿瑟费达斯蒂夫啊飒飒的发生地方阿斯顿发生的发色阿斯顿发生的发生的撒旦发生的发生地方阿瑟费达斯蒂夫是否大是大非阿瑟费达斯蒂夫啊飒飒的发生地方阿斯顿发生的发色阿斯顿发生的发生的撒旦发生的发生地方阿瑟费达斯蒂夫是否大是大非阿瑟费达斯蒂夫啊飒飒的发生地方阿斯顿发生的发色阿斯顿发生的发生的撒旦发生的发生地方阿瑟费达斯蒂夫是否大是大非阿瑟费达斯蒂夫啊飒飒的发生地方阿斯顿发生的发色阿斯顿发生的发生的撒旦发生的发生地方阿瑟费达斯蒂夫";
-//        w = new NoteCard;
-//        w->setText(str);
-//        w = new MRLibraryToolBar;
         w->show ();
     }
 
-//    MainWindow w;
-
-//    ArticleShelf w;
-//    MRWorkDirSettingWindow w;
-//    QImageTextWidget w;
-//    w.setImage (":/img/pdf");
-//    w.setText ("DFDSFSDFSDF");
-
-//    QListWidget w;
-//    w.setCurrentRow (10);
-//    w.setResizeMode(QListView::Adjust);
-
-//    QListWidgetItem *it1 = new QListWidgetItem(&w);
-//    it1->setSizeHint (QSize(200,200));
-//    QImageTextWidget *w1 = new QImageTextWidget(&w);
-//    w1->setImage (":/img/pdf");
-//    w.addItem (it1);
-//    w.setItemWidget (it1, w1);
-//    QListWidgetItem *it2 = new QListWidgetItem(&w);
-//    it2->setSizeHint (QSize(200,200));
-//    QImageTextWidget *w2 = new QImageTextWidget(&w);
-//    w2->setImage (":/img/pdf");
-//    w.addItem (it2);
-//    w.setItemWidget (it2, w2);
-//    w.setViewMode (QListView::IconMode);
-//    ArticleShelf w;
-//    MainWindow w;
-//    ArticleDisplayer w;
-//    w.setAlignment (Qt::AlignHCenter);
-//    ArticlePage w;
-//    ArticleReader w;
-//    NoteCard w;
-//    NoteDisplayer w;
-
-//    ReaderWithNote w;
-
-//    w.show();
-//    qDebug() << "w:" << w.size ();
-    return a.exec();
+   return a.exec();
 }

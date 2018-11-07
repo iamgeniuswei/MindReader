@@ -13,7 +13,7 @@
 
 #ifndef ORMHELPER_H
 #define ORMHELPER_H
-
+#include <QDebug>
 #include <memory>
 #include <string>
 #include <iostream>
@@ -39,6 +39,11 @@ public:
             unsigned int port = 0);
     static void initializeSqlite(const std::string& sqlite_name);
     static void initializeTables();
+
+private:
+    static void initializeTable(const std::string& schema_name);
+
+public:
 #ifdef DATAPERSISTENCE
     static std::shared_ptr<database> db();
 
@@ -52,14 +57,20 @@ public:
     template<typename T>
     static unsigned long long persist(std::shared_ptr<T> value)
     {
-        if (value == nullptr) {
-            return 0;
+        unsigned long long id = 0;
+        try {
+            if (value == nullptr) {
+                return 0;
+            }
+
+
+            transaction t(_db->begin());
+            id = _db->persist(*value);
+            t.commit();
+        } catch (std::exception &e) {
+            std::cerr << e.what ();
         }
 
-        unsigned long long id = 0;
-        transaction t(_db->begin());
-        id = _db->persist(*value);
-        t.commit();
         return id;
     }
 
@@ -73,15 +84,21 @@ public:
     template<typename T>
     static unsigned long long persist(T value)
     {
+        unsigned long long id = 0;
+        try
+        {
+            if (value == nullptr) {
+                return 0;
+            }
 
-        if (value == nullptr) {
-            return 0;
+            transaction t(_db->begin());
+            id = _db->persist(value);
+            t.commit();
+        } catch (std::exception &e)
+        {
+            qDebug() << e.what ();
         }
 
-        unsigned long long id = 0;
-        transaction t(_db->begin());
-        id = _db->persist(value);
-        t.commit();
         return id;
     }
 
@@ -121,6 +138,8 @@ public:
         t.commit();
 
     }
+
+
 
 #endif
 private:

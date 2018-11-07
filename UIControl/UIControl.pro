@@ -29,7 +29,9 @@ SOURCES += \
     QImageTextItem.cpp \
     qimagetextwidget.cpp \
     uiwidget.cpp \
-    uilabel.cpp
+    uilabel.cpp \
+    uidialog.cpp \
+    uiflowlayout.cpp
 
 HEADERS += \
         uicontrol.h \
@@ -39,7 +41,9 @@ HEADERS += \
     private/QIconButton_p.h \
     qimagetextwidget.h \
     uiwidget.h \
-    uilabel.h
+    uilabel.h \
+    uidialog.h \
+    uiflowlayout.h
 
 unix {
     target.path = /usr/lib
