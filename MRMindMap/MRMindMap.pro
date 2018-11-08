@@ -1,16 +1,17 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2018-10-25T09:54:10
+# Project created by QtCreator 2018-11-07T08:50:47
 #
 #-------------------------------------------------
 
+QT       += widgets
+
 QT       -= gui
 
-TARGET = Utility
+TARGET = MRMindMap
 TEMPLATE = lib
-CONFIG(debug, debug|release):DESTDIR = ../
-else:DESTDIR = ../release
-DEFINES += UTILITY_LIBRARY
+
+DEFINES += MRMINDMAP_LIBRARY
 
 # The following define makes your compiler emit warnings if you use
 # any feature of Qt which has been marked as deprecated (the exact warnings
@@ -24,22 +25,13 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-        utility.cpp \
-    mrsetting.cpp \
-    mrsettinghelper.cpp
+        mrmindmap.cpp
 
 HEADERS += \
-        utility.h \
-        utility_global.h \ 
-    mrsetting.h \
-    mrsettinghelper.h \
-    fifotsqueue.h
+        mrmindmap.h \
+        mrmindmap_global.h 
 
 unix {
     target.path = /usr/lib
     INSTALLS += target
 }
-
-
-INCLUDEPATH += "C:/Program Files (x86)/Windows Kits/10/Include/10.0.10150.0/ucrt"
-LIBS += "C:/Program Files (x86)/Windows Kits/10/Lib/10.0.10150.0/ucrt/x86/ucrtd.lib"

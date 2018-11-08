@@ -1,0 +1,12 @@
+#ifndef MRMINDMAP_GLOBAL_H
+#define MRMINDMAP_GLOBAL_H
+
+#include <QtCore/qglobal.h>
+
+#if defined(MRMINDMAP_LIBRARY)
+#  define MRMINDMAPSHARED_EXPORT Q_DECL_EXPORT
+#else
+#  define MRMINDMAPSHARED_EXPORT Q_DECL_IMPORT
+#endif
+
+#endif // MRMINDMAP_GLOBAL_H

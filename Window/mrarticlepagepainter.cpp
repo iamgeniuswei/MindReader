@@ -15,6 +15,9 @@ void MRArticlePagePainter::drawFollowMouse(QPainter &painter, CURSOR cursor, con
     case CURSOR::RECTANGLE:
         drawRectangle (painter, start, end);
         break;
+    case CURSOR::SELECT:
+        drawSelection (painter, start, end);
+        break;
     }
 }
 

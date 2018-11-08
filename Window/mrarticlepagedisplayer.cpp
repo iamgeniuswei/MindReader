@@ -27,6 +27,7 @@
 #include "mrcursor.h"
 #include "mrannotationcreator.h"
 #include "mrarticlepagepainter.h"
+#include "mrocrrecognizer.h"
 MRArticlePageDisplayer::MRArticlePageDisplayer(QWidget *parent)
     :QLabel(parent), d(new (std::nothrow) MRArticlePageDisplayerPrivate)
 {
@@ -132,6 +133,10 @@ void MRArticlePageDisplayer::mouseReleaseEvent(QMouseEvent* event)
         QString str = getTextFromSelection ();
         if(!str.isEmpty ())
             emit textReady (d->pageIndex, str);
+        else {
+            grabRectangle ();
+
+        }
     }
     else
     {
@@ -368,6 +373,15 @@ void MRArticlePageDisplayer::appendAnnotation(const fz_quad &quad)
     d->page->addAnnotation (annot);
 }
 
+QPixmap &&MRArticlePageDisplayer::grabRectangle()
+{
+    QRect rect = calculateSelectionRect ();
+    QPixmap p = this->grab(rect);
+    emit selectionReady (d->pageIndex, p);
+    d->ocr->addPendingPix (p);
+    return std::move(p);
+}
+
 void MRArticlePageDisplayer::handleCursorType(CURSOR cursor)
 {
     MRCursor::setCursor (this, cursor);
@@ -385,7 +399,7 @@ QString MRArticlePageDisplayer::getTextFromSelection()
     Q_ASSERT (d != nullptr );
     Q_ASSERT ( d->page != nullptr );
 
-    QRectF rect = calculateSelectionRect ();
+    QRectF rect = calculateSelectionRectF ();
     rect = mapToOrigin (rect, d->scaleX, d->scaleY, d->rotation);
     fz_quad quads[200];
     int num = 0;
@@ -397,7 +411,7 @@ QString MRArticlePageDisplayer::getTextFromSelection()
     return str;
 }
 
-QRectF MRArticlePageDisplayer::calculateSelectionRect()
+QRectF MRArticlePageDisplayer::calculateSelectionRectF()
 {
     Q_ASSERT ( d != nullptr );
     qreal x0 = 0, y0 = 0, x1 = 0, y1 = 0;
@@ -420,6 +434,32 @@ QRectF MRArticlePageDisplayer::calculateSelectionRect()
         }
     }
     QRectF rect(x0, y0, x1 - x0, y1 - y0);
+    return rect;
+}
+
+QRect MRArticlePageDisplayer::calculateSelectionRect()
+{
+    Q_ASSERT ( d != nullptr );
+    int x0 = 0, y0 = 0, x1 = 0, y1 = 0;
+    if (d->mouseEndPoint != d->mouseStartPoint)
+    {
+        if (d->mouseStartPoint.x() > d->mouseEndPoint.x())
+        {
+            x0 = d->mouseEndPoint.x();
+            x1 = d->mouseStartPoint.x();
+        } else {
+            x0 = d->mouseStartPoint.x();
+            x1 = d->mouseEndPoint.x();
+        }
+        if (d->mouseStartPoint.y() > d->mouseEndPoint.y()) {
+            y0 = d->mouseEndPoint.y();
+            y1 = d->mouseStartPoint.y();
+        } else {
+            y0 = d->mouseStartPoint.y();
+            y1 = d->mouseEndPoint.y();
+        }
+    }
+    QRect rect(x0, y0, x1 - x0, y1 - y0);
     return rect;
 }
 
@@ -469,5 +509,8 @@ void MRArticlePageDisplayer::loadSignals()
     d->render = new ArticlePageRender(this);
     connect (d->render, &ArticlePageRender::pageReady,
              this, &MRArticlePageDisplayer::displayPage);
+    d->ocr = new MROCRRecognizer(this);
+    d->ocr->start ();
+
 }
 

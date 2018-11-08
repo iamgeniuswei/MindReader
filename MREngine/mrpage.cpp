@@ -37,25 +37,25 @@ MRPage::MRPage(MRDocument *document, int index, int xscale, int yscale, int rota
     d->page = fz_load_page(d->context, d->document, index);
     d->index = index;
 
-//    //create transform and bounds
-//    fz_matrix transform = fz_rotate(rotation);
-//    fz_pre_scale(transform, xscale, yscale);
-//    fz_rect bounds;
-//    bounds = fz_bound_page(d->context, d->page);
-//    fz_transform_rect(bounds, transform);
+    //create transform and bounds
+    fz_matrix transform = fz_rotate(rotation);
+    fz_pre_scale(transform, xscale, yscale);
+    fz_rect bounds;
+    bounds = fz_bound_page(d->context, d->page);
+    fz_transform_rect(bounds, transform);
     
-//    //run display list
-//    fz_device *list_device;
-//    fz_display_list *display_list = fz_new_display_list(d->context, bounds);
-//    list_device = fz_new_list_device(d->context, display_list);
-//    fz_run_page(d->context, d->page, list_device, transform, NULL);
-//    fz_close_device(d->context, list_device);
+    //run display list
+    fz_device *list_device;
+    fz_display_list *display_list = fz_new_display_list(d->context, bounds);
+    list_device = fz_new_list_device(d->context, display_list);
+    fz_run_page(d->context, d->page, list_device, transform, NULL);
+    fz_close_device(d->context, list_device);
 
-//    //run text page
-//    d->textPage = fz_new_stext_page(d->context, bounds);
-//    fz_device* text_device = fz_new_stext_device(d->context, d->textPage, nullptr);
-//    fz_run_display_list(d->context, display_list, text_device, transform, bounds, NULL);
-//    fz_close_device(d->context, text_device);
+    //run text page
+    d->textPage = fz_new_stext_page(d->context, bounds);
+    fz_device* text_device = fz_new_stext_device(d->context, d->textPage, nullptr);
+    fz_run_display_list(d->context, display_list, text_device, transform, bounds, NULL);
+    fz_close_device(d->context, text_device);
 }
 
 
@@ -323,20 +323,28 @@ void MRPage::getAnnotations(QList<std::shared_ptr<MRAnnotation>> &annotations)
 
     while (annot != nullptr)
     {
-        pdf_annot *p_annot = (pdf_annot*)annot;
-        Q_ASSERT (p_annot);
-        int flage = pdf_annot_flags (d->context,
-                                           p_annot);
-        std::shared_ptr<MRAnnotation> annotation = MRAnnotationCreator::createAnnotation (flage);
-        annotation->rect = pdf_annot_rect (d->context,
-                                          p_annot);
-        pdf_annot_line (d->context,
-                        p_annot,
-                        &(annotation->start),
-                        &(annotation->end));
-        annotation->content = pdf_annot_contents (d->context,
-                                                 p_annot);
-        annotations.append (annotation);
+        fz_try(d->context)
+        {
+            pdf_annot *p_annot = (pdf_annot*)annot;
+            Q_ASSERT (p_annot);
+            int flage = pdf_annot_flags (d->context,
+                                               p_annot);
+            std::shared_ptr<MRAnnotation> annotation = MRAnnotationCreator::createAnnotation (flage);
+            annotation->rect = pdf_annot_rect (d->context,
+                                              p_annot);
+            pdf_annot_line (d->context,
+                            p_annot,
+                            &(annotation->start),
+                            &(annotation->end));
+            annotation->content = pdf_annot_contents (d->context,
+                                                     p_annot);
+            annotations.append (annotation);
+
+        }
+        fz_catch (d->context)
+        {
+            qDebug() << fz_caught_message (d->context);
+        }
         annot = fz_next_annot (d->context,
                                annot);
     }

@@ -86,6 +86,7 @@ protected:
     void appendAnnotation(int type, const fz_quad& quad, char *content = nullptr);
     void appendAnnotation();
     void appendAnnotation(const fz_quad& quad);
+    QPixmap&& grabRectangle();
 
 
 public slots:
@@ -99,7 +100,8 @@ public:
 //    virtual QSize sizeHint() const override;
     void setImage(const QImage &img);
     QString getTextFromSelection();
-    QRectF calculateSelectionRect();
+    QRectF calculateSelectionRectF();
+    QRect calculateSelectionRect();
 
 
         

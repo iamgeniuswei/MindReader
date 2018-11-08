@@ -2,7 +2,9 @@
 #define UTILITY_GLOBAL_H
 
 #include <QtCore/qglobal.h>
-
+#ifndef C11
+#define C11
+#endif
 #if defined(UTILITY_LIBRARY)
 #  define UTILITYSHARED_EXPORT Q_DECL_EXPORT
 #else

@@ -21,6 +21,8 @@
 #include "mrarticlemetadata.h"
 #include "mrarticleitem.h"
 #include "MRPage.h"
+#include <QGraphicsItem>
+#include <QGraphicsTextItem>
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
@@ -49,6 +51,8 @@ int main(int argc, char *argv[])
     ORMHelper::initializeSqlite (sqlite_path.toStdString ());
     ORMHelper::initializeTables ();
 
+    qDebug() << "QWidget size: " << sizeof(QWidget);
+    qDebug() << "QGraphicsTextItem size: " << sizeof(QGraphicsTextItem);
     if(isNew == "true")
     {
         w = new MRWorkDirSettingWindow;

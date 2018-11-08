@@ -53,7 +53,7 @@ void NoteCard::setIndex(int index)
 
 void NoteCard::setPixmap(const QPixmap &pixmap)
 {
-    //    ui->content->setPixmap (pixmap);
+        ui->content->setPixmap (pixmap);
 }
 
 void NoteCard::setArticle(std::shared_ptr<MRArticleMetaData> article)

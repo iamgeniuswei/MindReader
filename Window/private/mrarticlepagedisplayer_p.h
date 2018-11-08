@@ -8,6 +8,7 @@ class MRPage;
 class MRDocument;
 class MRAnnotation;
 class ArticlePageRender;
+class MROCRRecognizer;
 class MRArticlePageDisplayerPrivate
 {
 public:
@@ -28,6 +29,7 @@ public:
     int annotFlag;
     bool isShiftDown = false;
     ArticlePageRender *render = nullptr;
+    MROCRRecognizer *ocr = nullptr;
     std::shared_ptr<MRDocument> doc = nullptr;
 };
 

@@ -8,5 +8,6 @@ SUBDIRS += \
     Note \
     Utility \
     MRData \
-    UIControls
+    UIControls \
+    MRMindMap
 

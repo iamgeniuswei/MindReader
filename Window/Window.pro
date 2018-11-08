@@ -51,7 +51,8 @@ SOURCES += \
     MRArticleDisplayer.cpp \
     mrarticlereader.cpp \
     mrcursor.cpp \
-    mrarticlepagepainter.cpp
+    mrarticlepagepainter.cpp \
+    mrocrrecognizer.cpp
 
 HEADERS += \
         window.h \
@@ -79,7 +80,8 @@ HEADERS += \
     mrarticlereader.h \
     private/mrarticlepagedisplayer_p.h \
     mrcursor.h \
-    mrarticlepagepainter.h
+    mrarticlepagepainter.h \
+    mrocrrecognizer.h
 
 unix {
     target.path = /usr/lib
@@ -144,3 +146,8 @@ else:unix: LIBS += -L$$OUT_PWD/../MREngine/ -lMREngine
 
 INCLUDEPATH += $$PWD/../MREngine
 DEPENDPATH += $$PWD/../MREngine
+
+
+INCLUDEPATH += D:\lib\tesseract\include
+LIBS += D:\lib\tesseract\lib\tesseract40d.lib
+LIBS += D:\lib\tesseract\lib\pvt.cppan.demo.danbloomberg.leptonica-1.76.0.lib
