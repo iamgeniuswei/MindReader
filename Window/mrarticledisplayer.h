@@ -44,6 +44,7 @@ signals:
     void selectionReady(int page, const QPixmap& pixmap);
     void textReady(int page, const QString& text);
     void cursorType(CURSOR cursor);
+    void ADCIndexItemsReady(const QStringList& items);
 public slots:
     void displayFirstPage();
     void displayPrevPage();

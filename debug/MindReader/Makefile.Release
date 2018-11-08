@@ -163,6 +163,7 @@ compiler_rcc_clean:
 release\qrc_resource.cpp: ..\..\MindReader\res\resource.qrc \
 		C:\Qt\5.12.0\msvc2015\bin\rcc.exe \
 		..\..\MindReader\res\img\library.png \
+		..\..\MindReader\res\img\page-break.png \
 		..\..\MindReader\res\img\hand.png \
 		..\..\MindReader\res\img\list.png \
 		..\..\MindReader\res\img\warn.png \
@@ -176,7 +177,7 @@ release\qrc_resource.cpp: ..\..\MindReader\res\resource.qrc \
 		..\..\MindReader\res\img\close.png \
 		..\..\MindReader\res\img\grid.png \
 		..\..\MindReader\res\img\last.png \
-		..\..\MindReader\res\img\backword.png \
+		..\..\MindReader\res\img\backward.png \
 		..\..\MindReader\res\img\zoom-in.png \
 		..\..\MindReader\res\img\search.png \
 		..\..\MindReader\res\img\confirm.png \
@@ -184,6 +185,7 @@ release\qrc_resource.cpp: ..\..\MindReader\res\resource.qrc \
 		..\..\MindReader\res\img\info.png \
 		..\..\MindReader\res\img\notes.png \
 		"..\..\MindReader\res\img\line (1).png" \
+		..\..\MindReader\res\img\page.png \
 		..\..\MindReader\res\img\files.png \
 		..\..\MindReader\res\img\save.png \
 		..\..\MindReader\res\img\rectangle.png \
@@ -419,7 +421,7 @@ release\main.obj: ..\..\MindReader\main.cpp C:\Qt\5.12.0\msvc2015\include\QtWidg
 		C:\Qt\5.12.0\msvc2015\include\QtCore\QObject \
 		C:\Qt\5.12.0\msvc2015\include\QtCore\QThread \
 		C:\Qt\5.12.0\msvc2015\include\QtCore\qthread.h \
-		..\..\Window\MRArticleDisplayer.h \
+		..\..\Window\mrarticledisplayer.h \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\QScrollArea \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qscrollarea.h \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\QLabel \

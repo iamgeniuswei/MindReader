@@ -1,5 +1,5 @@
 #include "mrarticlereader.h"
-#include "MRArticleDisplayer.h"
+#include "mrarticledisplayer.h"
 #include "articledisplayercontroller.h"
 #include <QSplitter>
 #include "mrreadertoolbar.h"
@@ -37,6 +37,8 @@ void MRArticleReader::initializeSignals()
              displayer, &MRArticleDisplayer::zoomOutPage);
     connect (displayer, &MRArticleDisplayer::selectionReady,
              this, &MRArticleReader::selectionReady);
+    connect (displayer, &MRArticleDisplayer::ADCIndexItemsReady,
+             controller, &ArticleDisplayerController::updateADCIndex);
     connect (displayer, &MRArticleDisplayer::textReady,
              this, &MRArticleReader::textReady);
     connect (this, &MRArticleReader::cursorType,

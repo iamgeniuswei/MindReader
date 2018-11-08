@@ -44,7 +44,6 @@ private:
     QVBoxLayout *mainLayout = nullptr;
     QHBoxLayout *subLayout = nullptr;
     QSplitter *splitter = nullptr;
-//    ArticleReader *reader = nullptr;
     QWidget *readerContainer = nullptr;
     NoteDisplayer *note = nullptr;
 };

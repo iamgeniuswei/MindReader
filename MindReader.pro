@@ -9,5 +9,6 @@ SUBDIRS += \
     Utility \
     MRData \
     UIControls \
-    MRMindMap
+    MRMindMap \
+    MRTest
 

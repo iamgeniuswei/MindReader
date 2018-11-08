@@ -3,11 +3,13 @@
 
 #include <QWidget>
 #include "uiwidget.h"
+#include <QPushButton>
+#include "window_global.h"
 namespace Ui {
 class ArticleDisplayerController;
 }
 
-class ArticleDisplayerController : public UIWidget
+class WINDOWSHARED_EXPORT ArticleDisplayerController : public UIWidget
 {
     Q_OBJECT
 
@@ -24,6 +26,23 @@ signals:
     void lastPageClicked();
     void zoomInClicked();
     void zoomOutClicked();
+
+public:
+    QPushButton* getPage() const;
+    QPushButton* getPageBreak() const;
+
+
+public slots:
+    void updateADCIndex(const QStringList& items);
+
+signals:
+    void changeToSinglePage();
+    void changeToContinuousPage();
+
+private slots:
+    void on_page_clicked();
+
+    void on_pageBreak_clicked();
 
 private:
     Ui::ArticleDisplayerController *ui;

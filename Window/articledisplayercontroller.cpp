@@ -14,6 +14,8 @@ ArticleDisplayerController::ArticleDisplayerController(QWidget *parent) :
     ui->lastPageBtn->setObjectName ("controlButton");
     ui->zoomInBtn->setObjectName ("controlButton");
     ui->zoomOutBtn->setObjectName ("controlButton");
+    ui->page->setObjectName ("controlButton");
+    ui->pageBreak->setObjectName ("controlButton");
 }
 
 ArticleDisplayerController::~ArticleDisplayerController()
@@ -35,4 +37,36 @@ void ArticleDisplayerController::initializeSignals()
              this, &ArticleDisplayerController::zoomInClicked);
     connect (ui->zoomOutBtn, &QPushButton::clicked,
              this, &ArticleDisplayerController::zoomOutClicked);
+}
+
+QPushButton *ArticleDisplayerController::getPage() const
+{
+    return ui->page;
+}
+
+QPushButton *ArticleDisplayerController::getPageBreak() const
+{
+    return ui->pageBreak;
+}
+
+void ArticleDisplayerController::updateADCIndex(const QStringList &items)
+{
+    Q_ASSERT ( ui->ADCIndex != nullptr);
+    ui->ADCIndex->addItems (items);
+}
+
+void ArticleDisplayerController::on_page_clicked()
+{
+    if(ui->page->isChecked ())
+    {
+        emit changeToSinglePage ();
+    }
+}
+
+void ArticleDisplayerController::on_pageBreak_clicked()
+{
+    if(ui->pageBreak->isChecked())
+    {
+        emit changeToContinuousPage ();
+    }
 }

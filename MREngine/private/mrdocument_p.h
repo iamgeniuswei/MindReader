@@ -42,12 +42,8 @@ public:
             {
                 qDebug() << fz_caught_message (context);
             }
-
         }
-        if(context)
-        {
-            fz_drop_context (context);
-        }
+        context = nullptr;
     }
     
 public:

@@ -98,6 +98,7 @@ QImage MRPage::renderPage(float scaleX, float scaleY, float rotation)
             fz_clear_pixmap_with_value(ctx, pix, 0xFF);
 
         dev = fz_new_draw_device(ctx, transform, pix);
+
         fz_enable_device_hints(ctx, dev, FZ_NO_CACHE);
         fz_run_page(ctx, d->page, dev, fz_identity, NULL);
         fz_close_device(ctx, dev);

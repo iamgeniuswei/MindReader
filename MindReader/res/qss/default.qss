@@ -272,7 +272,10 @@ QPushButton#controlButton:pressed
 {
         background: rgb(80, 80, 80);
 }
-
+QPushButton#controlButton:checked
+{
+        background: rgb(80, 80, 80);
+}
 QPushButton#trash{
         border-radius: 4px;
         border: none;

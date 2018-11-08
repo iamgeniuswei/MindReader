@@ -11,7 +11,7 @@
  * Created on October 11, 2018, 10:42 AM
  */
 
-#include "MRArticleDisplayer.h"
+#include "mrarticledisplayer.h"
 #include "mrdocument.h"
 #include "mrpage.h"
 #include <QLabel>
@@ -53,6 +53,13 @@ bool MRArticleDisplayer::setArticle(std::shared_ptr<MRArticleMetaData> article)
     {
         content->setDoc (doc);
         content->requestPage (0, 1.0, 1.0, 0.0);
+        QStringList items;
+        QString count = QString::number (doc->pageCount ());
+        for(int i=0; i<doc->pageCount (); i++)
+        {
+            items << (QString::number (i) + "/" + count);
+        }
+        emit ADCIndexItemsReady (items);
     }
     else
     {

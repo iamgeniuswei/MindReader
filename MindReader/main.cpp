@@ -5,7 +5,7 @@
 #include <QListWidget>
 #include <QListWidgetItem>
 #include "mrmainwindow.h"
-#include "MRArticleDisplayer.h"
+#include "mrarticledisplayer.h"
 #include <QDebug>
 //#include "ArticlePage.h"
 #include "mrarticlereader.h"

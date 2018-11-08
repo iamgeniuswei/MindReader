@@ -16,7 +16,7 @@
         <file alias="list">img/list.png</file>
         <file alias="library">img/library.png</file>
         <file alias="notes">img/notes.png</file>
-        <file alias="backward">img/backword.png</file>
+        <file alias="backward">img/backward.png</file>
         <file alias="first">img/first.png</file>
         <file alias="forward">img/forward.png</file>
         <file alias="last">img/last.png</file>
@@ -37,6 +37,8 @@
         <file alias="pdf_t">img/pdf_t.png</file>
         <file alias="confirm">img/confirm.png</file>
         <file alias="pdf_s">img/pdf_s.png</file>
+        <file alias="page">img/page.png</file>
+        <file alias="page-break">img/page-break.png</file>
     </qresource>
     <qresource prefix="/qss">
         <file alias="default">qss/default.qss</file>

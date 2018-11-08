@@ -19,12 +19,12 @@
 
 #include <iostream>
 #include <QDebug>
+#include "mrcontext.h"
 MRDocument::MRDocument() 
     :d(new MRDocumentPrivate)
 {
-}
-
-MRDocument::MRDocument(const MRDocument& orig) {
+    MRContext *context = MRContext::instance ();
+    d->context = context->context ();
 }
 
 MRDocument::~MRDocument() {    
@@ -32,37 +32,14 @@ MRDocument::~MRDocument() {
         delete d;
 }
 
-void lock_mutex(void *user, int lock)
-{
-
-}
-
-void unlock_mutex(void *user, int lock)
-{
-
-}
-
-
 bool MRDocument::openDocument(const QString& file)
 {
-    Q_ASSERT (d);
-    fz_locks_context lock;
-    int mutex[5];
-    lock.user = mutex;
-    lock.lock = lock_mutex ;
-    lock.unlock = unlock_mutex;
-    if(d)
-    {
-        d->context = fz_new_context(nullptr, &lock, FZ_STORE_UNLIMITED);
-        if(d->context)
-        {
-            fz_register_document_handlers(d->context);
-        }
+    Q_ASSERT (d != nullptr );
+    Q_ASSERT (d->context != nullptr );
 
         fz_try(d->context)
         {
-            d->document = fz_open_document(d->context, file.toUtf8().data());
-            d->num_pages = fz_count_pages(d->context, d->document);
+            d->document = fz_open_document(d->context, file.toUtf8().data());            
 //            for(int i=0; i<d->num_pages; i++)
 //            {
 //                std::shared_ptr<MRPage> page = std::make_shared<MRPage>(this, i);
@@ -74,8 +51,18 @@ bool MRDocument::openDocument(const QString& file)
             qDebug() << fz_caught_message (d->context);
             return false;
         }
-    }
 
+        fz_try(d->context)
+        {
+            d->num_pages = fz_count_pages(d->context, d->document);
+        }
+        fz_catch (d->context)
+        {
+            fz_drop_document (d->context,
+                              d->document);
+            qDebug() << fz_caught_message (d->context);
+            return false;
+        }
     return true;
 }
 

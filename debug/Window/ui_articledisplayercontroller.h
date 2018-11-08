@@ -12,10 +12,11 @@
 #include <QtCore/QVariant>
 #include <QtGui/QIcon>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QHBoxLayout>
-#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QSlider>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QWidget>
 
@@ -28,19 +29,23 @@ public:
     QSpacerItem *horizontalSpacer;
     QPushButton *firstPageBtn;
     QPushButton *prevPageBtn;
-    QLineEdit *lineEdit;
+    QComboBox *ADCIndex;
     QPushButton *nextPageBtn;
     QPushButton *lastPageBtn;
     QSpacerItem *horizontalSpacer_2;
-    QPushButton *zoomInBtn;
-    QPushButton *zoomOutBtn;
+    QPushButton *page;
+    QPushButton *pageBreak;
     QComboBox *comboBox;
+    QPushButton *zoomInBtn;
+    QSlider *horizontalSlider;
+    QPushButton *zoomOutBtn;
+    QButtonGroup *ADCPageFormat;
 
     void setupUi(QWidget *ArticleDisplayerController)
     {
         if (ArticleDisplayerController->objectName().isEmpty())
             ArticleDisplayerController->setObjectName(QString::fromUtf8("ArticleDisplayerController"));
-        ArticleDisplayerController->resize(700, 41);
+        ArticleDisplayerController->resize(700, 50);
         horizontalLayout = new QHBoxLayout(ArticleDisplayerController);
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
@@ -65,11 +70,10 @@ public:
 
         horizontalLayout->addWidget(prevPageBtn);
 
-        lineEdit = new QLineEdit(ArticleDisplayerController);
-        lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
-        lineEdit->setMinimumSize(QSize(100, 0));
+        ADCIndex = new QComboBox(ArticleDisplayerController);
+        ADCIndex->setObjectName(QString::fromUtf8("ADCIndex"));
 
-        horizontalLayout->addWidget(lineEdit);
+        horizontalLayout->addWidget(ADCIndex);
 
         nextPageBtn = new QPushButton(ArticleDisplayerController);
         nextPageBtn->setObjectName(QString::fromUtf8("nextPageBtn"));
@@ -93,23 +97,29 @@ public:
 
         horizontalLayout->addItem(horizontalSpacer_2);
 
-        zoomInBtn = new QPushButton(ArticleDisplayerController);
-        zoomInBtn->setObjectName(QString::fromUtf8("zoomInBtn"));
+        page = new QPushButton(ArticleDisplayerController);
+        ADCPageFormat = new QButtonGroup(ArticleDisplayerController);
+        ADCPageFormat->setObjectName(QString::fromUtf8("ADCPageFormat"));
+        ADCPageFormat->addButton(page);
+        page->setObjectName(QString::fromUtf8("page"));
         QIcon icon4;
-        icon4.addFile(QString::fromUtf8(":/img/zoomIn"), QSize(), QIcon::Normal, QIcon::Off);
-        zoomInBtn->setIcon(icon4);
-        zoomInBtn->setIconSize(QSize(24, 24));
+        icon4.addFile(QString::fromUtf8(":/img/page"), QSize(), QIcon::Normal, QIcon::Off);
+        page->setIcon(icon4);
+        page->setIconSize(QSize(20, 20));
+        page->setCheckable(true);
 
-        horizontalLayout->addWidget(zoomInBtn);
+        horizontalLayout->addWidget(page);
 
-        zoomOutBtn = new QPushButton(ArticleDisplayerController);
-        zoomOutBtn->setObjectName(QString::fromUtf8("zoomOutBtn"));
+        pageBreak = new QPushButton(ArticleDisplayerController);
+        ADCPageFormat->addButton(pageBreak);
+        pageBreak->setObjectName(QString::fromUtf8("pageBreak"));
         QIcon icon5;
-        icon5.addFile(QString::fromUtf8(":/img/zoomOut"), QSize(), QIcon::Normal, QIcon::Off);
-        zoomOutBtn->setIcon(icon5);
-        zoomOutBtn->setIconSize(QSize(24, 24));
+        icon5.addFile(QString::fromUtf8(":/img/page-break"), QSize(), QIcon::Normal, QIcon::Off);
+        pageBreak->setIcon(icon5);
+        pageBreak->setIconSize(QSize(20, 20));
+        pageBreak->setCheckable(true);
 
-        horizontalLayout->addWidget(zoomOutBtn);
+        horizontalLayout->addWidget(pageBreak);
 
         comboBox = new QComboBox(ArticleDisplayerController);
         comboBox->addItem(QString());
@@ -119,6 +129,31 @@ public:
         comboBox->setObjectName(QString::fromUtf8("comboBox"));
 
         horizontalLayout->addWidget(comboBox);
+
+        zoomInBtn = new QPushButton(ArticleDisplayerController);
+        zoomInBtn->setObjectName(QString::fromUtf8("zoomInBtn"));
+        QIcon icon6;
+        icon6.addFile(QString::fromUtf8(":/img/zoomIn"), QSize(), QIcon::Normal, QIcon::Off);
+        zoomInBtn->setIcon(icon6);
+        zoomInBtn->setIconSize(QSize(20, 20));
+
+        horizontalLayout->addWidget(zoomInBtn);
+
+        horizontalSlider = new QSlider(ArticleDisplayerController);
+        horizontalSlider->setObjectName(QString::fromUtf8("horizontalSlider"));
+        horizontalSlider->setMaximumSize(QSize(100, 16777215));
+        horizontalSlider->setOrientation(Qt::Horizontal);
+
+        horizontalLayout->addWidget(horizontalSlider);
+
+        zoomOutBtn = new QPushButton(ArticleDisplayerController);
+        zoomOutBtn->setObjectName(QString::fromUtf8("zoomOutBtn"));
+        QIcon icon7;
+        icon7.addFile(QString::fromUtf8(":/img/zoomOut"), QSize(), QIcon::Normal, QIcon::Off);
+        zoomOutBtn->setIcon(icon7);
+        zoomOutBtn->setIconSize(QSize(20, 20));
+
+        horizontalLayout->addWidget(zoomOutBtn);
 
 
         retranslateUi(ArticleDisplayerController);
@@ -133,13 +168,15 @@ public:
         prevPageBtn->setText(QString());
         nextPageBtn->setText(QString());
         lastPageBtn->setText(QString());
-        zoomInBtn->setText(QString());
-        zoomOutBtn->setText(QString());
+        page->setText(QString());
+        pageBreak->setText(QString());
         comboBox->setItemText(0, QApplication::translate("ArticleDisplayerController", "50%", nullptr));
         comboBox->setItemText(1, QApplication::translate("ArticleDisplayerController", "100%", nullptr));
         comboBox->setItemText(2, QApplication::translate("ArticleDisplayerController", "150%", nullptr));
         comboBox->setItemText(3, QApplication::translate("ArticleDisplayerController", "200%", nullptr));
 
+        zoomInBtn->setText(QString());
+        zoomOutBtn->setText(QString());
     } // retranslateUi
 
 };

@@ -48,11 +48,12 @@ SOURCES += \
     mrwindowutility.cpp \
     mrarticleshelf.cpp \
     mrarticlepagedisplayer.cpp \
-    MRArticleDisplayer.cpp \
     mrarticlereader.cpp \
     mrcursor.cpp \
     mrarticlepagepainter.cpp \
-    mrocrrecognizer.cpp
+    mrocrrecognizer.cpp \
+    mrarticledisplayer.cpp \
+    mrarticleloader.cpp
 
 HEADERS += \
         window.h \
@@ -76,12 +77,13 @@ HEADERS += \
     mrarticleitem.h \
     mrarticleshelf.h \
     mrarticlepagedisplayer.h \
-    MRArticleDisplayer.h \
     mrarticlereader.h \
     private/mrarticlepagedisplayer_p.h \
     mrcursor.h \
     mrarticlepagepainter.h \
-    mrocrrecognizer.h
+    mrocrrecognizer.h \
+    mrarticledisplayer.h \
+    mrarticleloader.h
 
 unix {
     target.path = /usr/lib

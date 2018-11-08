@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>700</width>
-    <height>41</height>
+    <height>50</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -62,14 +62,7 @@
     </widget>
    </item>
    <item>
-    <widget class="QLineEdit" name="lineEdit">
-     <property name="minimumSize">
-      <size>
-       <width>100</width>
-       <height>0</height>
-      </size>
-     </property>
-    </widget>
+    <widget class="QComboBox" name="ADCIndex"/>
    </item>
    <item>
     <widget class="QPushButton" name="nextPageBtn">
@@ -119,37 +112,49 @@
     </spacer>
    </item>
    <item>
-    <widget class="QPushButton" name="zoomInBtn">
+    <widget class="QPushButton" name="page">
      <property name="text">
       <string/>
      </property>
      <property name="icon">
       <iconset resource="../MindReader/res/resource.qrc">
-       <normaloff>:/img/zoomIn</normaloff>:/img/zoomIn</iconset>
+       <normaloff>:/img/page</normaloff>:/img/page</iconset>
      </property>
      <property name="iconSize">
       <size>
-       <width>24</width>
-       <height>24</height>
+       <width>20</width>
+       <height>20</height>
       </size>
      </property>
+     <property name="checkable">
+      <bool>true</bool>
+     </property>
+     <attribute name="buttonGroup">
+      <string notr="true">ADCPageFormat</string>
+     </attribute>
     </widget>
    </item>
    <item>
-    <widget class="QPushButton" name="zoomOutBtn">
+    <widget class="QPushButton" name="pageBreak">
      <property name="text">
       <string/>
      </property>
      <property name="icon">
       <iconset resource="../MindReader/res/resource.qrc">
-       <normaloff>:/img/zoomOut</normaloff>:/img/zoomOut</iconset>
+       <normaloff>:/img/page-break</normaloff>:/img/page-break</iconset>
      </property>
      <property name="iconSize">
       <size>
-       <width>24</width>
-       <height>24</height>
+       <width>20</width>
+       <height>20</height>
       </size>
      </property>
+     <property name="checkable">
+      <bool>true</bool>
+     </property>
+     <attribute name="buttonGroup">
+      <string notr="true">ADCPageFormat</string>
+     </attribute>
     </widget>
    </item>
    <item>
@@ -176,10 +181,60 @@
      </item>
     </widget>
    </item>
+   <item>
+    <widget class="QPushButton" name="zoomInBtn">
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="../MindReader/res/resource.qrc">
+       <normaloff>:/img/zoomIn</normaloff>:/img/zoomIn</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>20</width>
+       <height>20</height>
+      </size>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QSlider" name="horizontalSlider">
+     <property name="maximumSize">
+      <size>
+       <width>100</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="zoomOutBtn">
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="../MindReader/res/resource.qrc">
+       <normaloff>:/img/zoomOut</normaloff>:/img/zoomOut</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>20</width>
+       <height>20</height>
+      </size>
+     </property>
+    </widget>
+   </item>
   </layout>
  </widget>
  <resources>
   <include location="../MindReader/res/resource.qrc"/>
  </resources>
  <connections/>
+ <buttongroups>
+  <buttongroup name="ADCPageFormat"/>
+ </buttongroups>
 </ui>

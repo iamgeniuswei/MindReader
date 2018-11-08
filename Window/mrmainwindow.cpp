@@ -1,7 +1,7 @@
 #include "mrmainwindow.h"
 #include "ui_mrmainwindow.h"
 #include "mrlibrary.h"
-#include "MRArticleDisplayer.h"
+#include "mrarticledisplayer.h"
 #include "mrarticlereader.h"
 #include "mrmessagebox.h"
 MRMainWindow::MRMainWindow(QWidget *parent) :
@@ -29,7 +29,6 @@ void MRMainWindow::initializeSignals()
 
 void MRMainWindow::switchToAritcle(std::shared_ptr<MRArticleMetaData> article)
 {
-//    ArticleDisplayer *w = new ArticleDisplayer;
     MRArticleReader *w = new MRArticleReader;
     if(w->setArticle (article))
     {
@@ -39,7 +38,8 @@ void MRMainWindow::switchToAritcle(std::shared_ptr<MRArticleMetaData> article)
         connect (w, &MRArticleReader::backToLibrary,
                  this, &MRMainWindow::switchLibrary);
     }
-    else {
+    else
+    {
         MRMessageBox msg;
         msg.exec ();
     }

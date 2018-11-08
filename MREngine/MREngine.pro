@@ -34,7 +34,8 @@ SOURCES += \
     mrtextannotation.cpp \
     mrannotationcreator.cpp \
     mrhighlightannotation.cpp \
-    mrsquareannotation.cpp
+    mrsquareannotation.cpp \
+    mrcontext.cpp
 
 HEADERS += \
     pdfcore_global.h \
@@ -49,7 +50,9 @@ HEADERS += \
     mrtextannotation.h \
     mrannotationcreator.h \
     mrhighlightannotation.h \
-    mrsquareannotation.h
+    mrsquareannotation.h \
+    mrcontext.h \
+    private/mrcontext_p.h
 
 unix {
     target.path = /usr/lib

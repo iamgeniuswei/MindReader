@@ -23,8 +23,10 @@ class MRPage;
 class PDFCORESHARED_EXPORT MRDocument {
 public:
     MRDocument();
-    MRDocument(const MRDocument& orig);
-    virtual ~MRDocument();
+    MRDocument(const MRDocument& orig) = delete ;
+    MRDocument& operator=(const MRDocument& orig) = delete;
+    ~MRDocument();
+public:
     bool openDocument(const QString &file);
     fz_context* context() const;
     fz_document* document() const;
