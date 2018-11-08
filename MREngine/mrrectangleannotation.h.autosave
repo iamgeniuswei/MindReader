@@ -1,0 +1,11 @@
+#ifndef MRRECTANGLEANNOTATION_H
+#define MRRECTANGLEANNOTATION_H
+
+#include "mrannotation.h"
+class MRRectangleAnnotation : public MRAnnotation
+{
+public:
+    MRRectangleAnnotation();
+};
+
+#endif // MRRECTANGLEANNOTATION_H
