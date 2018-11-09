@@ -85,6 +85,8 @@ void MRArticlePageDisplayer::displayPage(float scaleX, float scaleY, float rotat
     d->pageIndex = index;
 
     QPixmap pixmap = QPixmap::fromImage (img);
+    d->pageSize.setHeight (pixmap.height ());
+    d->pageSize.setWidth (pixmap.width ());
     setPixmap (pixmap);
     resize (sizeHint ());
     setMRPage (page);
@@ -158,7 +160,7 @@ void MRArticlePageDisplayer::paintEvent(QPaintEvent *event)
                                                d->mouseEndPoint);
     }
 
-    qDebug() << d->annotations.size ();
+//    qDebug() << d->annotations.size ();
 
     for(int i=0; i< d->annotations.size (); i++)
     {
@@ -382,6 +384,11 @@ QPixmap &&MRArticlePageDisplayer::grabRectangle()
     return std::move(p);
 }
 
+QSize MRArticlePageDisplayer::pageSize() const
+{
+    return d->pageSize;
+}
+
 void MRArticlePageDisplayer::handleCursorType(CURSOR cursor)
 {
     MRCursor::setCursor (this, cursor);
@@ -390,7 +397,7 @@ void MRArticlePageDisplayer::handleCursorType(CURSOR cursor)
 void MRArticlePageDisplayer::setImage(const QImage &img)
 {
     this->setPixmap (QPixmap::fromImage (img));
-    qDebug() << "my size" << size ();
+//    qDebug() << "my size" << size ();
     update ();
 }
 
@@ -500,17 +507,17 @@ void MRArticlePageDisplayer::setDoc(std::shared_ptr<MRDocument> value)
 {
     Q_ASSERT (d != nullptr);
     d->doc = value;
-    d->render->setPDFDocument (value);
+//    d->render->setPDFDocument (value);
 }
 
 void MRArticlePageDisplayer::loadSignals()
 {
     Q_ASSERT (d != nullptr);
-    d->render = new ArticlePageRender(this);
-    connect (d->render, &ArticlePageRender::pageReady,
-             this, &MRArticlePageDisplayer::displayPage);
-    d->ocr = new MROCRRecognizer(this);
-    d->ocr->start ();
+//    d->render = new ArticlePageRender(this);
+//    connect (d->render, &ArticlePageRender::pageReady,
+//             this, &MRArticlePageDisplayer::displayPage);
+//    d->ocr = new MROCRRecognizer(this);
+//    d->ocr->start ();
 
 }
 

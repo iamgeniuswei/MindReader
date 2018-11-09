@@ -5,10 +5,13 @@
 MRContext *MRContext::_instance = nullptr;
 MRContext::MRContextGarbo MRContext::_Garbo;
 std::mutex MRContext::lock;
+
+
 void lock_mutex(void *user, int lock)
 {
     Q_UNUSED (user);
     Q_UNUSED (lock);
+
 }
 
 void unlock_mutex(void *user, int lock)

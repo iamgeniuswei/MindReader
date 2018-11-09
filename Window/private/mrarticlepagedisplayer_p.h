@@ -31,6 +31,7 @@ public:
     ArticlePageRender *render = nullptr;
     MROCRRecognizer *ocr = nullptr;
     std::shared_ptr<MRDocument> doc = nullptr;
+    QSize pageSize;
 };
 
 #endif // MRARTICLEPAGEDISPLAYER_P_H

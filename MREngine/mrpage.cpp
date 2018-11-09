@@ -20,6 +20,7 @@
 #include <QPointF>
 #include <QDebug>
 #include "mrannotationcreator.h"
+#include <mutex>
 static inline void imageCleanupHandler(void *data)
 {
     unsigned char *samples = static_cast<unsigned char *> (data);
@@ -65,9 +66,11 @@ MRPage::~MRPage()
     if(d)
         delete d;
 }
-
+std::mutex page_lock;
+std::lock_guard<std::mutex> lk(page_lock);
 QImage MRPage::renderPage(float scaleX, float scaleY, float rotation)
 {
+
     int width = 0, height = 0;
     fz_pixmap *pix = nullptr;
     unsigned char* copyed_samples = nullptr;
@@ -81,17 +84,18 @@ QImage MRPage::renderPage(float scaleX, float scaleY, float rotation)
     int alpha = 0;
     fz_var(dev);
     fz_context *ctx = fz_clone_context (d->context);
-    fz_matrix transform = fz_identity;
-    transform = fz_scale(scaleX, scaleY);
-    fz_pre_rotate(transform, rotation);
-    rect = fz_bound_page(ctx, d->page);
-    rect = fz_transform_rect(rect, transform);
-    bbox = fz_round_rect(rect);
-
-    pix = fz_new_pixmap_with_bbox(ctx, fz_device_rgb (d->context), bbox, 0, alpha);
 
     fz_try(ctx)
     {
+        fz_matrix transform = fz_identity;
+        transform = fz_scale(scaleX, scaleY);
+        fz_pre_rotate(transform, rotation);
+        rect = fz_bound_page(ctx, d->page);
+        rect = fz_transform_rect(rect, transform);
+        bbox = fz_round_rect(rect);
+
+        pix = fz_new_pixmap_with_bbox(ctx, fz_device_rgb (d->context), bbox, 0, alpha);
+
         if (alpha)
             fz_clear_pixmap(ctx, pix);
         else
@@ -114,8 +118,8 @@ QImage MRPage::renderPage(float scaleX, float scaleY, float rotation)
     }
 
 //	return pix;
-    width = fz_pixmap_width(ctx, pix);
-    height = fz_pixmap_height(ctx, pix);
+    d->width = width = fz_pixmap_width(ctx, pix);
+    d->height = height = fz_pixmap_height(ctx, pix);
     unsigned int size = pix->stride * height;
     copyed_samples = new unsigned char[size];
     memcpy (copyed_samples, pix->samples, size);
@@ -328,18 +332,25 @@ void MRPage::getAnnotations(QList<std::shared_ptr<MRAnnotation>> &annotations)
         {
             pdf_annot *p_annot = (pdf_annot*)annot;
             Q_ASSERT (p_annot);
-            int flage = pdf_annot_flags (d->context,
+            int type = pdf_annot_type (d->context,
                                                p_annot);
-            std::shared_ptr<MRAnnotation> annotation = MRAnnotationCreator::createAnnotation (flage);
-            annotation->rect = pdf_annot_rect (d->context,
-                                              p_annot);
-            pdf_annot_line (d->context,
-                            p_annot,
-                            &(annotation->start),
-                            &(annotation->end));
-            annotation->content = pdf_annot_contents (d->context,
-                                                     p_annot);
-            annotations.append (annotation);
+            int flag = pdf_annot_type (d->context,
+                                               p_annot);
+            qDebug() << "index: " << d->index << ": " << "annot type: " << type << " flag: " << flag;
+            std::shared_ptr<MRAnnotation> annotation = MRAnnotationCreator::createAnnotation (type);
+            if(type != PDF_ANNOT_UNKNOWN)
+            {
+                annotation->rect = pdf_annot_rect (d->context,
+                                                   p_annot);
+                pdf_annot_line (d->context,
+                                p_annot,
+                                &(annotation->start),
+                                &(annotation->end));
+                annotation->content = pdf_annot_contents (d->context,
+                                                          p_annot);
+                annotations.append (annotation);
+            }
+
 
         }
         fz_catch (d->context)

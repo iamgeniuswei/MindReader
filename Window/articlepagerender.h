@@ -5,6 +5,7 @@
 #include <QThread>
 #include <QImage>
 #include <memory>
+#include "fifotsqueue.h"
 class MRDocument;
 class MRPage;
 class ArticlePageRender : public QThread
@@ -16,6 +17,7 @@ public:
 
 public:
     void requestPage(int page, float scaleX, float scaleY, float rotation);
+    void requestPage(int sIndex, int eIndex, float scaleX, float scaleY, float rotation);
     void setPDFDocument(std::shared_ptr<MRDocument> document = nullptr);
     void retDocument();
 signals:
@@ -34,6 +36,9 @@ private:
     float rotation = 0.0;
     std::shared_ptr<MRDocument> doc = nullptr;
     int pageIndex = 0;
+    int sIndex = 0;
+    int eIndex = 0;
+    FIFOTSQueue<int> pendingIndex;
 };
 
 #endif // ARTICLEPAGERENDER_H

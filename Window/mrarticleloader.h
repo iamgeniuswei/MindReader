@@ -2,7 +2,7 @@
 #define MRARTICLELOADER_H
 
 #include <QThread>
-
+class MRDocument;
 class MRArticleLoader : public QThread
 {
     Q_OBJECT
@@ -17,6 +17,8 @@ protected:
 
 
 signals:
+    void docReady(bool ret, std::shared_ptr<MRDocument> doc);
+    void indexReady(const QStringList& items);
 
 public slots:
 

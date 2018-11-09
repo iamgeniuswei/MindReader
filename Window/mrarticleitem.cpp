@@ -15,6 +15,7 @@ MRArticleItem::MRArticleItem(QWidget *parent) :
 MRArticleItem::~MRArticleItem()
 {
     delete ui;
+    qDebug() << "delete item";
 }
 
 void MRArticleItem::setTitle(const QString &text)

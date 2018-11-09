@@ -63,6 +63,7 @@ public:
                      float scaleX,
                      float scaleY,
                      float rotation);
+    QSize pageSize() const;
 protected:
     virtual void mousePressEvent(QMouseEvent* ev) override;
     virtual void mouseMoveEvent(QMouseEvent* event) override;
@@ -87,6 +88,7 @@ protected:
     void appendAnnotation();
     void appendAnnotation(const fz_quad& quad);
     QPixmap&& grabRectangle();
+
 
 
 public slots:

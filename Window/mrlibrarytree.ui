@@ -79,6 +79,9 @@
      <property name="indentation">
       <number>20</number>
      </property>
+     <property name="headerHidden">
+      <bool>true</bool>
+     </property>
      <attribute name="headerVisible">
       <bool>false</bool>
      </attribute>

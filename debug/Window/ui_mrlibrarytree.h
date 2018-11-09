@@ -75,6 +75,7 @@ public:
         articleTree = new QTreeView(MRLibraryTree);
         articleTree->setObjectName(QString::fromUtf8("articleTree"));
         articleTree->setIndentation(20);
+        articleTree->setHeaderHidden(true);
         articleTree->header()->setVisible(false);
 
         verticalLayout->addWidget(articleTree);

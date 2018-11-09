@@ -3,15 +3,25 @@
 #include <QStandardItem>
 #include <QModelIndex>
 #include <QDebug>
+
 MRLibraryTree::MRLibraryTree(QWidget *parent) :
     UIWidget(parent),
     ui(new Ui::MRLibraryTree)
 {
     ui->setupUi(this);
-    model = new QStandardItemModel(this);
-    root = new QStandardItem( QIcon(":/img/browser") ,tr("Root"));
-    ui->articleTree->setModel (model);
-    model->appendRow (root);
+//    model = new QStandardItemModel(this);
+//    root = new QStandardItem( QIcon(":/img/browser") ,tr("Root"));
+//    ui->articleTree->setModel (model);
+//    model->appendRow (root);
+    fileModel = new QFileSystemModel(this);
+    fileModel->setRootPath ("D:/Article");
+    fileModel->setFilter (QDir::Dirs|QDir::NoDotAndDotDot);
+    ui->articleTree->setModel (fileModel);
+    ui->articleTree->setRootIndex(fileModel->index ("D:/Article"));
+    ui->articleTree->setColumnHidden (1, true);
+    ui->articleTree->setColumnHidden (2, true);
+    ui->articleTree->setColumnHidden (3, true);
+
 }
 
 MRLibraryTree::~MRLibraryTree()
@@ -43,11 +53,13 @@ void MRLibraryTree::addFolder(const QString& name)
 void MRLibraryTree::on_articleTree_clicked(const QModelIndex &index)
 {
     cur_index = index;
-    QStandardItem *item = model->itemFromIndex (index);
-    QString dir = getRelativeDir (item);
-    int count = item->rowCount ();
-    if(count !=0)
-        item->removeRows (0, count);
+    qDebug() << "item clicked";
+    QString dir = fileModel->filePath (index);
+//     *item = model->itemFromIndex (index);
+//    QString dir = getRelativeDir (item);
+//    int count = item->rowCount ();
+//    if(count !=0)
+//        item->removeRows (0, count);
     emit showArticleInDir (dir);
 
 
@@ -64,5 +76,6 @@ QString MRLibraryTree::getRelativeDir(QStandardItem* item)
     }
     if(dir.isEmpty ())
         dir = "root";
+    qDebug() << dir;
     return dir;
 }

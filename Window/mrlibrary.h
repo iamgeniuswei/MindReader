@@ -11,6 +11,7 @@
 #include "mrlibrarytree.h"
 #include <QSplitter>
 #include "mrarticlescanner.h"
+#include <QScrollArea>
 class MRLibrary : public UIWidget
 {
     Q_OBJECT
@@ -31,6 +32,7 @@ private:
     QVBoxLayout *layout = nullptr;
     MRLibraryToolBar *toolBar = nullptr;
     MRArticleShelf *shelf = nullptr;
+    QScrollArea *scroll = nullptr;
     MRLibraryTree *tree = nullptr;
     QSplitter *splitter = nullptr;
     MRArticleScanner *scanner = nullptr;

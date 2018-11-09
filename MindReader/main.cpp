@@ -20,15 +20,17 @@
 #include "memory"
 #include "mrarticlemetadata.h"
 #include "mrarticleitem.h"
-#include "MRPage.h"
+#include "mrpage.h"
 #include <QGraphicsItem>
 #include <QGraphicsTextItem>
+#include "mrlibrarytree.h"
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
     qRegisterMetaType<std::shared_ptr<MRArticleMetaData>>("std::shared_ptr<MRArticleMetaData>");
     qRegisterMetaType<std::shared_ptr<MRPage>>("std::shared_ptr<MRPage>");
+    qRegisterMetaType<std::shared_ptr<MRDocument>>("std::shared_ptr<MRDocument>");
 
     MRSetting set;
     set.initializeSetting ("config.ini");
@@ -62,6 +64,7 @@ int main(int argc, char *argv[])
     {
 //        w = new MRArticleItem;
         w = new MRMainWindow;
+//        w = new MRLibraryTree;
         w->show ();
     }
 

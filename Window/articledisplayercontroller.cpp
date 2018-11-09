@@ -59,7 +59,7 @@ void ArticleDisplayerController::on_page_clicked()
 {
     if(ui->page->isChecked ())
     {
-        emit changeToSinglePage ();
+        emit changePageForm (PAGEFORM::SINGLE);
     }
 }
 
@@ -67,6 +67,6 @@ void ArticleDisplayerController::on_pageBreak_clicked()
 {
     if(ui->pageBreak->isChecked())
     {
-        emit changeToContinuousPage ();
+        emit changePageForm (PAGEFORM::CONTINUOUS);
     }
 }

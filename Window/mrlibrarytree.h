@@ -8,11 +8,13 @@
 #include <QStandardItemModel>
 #include <QStandardItem>
 #include <QModelIndex>
+#include <QFileSystemModel>
+#include "window_global.h"
 namespace Ui {
 class MRLibraryTree;
 }
 
-class MRLibraryTree : public UIWidget
+class WINDOWSHARED_EXPORT MRLibraryTree : public UIWidget
 {
     Q_OBJECT
 
@@ -32,6 +34,7 @@ private:
     Ui::MRLibraryTree *ui;
     QStandardItemModel *model = nullptr;
     QStandardItem *root = nullptr;
+    QFileSystemModel *fileModel = nullptr;
     QModelIndex cur_index;
 };
 

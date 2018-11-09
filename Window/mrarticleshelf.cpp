@@ -8,10 +8,12 @@
 #include "articleitem.h"
 #include "mrarticleitem.h"
 #include <QPushButton>
+#include <QPushButton>
 MRArticleShelf::MRArticleShelf(QWidget *parent) : UIWidget(parent)
 {
+    loadUI ();
     setObjectName ("MRArticleShelf");
-    mainLayout = new UIFlowLayout(this, 9, 20);
+//    mainLayout = new UIFlowLayout(this, 9, 20);
 
 //    mainLayout->addWidget (new QPushButton("Dfaf"));
 
@@ -25,7 +27,7 @@ MRArticleShelf::MRArticleShelf(QWidget *parent) : UIWidget(parent)
 //    it->setFixedSize (120,180);
 //    mainLayout->addWidget (it);
 
-    setLayout (mainLayout);
+//    setLayout (mainLayout);
 //    setMaximumSize (200,200);
 //    QSize widgetSize = this->size ();
 
@@ -74,7 +76,7 @@ MRArticleShelf::MRArticleShelf(QWidget *parent) : UIWidget(parent)
 
 void MRArticleShelf::addArticleItem (std::shared_ptr<MRArticleMetaData> article)
 {
-    MRArticleItem *w = new MRArticleItem (this);
+    MRArticleItem *w = new MRArticleItem (container);
 //    w->setImage (":img/pdf");
     w->setTitle (QString::fromStdString (article->title ()));
     w->setArticle (article);
@@ -85,8 +87,21 @@ void MRArticleShelf::addArticleItem (std::shared_ptr<MRArticleMetaData> article)
 //    it->setSizeHint (w->size ());
 //    this->addItem (it);
 //    this->setItemWidget (it, w);
-    mainLayout->addWidget (w);
-    setLayout (mainLayout);
+
+
+    flow->addWidget (w);
+    items.append (w);
+
+//    container->setLayout (mainLayout);
+//    scroll->setWidget (container);
+//    mainLayout->addWidget (scroll);
+
+//    container->setLayout (flow);
+
+//    mainLayout->addWidget (w);
+//    setLayout (flow);
+//    container->setLayout (flow);
+//    qDebug() << "container: " << container->sizeHint ();
     connect (w, &MRArticleItem::articleClicked,
              this, &MRArticleShelf::articleItemClicked);
 }
@@ -104,7 +119,28 @@ void MRArticleShelf::clearArticleItems()
 //        }
 //    }
 //    this->clear ();
-//    update ();
+    //    update ();
+
+    foreach(MRArticleItem *it , items)
+    {
+        it = items.takeLast ();
+        delete it;
+    }
+}
+
+void MRArticleShelf::loadUI()
+{
+//    mainLayout = new QVBoxLayout(this);
+//    scroll = new QScrollArea(this);
+//    container = new QWidget;
+    flow = new UIFlowLayout(container, 20, 20, 60);
+    flow->setSizeConstraint (QLayout::SetMinAndMaxSize);
+
+    setLayout (flow);
+//    resize (1000, 800);
+//    setWidget (container);
+
+
 }
 
 

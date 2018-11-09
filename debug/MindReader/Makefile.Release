@@ -356,14 +356,16 @@ release\main.obj: ..\..\MindReader\main.cpp C:\Qt\5.12.0\msvc2015\include\QtWidg
 		C:\Qt\5.12.0\msvc2015\include\QtGui\qinputmethod.h \
 		..\..\Window\mrarticleshelf.h \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\QWidget \
+		C:\Qt\5.12.0\msvc2015\include\QtWidgets\QScrollArea \
+		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qscrollarea.h \
+		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qabstractscrollarea.h \
+		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qframe.h \
 		..\..\UIControl\uiwidget.h \
 		..\..\UIControl\uicontrol_global.h \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\QListWidget \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qlistwidget.h \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qlistview.h \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qabstractitemview.h \
-		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qabstractscrollarea.h \
-		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qframe.h \
 		C:\Qt\5.12.0\msvc2015\include\QtCore\qabstractitemmodel.h \
 		C:\Qt\5.12.0\msvc2015\include\QtCore\qitemselectionmodel.h \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qabstractitemdelegate.h \
@@ -401,6 +403,7 @@ release\main.obj: ..\..\MindReader\main.cpp C:\Qt\5.12.0\msvc2015\include\QtWidg
 		C:\Qt\5.12.0\msvc2015\include\QtCore\QRect \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\QStyle \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\QVBoxLayout \
+		..\..\Window\mrarticleitem.h \
 		..\..\UIControl\qimagetextwidget.h \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\QListWidgetItem \
 		..\..\Window\mrmainwindow.h \
@@ -415,6 +418,11 @@ release\main.obj: ..\..\MindReader\main.cpp C:\Qt\5.12.0\msvc2015\include\QtWidg
 		C:\Qt\5.12.0\msvc2015\include\QtGui\qstandarditemmodel.h \
 		C:\Qt\5.12.0\msvc2015\include\QtGui\QStandardItem \
 		C:\Qt\5.12.0\msvc2015\include\QtCore\QModelIndex \
+		C:\Qt\5.12.0\msvc2015\include\QtWidgets\QFileSystemModel \
+		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qfilesystemmodel.h \
+		C:\Qt\5.12.0\msvc2015\include\QtCore\qdir.h \
+		C:\Qt\5.12.0\msvc2015\include\QtCore\qfileinfo.h \
+		C:\Qt\5.12.0\msvc2015\include\QtCore\qdiriterator.h \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\QSplitter \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qsplitter.h \
 		..\..\Window\mrarticlescanner.h \
@@ -422,8 +430,6 @@ release\main.obj: ..\..\MindReader\main.cpp C:\Qt\5.12.0\msvc2015\include\QtWidg
 		C:\Qt\5.12.0\msvc2015\include\QtCore\QThread \
 		C:\Qt\5.12.0\msvc2015\include\QtCore\qthread.h \
 		..\..\Window\mrarticledisplayer.h \
-		C:\Qt\5.12.0\msvc2015\include\QtWidgets\QScrollArea \
-		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qscrollarea.h \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\QLabel \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qlabel.h \
 		..\..\Window\mrarticlepagedisplayer.h \
@@ -515,6 +521,8 @@ release\main.obj: ..\..\MindReader\main.cpp C:\Qt\5.12.0\msvc2015\include\QtWidg
 		C:\Qt\5.12.0\msvc2015\include\QtCore\QString \
 		..\..\Window\articlepagerender.h \
 		C:\Qt\5.12.0\msvc2015\include\QtGui\QImage \
+		..\..\Utility\fifotsqueue.h \
+		..\..\Utility\utility_global.h \
 		C:\Qt\5.12.0\msvc2015\include\QtCore\QDebug \
 		..\..\Window\mrarticlereader.h \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\QHBoxLayout \
@@ -532,7 +540,6 @@ release\main.obj: ..\..\MindReader\main.cpp C:\Qt\5.12.0\msvc2015\include\QtWidg
 		C:\Qt\5.12.0\msvc2015\include\QtCore\qsettings.h \
 		"C:\Program Files (x86)\Windows Kits\10\Include\10.0.10150.0\ucrt\ctype.h" \
 		"C:\Program Files (x86)\Windows Kits\10\Include\10.0.10150.0\ucrt\corecrt_wctype.h" \
-		..\..\Utility\utility_global.h \
 		..\..\Window\mrworkdirsettingwindow.h \
 		..\..\MRData\ORMHelper.h \
 		..\..\..\..\..\lib\odb\include\odb\database.hxx \
@@ -579,8 +586,7 @@ release\main.obj: ..\..\MindReader\main.cpp C:\Qt\5.12.0\msvc2015\include\QtWidg
 		..\..\..\..\..\lib\odb\include\odb\database.txx \
 		..\..\..\..\..\lib\odb\include\odb\section.hxx \
 		..\..\..\..\..\lib\odb\include\odb\no-op-cache-traits.hxx \
-		..\..\Window\mrarticleitem.h \
-		..\..\MREngine\MRPage.h \
+		..\..\MREngine\mrpage.h \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\QGraphicsItem \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qgraphicsitem.h \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\QGraphicsTextItem

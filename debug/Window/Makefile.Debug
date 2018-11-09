@@ -527,6 +527,8 @@ debug\moc_articlepagerender.cpp: C:\Qt\5.12.0\msvc2015\include\QtCore\QObject \
 		C:\Qt\5.12.0\msvc2015\include\QtCore\qiodevice.h \
 		C:\Qt\5.12.0\msvc2015\include\QtCore\qline.h \
 		C:\Qt\5.12.0\msvc2015\include\QtGui\qpainterpath.h \
+		..\..\Utility\fifotsqueue.h \
+		..\..\Utility\utility_global.h \
 		..\..\Window\articlepagerender.h \
 		debug\moc_predefs.h \
 		C:\Qt\5.12.0\msvc2015\bin\moc.exe
@@ -657,6 +659,8 @@ debug\moc_articledisplayercontroller.cpp: C:\Qt\5.12.0\msvc2015\include\QtWidget
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qabstractbutton.h \
 		C:\Qt\5.12.0\msvc2015\include\QtGui\qicon.h \
 		..\..\Window\window_global.h \
+		..\..\Window\mrwindowutility.h \
+		C:\Qt\5.12.0\msvc2015\include\QtGui\QFont \
 		..\..\Window\articledisplayercontroller.h \
 		debug\moc_predefs.h \
 		C:\Qt\5.12.0\msvc2015\bin\moc.exe
@@ -1341,11 +1345,13 @@ debug\moc_mrmainwindow.cpp: C:\Qt\5.12.0\msvc2015\include\QtWidgets\QMainWindow 
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qlayoutitem.h \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qgridlayout.h \
 		..\..\Window\mrarticleshelf.h \
+		C:\Qt\5.12.0\msvc2015\include\QtWidgets\QScrollArea \
+		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qscrollarea.h \
+		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qabstractscrollarea.h \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\QListWidget \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qlistwidget.h \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qlistview.h \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qabstractitemview.h \
-		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qabstractscrollarea.h \
 		C:\Qt\5.12.0\msvc2015\include\QtCore\qabstractitemmodel.h \
 		C:\Qt\5.12.0\msvc2015\include\QtCore\qitemselectionmodel.h \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qabstractitemdelegate.h \
@@ -1375,11 +1381,17 @@ debug\moc_mrmainwindow.cpp: C:\Qt\5.12.0\msvc2015\include\QtWidgets\QMainWindow 
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\QLayout \
 		C:\Qt\5.12.0\msvc2015\include\QtCore\QRect \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\QStyle \
+		..\..\Window\mrarticleitem.h \
 		..\..\Window\mrlibrarytree.h \
 		C:\Qt\5.12.0\msvc2015\include\QtGui\QStandardItemModel \
 		C:\Qt\5.12.0\msvc2015\include\QtGui\qstandarditemmodel.h \
 		C:\Qt\5.12.0\msvc2015\include\QtGui\QStandardItem \
 		C:\Qt\5.12.0\msvc2015\include\QtCore\QModelIndex \
+		C:\Qt\5.12.0\msvc2015\include\QtWidgets\QFileSystemModel \
+		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qfilesystemmodel.h \
+		C:\Qt\5.12.0\msvc2015\include\QtCore\qdir.h \
+		C:\Qt\5.12.0\msvc2015\include\QtCore\qfileinfo.h \
+		C:\Qt\5.12.0\msvc2015\include\QtCore\qdiriterator.h \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\QSplitter \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qsplitter.h \
 		..\..\Window\mrarticlescanner.h \
@@ -1643,12 +1655,14 @@ debug\moc_mrlibrary.cpp: C:\Qt\5.12.0\msvc2015\include\QtWidgets\QWidget \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qlayoutitem.h \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qgridlayout.h \
 		..\..\Window\mrarticleshelf.h \
+		C:\Qt\5.12.0\msvc2015\include\QtWidgets\QScrollArea \
+		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qscrollarea.h \
+		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qabstractscrollarea.h \
+		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qframe.h \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\QListWidget \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qlistwidget.h \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qlistview.h \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qabstractitemview.h \
-		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qabstractscrollarea.h \
-		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qframe.h \
 		C:\Qt\5.12.0\msvc2015\include\QtCore\qabstractitemmodel.h \
 		C:\Qt\5.12.0\msvc2015\include\QtCore\qitemselectionmodel.h \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qabstractitemdelegate.h \
@@ -1680,11 +1694,17 @@ debug\moc_mrlibrary.cpp: C:\Qt\5.12.0\msvc2015\include\QtWidgets\QWidget \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\QLayout \
 		C:\Qt\5.12.0\msvc2015\include\QtCore\QRect \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\QStyle \
+		..\..\Window\mrarticleitem.h \
 		..\..\Window\mrlibrarytree.h \
 		C:\Qt\5.12.0\msvc2015\include\QtGui\QStandardItemModel \
 		C:\Qt\5.12.0\msvc2015\include\QtGui\qstandarditemmodel.h \
 		C:\Qt\5.12.0\msvc2015\include\QtGui\QStandardItem \
 		C:\Qt\5.12.0\msvc2015\include\QtCore\QModelIndex \
+		C:\Qt\5.12.0\msvc2015\include\QtWidgets\QFileSystemModel \
+		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qfilesystemmodel.h \
+		C:\Qt\5.12.0\msvc2015\include\QtCore\qdir.h \
+		C:\Qt\5.12.0\msvc2015\include\QtCore\qfileinfo.h \
+		C:\Qt\5.12.0\msvc2015\include\QtCore\qdiriterator.h \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\QSplitter \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qsplitter.h \
 		..\..\Window\mrarticlescanner.h \
@@ -1965,6 +1985,12 @@ debug\moc_mrlibrarytree.cpp: C:\Qt\5.12.0\msvc2015\include\QtWidgets\QWidget \
 		C:\Qt\5.12.0\msvc2015\include\QtGui\qicon.h \
 		C:\Qt\5.12.0\msvc2015\include\QtGui\QStandardItem \
 		C:\Qt\5.12.0\msvc2015\include\QtCore\QModelIndex \
+		C:\Qt\5.12.0\msvc2015\include\QtWidgets\QFileSystemModel \
+		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qfilesystemmodel.h \
+		C:\Qt\5.12.0\msvc2015\include\QtCore\qdir.h \
+		C:\Qt\5.12.0\msvc2015\include\QtCore\qfileinfo.h \
+		C:\Qt\5.12.0\msvc2015\include\QtCore\qdiriterator.h \
+		..\..\Window\window_global.h \
 		..\..\Window\mrlibrarytree.h \
 		debug\moc_predefs.h \
 		C:\Qt\5.12.0\msvc2015\bin\moc.exe
@@ -2422,14 +2448,16 @@ debug\moc_mrarticleshelf.cpp: C:\Qt\5.12.0\msvc2015\include\QtWidgets\QWidget \
 		C:\Qt\5.12.0\msvc2015\include\QtCore\qfiledevice.h \
 		C:\Qt\5.12.0\msvc2015\include\QtGui\qvector2d.h \
 		C:\Qt\5.12.0\msvc2015\include\QtGui\qtouchdevice.h \
+		C:\Qt\5.12.0\msvc2015\include\QtWidgets\QScrollArea \
+		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qscrollarea.h \
+		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qabstractscrollarea.h \
+		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qframe.h \
 		..\..\UIControl\uiwidget.h \
 		..\..\UIControl\uicontrol_global.h \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\QListWidget \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qlistwidget.h \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qlistview.h \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qabstractitemview.h \
-		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qabstractscrollarea.h \
-		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qframe.h \
 		C:\Qt\5.12.0\msvc2015\include\QtCore\qabstractitemmodel.h \
 		C:\Qt\5.12.0\msvc2015\include\QtCore\qitemselectionmodel.h \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qabstractitemdelegate.h \
@@ -2467,6 +2495,7 @@ debug\moc_mrarticleshelf.cpp: C:\Qt\5.12.0\msvc2015\include\QtWidgets\QWidget \
 		C:\Qt\5.12.0\msvc2015\include\QtCore\QRect \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\QStyle \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\QVBoxLayout \
+		..\..\Window\mrarticleitem.h \
 		..\..\Window\mrarticleshelf.h \
 		debug\moc_predefs.h \
 		C:\Qt\5.12.0\msvc2015\bin\moc.exe
@@ -3167,6 +3196,8 @@ debug\moc_mrarticledisplayer.cpp: C:\Qt\5.12.0\msvc2015\include\QtWidgets\QScrol
 		C:\Qt\5.12.0\msvc2015\include\QtCore\QThread \
 		C:\Qt\5.12.0\msvc2015\include\QtCore\qthread.h \
 		C:\Qt\5.12.0\msvc2015\include\QtGui\QImage \
+		..\..\Utility\fifotsqueue.h \
+		..\..\Utility\utility_global.h \
 		..\..\Window\mrarticledisplayer.h \
 		debug\moc_predefs.h \
 		C:\Qt\5.12.0\msvc2015\bin\moc.exe
@@ -3551,6 +3582,8 @@ debug\articlepagerender.obj: ..\..\Window\articlepagerender.cpp ..\..\Window\art
 		C:\Qt\5.12.0\msvc2015\include\QtCore\qiodevice.h \
 		C:\Qt\5.12.0\msvc2015\include\QtCore\qline.h \
 		C:\Qt\5.12.0\msvc2015\include\QtGui\qpainterpath.h \
+		..\..\Utility\fifotsqueue.h \
+		..\..\Utility\utility_global.h \
 		..\..\MREngine\mrpage.h \
 		C:\Qt\5.12.0\msvc2015\include\QtCore\QString \
 		..\..\MREngine\pdfcore_global.h \
@@ -3644,7 +3677,18 @@ debug\articlepagerender.obj: ..\..\Window\articlepagerender.cpp ..\..\Window\art
 		C:\Qt\5.12.0\msvc2015\include\QtGui\qfontinfo.h \
 		C:\Qt\5.12.0\msvc2015\include\QtGui\qfont.h \
 		C:\Qt\5.12.0\msvc2015\include\QtGui\qfontmetrics.h \
-		..\..\MREngine\mrdocument.h
+		..\..\MREngine\mrdocument.h \
+		C:\Qt\5.12.0\msvc2015\include\QtCore\QDebug \
+		C:\Qt\5.12.0\msvc2015\include\QtCore\qdebug.h \
+		C:\Qt\5.12.0\msvc2015\include\QtCore\qmap.h \
+		C:\Qt\5.12.0\msvc2015\include\QtCore\qtextstream.h \
+		C:\Qt\5.12.0\msvc2015\include\QtCore\qlocale.h \
+		C:\Qt\5.12.0\msvc2015\include\QtCore\qvariant.h \
+		"C:\Program Files (x86)\Windows Kits\10\Include\10.0.10150.0\ucrt\stdio.h" \
+		"C:\Program Files (x86)\Windows Kits\10\Include\10.0.10150.0\ucrt\corecrt_wstdio.h" \
+		"C:\Program Files (x86)\Windows Kits\10\Include\10.0.10150.0\ucrt\corecrt_stdio_config.h" \
+		C:\Qt\5.12.0\msvc2015\include\QtCore\qset.h \
+		C:\Qt\5.12.0\msvc2015\include\QtCore\qcontiguouscache.h
 
 debug\articledisplayercontroller.obj: ..\..\Window\articledisplayercontroller.cpp ..\..\Window\articledisplayercontroller.h \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\QWidget \
@@ -3772,6 +3816,8 @@ debug\articledisplayercontroller.obj: ..\..\Window\articledisplayercontroller.cp
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qabstractbutton.h \
 		C:\Qt\5.12.0\msvc2015\include\QtGui\qicon.h \
 		..\..\Window\window_global.h \
+		..\..\Window\mrwindowutility.h \
+		C:\Qt\5.12.0\msvc2015\include\QtGui\QFont \
 		ui_articledisplayercontroller.h \
 		C:\Qt\5.12.0\msvc2015\include\QtCore\QVariant \
 		C:\Qt\5.12.0\msvc2015\include\QtGui\QIcon \
@@ -4460,13 +4506,15 @@ debug\mrworkdirsettingwindow.obj: ..\..\Window\mrworkdirsettingwindow.cpp ..\..\
 		"C:\Program Files (x86)\Windows Kits\10\Include\10.0.10150.0\ucrt\corecrt_wctype.h" \
 		..\..\Utility\utility_global.h \
 		..\..\Window\mrarticleshelf.h \
+		C:\Qt\5.12.0\msvc2015\include\QtWidgets\QScrollArea \
+		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qscrollarea.h \
+		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qabstractscrollarea.h \
 		..\..\UIControl\uiwidget.h \
 		..\..\UIControl\uicontrol_global.h \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\QListWidget \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qlistwidget.h \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qlistview.h \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qabstractitemview.h \
-		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qabstractscrollarea.h \
 		C:\Qt\5.12.0\msvc2015\include\QtCore\qitemselectionmodel.h \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qabstractitemdelegate.h \
 		..\..\MRData\mrarticlemetadata.h \
@@ -4485,7 +4533,8 @@ debug\mrworkdirsettingwindow.obj: ..\..\Window\mrworkdirsettingwindow.cpp ..\..\
 		..\..\UIControl\uiflowlayout.h \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\QLayout \
 		C:\Qt\5.12.0\msvc2015\include\QtCore\QRect \
-		C:\Qt\5.12.0\msvc2015\include\QtWidgets\QStyle
+		C:\Qt\5.12.0\msvc2015\include\QtWidgets\QStyle \
+		..\..\Window\mrarticleitem.h
 
 debug\mrmainwindow.obj: ..\..\Window\mrmainwindow.cpp ..\..\Window\mrmainwindow.h \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\QMainWindow \
@@ -4624,11 +4673,13 @@ debug\mrmainwindow.obj: ..\..\Window\mrmainwindow.cpp ..\..\Window\mrmainwindow.
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qlayoutitem.h \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qgridlayout.h \
 		..\..\Window\mrarticleshelf.h \
+		C:\Qt\5.12.0\msvc2015\include\QtWidgets\QScrollArea \
+		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qscrollarea.h \
+		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qabstractscrollarea.h \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\QListWidget \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qlistwidget.h \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qlistview.h \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qabstractitemview.h \
-		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qabstractscrollarea.h \
 		C:\Qt\5.12.0\msvc2015\include\QtCore\qabstractitemmodel.h \
 		C:\Qt\5.12.0\msvc2015\include\QtCore\qitemselectionmodel.h \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qabstractitemdelegate.h \
@@ -4658,11 +4709,17 @@ debug\mrmainwindow.obj: ..\..\Window\mrmainwindow.cpp ..\..\Window\mrmainwindow.
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\QLayout \
 		C:\Qt\5.12.0\msvc2015\include\QtCore\QRect \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\QStyle \
+		..\..\Window\mrarticleitem.h \
 		..\..\Window\mrlibrarytree.h \
 		C:\Qt\5.12.0\msvc2015\include\QtGui\QStandardItemModel \
 		C:\Qt\5.12.0\msvc2015\include\QtGui\qstandarditemmodel.h \
 		C:\Qt\5.12.0\msvc2015\include\QtGui\QStandardItem \
 		C:\Qt\5.12.0\msvc2015\include\QtCore\QModelIndex \
+		C:\Qt\5.12.0\msvc2015\include\QtWidgets\QFileSystemModel \
+		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qfilesystemmodel.h \
+		C:\Qt\5.12.0\msvc2015\include\QtCore\qdir.h \
+		C:\Qt\5.12.0\msvc2015\include\QtCore\qfileinfo.h \
+		C:\Qt\5.12.0\msvc2015\include\QtCore\qdiriterator.h \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\QSplitter \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qsplitter.h \
 		..\..\Window\mrarticlescanner.h \
@@ -4688,8 +4745,6 @@ debug\mrmainwindow.obj: ..\..\Window\mrmainwindow.cpp ..\..\Window\mrmainwindow.
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\QStatusBar \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qstatusbar.h \
 		..\..\Window\mrarticledisplayer.h \
-		C:\Qt\5.12.0\msvc2015\include\QtWidgets\QScrollArea \
-		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qscrollarea.h \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\QLabel \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qlabel.h \
 		..\..\Window\mrarticlepagedisplayer.h \
@@ -4781,6 +4836,8 @@ debug\mrmainwindow.obj: ..\..\Window\mrmainwindow.cpp ..\..\Window\mrmainwindow.
 		C:\Qt\5.12.0\msvc2015\include\QtCore\QString \
 		..\..\Window\articlepagerender.h \
 		C:\Qt\5.12.0\msvc2015\include\QtGui\QImage \
+		..\..\Utility\fifotsqueue.h \
+		..\..\Utility\utility_global.h \
 		..\..\Window\mrarticlereader.h \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\QHBoxLayout \
 		..\..\Window\notedisplayer.h \
@@ -5076,12 +5133,14 @@ debug\mrlibrary.obj: ..\..\Window\mrlibrary.cpp ..\..\Window\mrlibrary.h \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qlayoutitem.h \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qgridlayout.h \
 		..\..\Window\mrarticleshelf.h \
+		C:\Qt\5.12.0\msvc2015\include\QtWidgets\QScrollArea \
+		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qscrollarea.h \
+		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qabstractscrollarea.h \
+		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qframe.h \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\QListWidget \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qlistwidget.h \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qlistview.h \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qabstractitemview.h \
-		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qabstractscrollarea.h \
-		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qframe.h \
 		C:\Qt\5.12.0\msvc2015\include\QtCore\qabstractitemmodel.h \
 		C:\Qt\5.12.0\msvc2015\include\QtCore\qitemselectionmodel.h \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qabstractitemdelegate.h \
@@ -5113,11 +5172,17 @@ debug\mrlibrary.obj: ..\..\Window\mrlibrary.cpp ..\..\Window\mrlibrary.h \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\QLayout \
 		C:\Qt\5.12.0\msvc2015\include\QtCore\QRect \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\QStyle \
+		..\..\Window\mrarticleitem.h \
 		..\..\Window\mrlibrarytree.h \
 		C:\Qt\5.12.0\msvc2015\include\QtGui\QStandardItemModel \
 		C:\Qt\5.12.0\msvc2015\include\QtGui\qstandarditemmodel.h \
 		C:\Qt\5.12.0\msvc2015\include\QtGui\QStandardItem \
 		C:\Qt\5.12.0\msvc2015\include\QtCore\QModelIndex \
+		C:\Qt\5.12.0\msvc2015\include\QtWidgets\QFileSystemModel \
+		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qfilesystemmodel.h \
+		C:\Qt\5.12.0\msvc2015\include\QtCore\qdir.h \
+		C:\Qt\5.12.0\msvc2015\include\QtCore\qfileinfo.h \
+		C:\Qt\5.12.0\msvc2015\include\QtCore\qdiriterator.h \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\QSplitter \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qsplitter.h \
 		..\..\Window\mrarticlescanner.h \
@@ -5422,6 +5487,12 @@ debug\mrlibrarytree.obj: ..\..\Window\mrlibrarytree.cpp ..\..\Window\mrlibrarytr
 		C:\Qt\5.12.0\msvc2015\include\QtGui\qicon.h \
 		C:\Qt\5.12.0\msvc2015\include\QtGui\QStandardItem \
 		C:\Qt\5.12.0\msvc2015\include\QtCore\QModelIndex \
+		C:\Qt\5.12.0\msvc2015\include\QtWidgets\QFileSystemModel \
+		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qfilesystemmodel.h \
+		C:\Qt\5.12.0\msvc2015\include\QtCore\qdir.h \
+		C:\Qt\5.12.0\msvc2015\include\QtCore\qfileinfo.h \
+		C:\Qt\5.12.0\msvc2015\include\QtCore\qdiriterator.h \
+		..\..\Window\window_global.h \
 		ui_mrlibrarytree.h \
 		C:\Qt\5.12.0\msvc2015\include\QtCore\QVariant \
 		C:\Qt\5.12.0\msvc2015\include\QtGui\QIcon \
@@ -6124,14 +6195,16 @@ debug\mrarticleshelf.obj: ..\..\Window\mrarticleshelf.cpp ..\..\Window\mrarticle
 		C:\Qt\5.12.0\msvc2015\include\QtCore\qfiledevice.h \
 		C:\Qt\5.12.0\msvc2015\include\QtGui\qvector2d.h \
 		C:\Qt\5.12.0\msvc2015\include\QtGui\qtouchdevice.h \
+		C:\Qt\5.12.0\msvc2015\include\QtWidgets\QScrollArea \
+		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qscrollarea.h \
+		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qabstractscrollarea.h \
+		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qframe.h \
 		..\..\UIControl\uiwidget.h \
 		..\..\UIControl\uicontrol_global.h \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\QListWidget \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qlistwidget.h \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qlistview.h \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qabstractitemview.h \
-		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qabstractscrollarea.h \
-		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qframe.h \
 		C:\Qt\5.12.0\msvc2015\include\QtCore\qabstractitemmodel.h \
 		C:\Qt\5.12.0\msvc2015\include\QtCore\qitemselectionmodel.h \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qabstractitemdelegate.h \
@@ -6169,6 +6242,7 @@ debug\mrarticleshelf.obj: ..\..\Window\mrarticleshelf.cpp ..\..\Window\mrarticle
 		C:\Qt\5.12.0\msvc2015\include\QtCore\QRect \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\QStyle \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\QVBoxLayout \
+		..\..\Window\mrarticleitem.h \
 		..\..\UIControl\qimagetextwidget.h \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\QGridLayout \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\QSpacerItem \
@@ -6181,7 +6255,6 @@ debug\mrarticleshelf.obj: ..\..\Window\mrarticleshelf.cpp ..\..\Window\mrarticle
 		..\..\Window\articleitem.h \
 		..\..\MRData\mrarticledata.h \
 		C:\Qt\5.12.0\msvc2015\include\QtCore\QString \
-		..\..\Window\mrarticleitem.h \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\QPushButton \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qpushbutton.h \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qabstractbutton.h
@@ -6410,6 +6483,8 @@ debug\mrarticlepagedisplayer.obj: ..\..\Window\mrarticlepagedisplayer.cpp ..\..\
 		C:\Qt\5.12.0\msvc2015\include\QtCore\QObject \
 		C:\Qt\5.12.0\msvc2015\include\QtCore\QThread \
 		C:\Qt\5.12.0\msvc2015\include\QtCore\qthread.h \
+		..\..\Utility\fifotsqueue.h \
+		..\..\Utility\utility_global.h \
 		C:\Qt\5.12.0\msvc2015\include\QtGui\QPixmapCache \
 		C:\Qt\5.12.0\msvc2015\include\QtGui\qpixmapcache.h \
 		..\..\Window\mrcursor.h \
@@ -6455,9 +6530,7 @@ debug\mrarticlepagedisplayer.obj: ..\..\Window\mrarticlepagedisplayer.cpp ..\..\
 		..\..\..\..\..\lib\tesseract\include\leptonica\regutils.h \
 		..\..\..\..\..\lib\tesseract\include\leptonica\stringcode.h \
 		..\..\..\..\..\lib\tesseract\include\leptonica\sudoku.h \
-		..\..\..\..\..\lib\tesseract\include\leptonica\watershed.h \
-		..\..\Utility\fifotsqueue.h \
-		..\..\Utility\utility_global.h
+		..\..\..\..\..\lib\tesseract\include\leptonica\watershed.h
 
 debug\mrarticlereader.obj: ..\..\Window\mrarticlereader.cpp ..\..\Window\mrarticlereader.h \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\QWidget \
@@ -6693,6 +6766,8 @@ debug\mrarticlereader.obj: ..\..\Window\mrarticlereader.cpp ..\..\Window\mrartic
 		C:\Qt\5.12.0\msvc2015\include\QtCore\QThread \
 		C:\Qt\5.12.0\msvc2015\include\QtCore\qthread.h \
 		C:\Qt\5.12.0\msvc2015\include\QtGui\QImage \
+		..\..\Utility\fifotsqueue.h \
+		..\..\Utility\utility_global.h \
 		..\..\Window\articledisplayercontroller.h \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\QPushButton \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\qpushbutton.h \
@@ -7388,6 +7463,8 @@ debug\mrarticledisplayer.obj: ..\..\Window\mrarticledisplayer.cpp ..\..\Window\m
 		C:\Qt\5.12.0\msvc2015\include\QtCore\QThread \
 		C:\Qt\5.12.0\msvc2015\include\QtCore\qthread.h \
 		C:\Qt\5.12.0\msvc2015\include\QtGui\QImage \
+		..\..\Utility\fifotsqueue.h \
+		..\..\Utility\utility_global.h \
 		..\..\MREngine\mrpage.h \
 		C:\Qt\5.12.0\msvc2015\include\QtCore\QDebug \
 		C:\Qt\5.12.0\msvc2015\include\QtWidgets\QScrollBar \
@@ -7419,7 +7496,7 @@ debug\mrarticledisplayer.obj: ..\..\Window\mrarticledisplayer.cpp ..\..\Window\m
 		C:\Qt\5.12.0\msvc2015\include\QtCore\qsettings.h \
 		"C:\Program Files (x86)\Windows Kits\10\Include\10.0.10150.0\ucrt\ctype.h" \
 		"C:\Program Files (x86)\Windows Kits\10\Include\10.0.10150.0\ucrt\corecrt_wctype.h" \
-		..\..\Utility\utility_global.h
+		..\..\Window\mrarticleloader.h
 
 debug\mrarticleloader.obj: ..\..\Window\mrarticleloader.cpp ..\..\Window\mrarticleloader.h \
 		C:\Qt\5.12.0\msvc2015\include\QtCore\QThread \
@@ -7484,7 +7561,67 @@ debug\mrarticleloader.obj: ..\..\Window\mrarticleloader.cpp ..\..\Window\mrartic
 		C:\Qt\5.12.0\msvc2015\include\QtCore\qmetatype.h \
 		C:\Qt\5.12.0\msvc2015\include\QtCore\qvarlengtharray.h \
 		C:\Qt\5.12.0\msvc2015\include\QtCore\qcontainerfwd.h \
-		C:\Qt\5.12.0\msvc2015\include\QtCore\qobject_impl.h
+		C:\Qt\5.12.0\msvc2015\include\QtCore\qobject_impl.h \
+		..\..\MREngine\mrdocument.h \
+		C:\Qt\5.12.0\msvc2015\include\QtCore\QString \
+		..\..\..\mupdf\include\mupdf\fitz.h \
+		..\..\..\mupdf\include\mupdf\fitz\version.h \
+		..\..\..\mupdf\include\mupdf\fitz\config.h \
+		..\..\..\mupdf\include\mupdf\fitz\system.h \
+		..\..\..\mupdf\include\mupdf\memento.h \
+		..\..\..\mupdf\include\mupdf\fitz\track-usage.h \
+		"C:\Program Files (x86)\Windows Kits\10\Include\10.0.10150.0\ucrt\math.h" \
+		..\..\..\mupdf\include\mupdf\fitz\context.h \
+		..\..\..\mupdf\include\mupdf\fitz\geometry.h \
+		..\..\..\mupdf\include\mupdf\fitz\crypt.h \
+		..\..\..\mupdf\include\mupdf\fitz\getopt.h \
+		..\..\..\mupdf\include\mupdf\fitz\hash.h \
+		..\..\..\mupdf\include\mupdf\fitz\output.h \
+		..\..\..\mupdf\include\mupdf\fitz\buffer.h \
+		..\..\..\mupdf\include\mupdf\fitz\string-util.h \
+		..\..\..\mupdf\include\mupdf\fitz\stream.h \
+		..\..\..\mupdf\include\mupdf\fitz\pool.h \
+		..\..\..\mupdf\include\mupdf\fitz\tree.h \
+		..\..\..\mupdf\include\mupdf\fitz\bidi.h \
+		..\..\..\mupdf\include\mupdf\fitz\xml.h \
+		..\..\..\mupdf\include\mupdf\fitz\compress.h \
+		..\..\..\mupdf\include\mupdf\fitz\compressed-buffer.h \
+		..\..\..\mupdf\include\mupdf\fitz\filter.h \
+		..\..\..\mupdf\include\mupdf\fitz\store.h \
+		..\..\..\mupdf\include\mupdf\fitz\archive.h \
+		..\..\..\mupdf\include\mupdf\fitz\colorspace.h \
+		..\..\..\mupdf\include\mupdf\fitz\pixmap.h \
+		..\..\..\mupdf\include\mupdf\fitz\separation.h \
+		..\..\..\mupdf\include\mupdf\fitz\glyph.h \
+		..\..\..\mupdf\include\mupdf\fitz\bitmap.h \
+		..\..\..\mupdf\include\mupdf\fitz\image.h \
+		..\..\..\mupdf\include\mupdf\fitz\shade.h \
+		..\..\..\mupdf\include\mupdf\fitz\font.h \
+		..\..\..\mupdf\include\mupdf\fitz\path.h \
+		..\..\..\mupdf\include\mupdf\fitz\text.h \
+		..\..\..\mupdf\include\mupdf\fitz\color-management.h \
+		..\..\..\mupdf\include\mupdf\fitz\device.h \
+		..\..\..\mupdf\include\mupdf\fitz\display-list.h \
+		..\..\..\mupdf\include\mupdf\fitz\structured-text.h \
+		..\..\..\mupdf\include\mupdf\fitz\transition.h \
+		..\..\..\mupdf\include\mupdf\fitz\glyph-cache.h \
+		..\..\..\mupdf\include\mupdf\fitz\link.h \
+		..\..\..\mupdf\include\mupdf\fitz\outline.h \
+		..\..\..\mupdf\include\mupdf\fitz\document.h \
+		..\..\..\mupdf\include\mupdf\fitz\annotation.h \
+		..\..\..\mupdf\include\mupdf\fitz\util.h \
+		..\..\..\mupdf\include\mupdf\fitz\writer.h \
+		..\..\..\mupdf\include\mupdf\fitz\band-writer.h \
+		..\..\..\mupdf\include\mupdf\fitz\output-pnm.h \
+		..\..\..\mupdf\include\mupdf\fitz\output-png.h \
+		..\..\..\mupdf\include\mupdf\fitz\output-pwg.h \
+		..\..\..\mupdf\include\mupdf\fitz\output-pcl.h \
+		..\..\..\mupdf\include\mupdf\fitz\output-pclm.h \
+		..\..\..\mupdf\include\mupdf\fitz\output-ps.h \
+		..\..\..\mupdf\include\mupdf\fitz\output-psd.h \
+		..\..\..\mupdf\include\mupdf\fitz\output-svg.h \
+		..\..\..\mupdf\include\mupdf\fitz\output-tga.h \
+		..\..\MREngine\pdfcore_global.h
 
 debug\moc_articleitem.obj: debug\moc_articleitem.cpp 
 

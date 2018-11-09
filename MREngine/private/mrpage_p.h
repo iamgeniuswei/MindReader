@@ -49,6 +49,8 @@ public:
     fz_display_list *display_list;
     fz_stext_page *textPage = nullptr;
     int index = 0;
+    int width = 0;
+    int height = 0;
 };
 
 #endif /* PDFPAGE_P_H */

@@ -5,6 +5,7 @@
 #include "uiwidget.h"
 #include <QPushButton>
 #include "window_global.h"
+#include "mrwindowutility.h"
 namespace Ui {
 class ArticleDisplayerController;
 }
@@ -36,8 +37,7 @@ public slots:
     void updateADCIndex(const QStringList& items);
 
 signals:
-    void changeToSinglePage();
-    void changeToContinuousPage();
+    void changePageForm(PAGEFORM form);
 
 private slots:
     void on_page_clicked();

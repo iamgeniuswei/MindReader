@@ -11,8 +11,8 @@
  * Created on October 11, 2018, 10:42 AM
  */
 
-#ifndef _ARTICLEDISPLAYER_H
-#define _ARTICLEDISPLAYER_H
+#ifndef _MRARTICLEDISPLAYER_H
+#define _MRARTICLEDISPLAYER_H
 
 #include <QScrollArea>
 #include <QWidget>
@@ -25,6 +25,8 @@
 class MRDocument;
 class MRPage;
 class MRArticleMetaData;
+class MRArticleLoader;
+class QVBoxLayout;
 class WINDOWSHARED_EXPORT MRArticleDisplayer : public QScrollArea
 {
     Q_OBJECT
@@ -52,23 +54,38 @@ public slots:
     void displayLastPage();
     void zoomInPage();
     void zoomOutPage();
-//    void displayPage(float scaleX, float scaleY, float rotation, int page, QImage img, MRPage *src);
+    void displayPage(float scaleX,
+                     float scaleY,
+                     float rotation,
+                     int index,
+                     QImage img,
+                     std::shared_ptr<MRPage> src);
     void resetArticle();
+    void updatePageForm(PAGEFORM value);
 
+private slots:
+    void handleDocReady(bool ret, std::shared_ptr<MRDocument> document);
+    void handleScrollBarChanged(int value);
 
 private:
-    QScrollArea *container = nullptr;
+//    QScrollArea *container = nullptr;
     QVBoxLayout *layout = nullptr;
     std::shared_ptr<MRDocument> doc = nullptr;
     MRArticlePageDisplayer *content = nullptr;
     QLabel *second = nullptr;
     QLabel *third = nullptr;
-    QList<MRArticlePageDisplayer*> labels;
+    QList<MRArticlePageDisplayer*> pages;
+    QList<QPixmap> pixmaps;
     int current;
     int index;
     int m_totalPages;
     int m_pageSpacing = 6;
     ArticlePageRender *render = nullptr;
+    PAGEFORM form = PAGEFORM::CONTINUOUS;
+    MRArticleLoader *loader = nullptr;
+    QWidget *container = nullptr;
+    int MAX_PAGE_ON_DISPLAY = 10;
+    int curIndexOnDisplay = 0;
 };
 
-#endif /* _ARTICLEDISPLAYER_H */
+#endif /* _MRARTICLEDISPLAYER_H */

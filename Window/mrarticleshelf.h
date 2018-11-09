@@ -2,6 +2,7 @@
 #define ARTICLESHELF_H
 
 #include <QWidget>
+#include <QScrollArea>
 #include "uiwidget.h"
 #include <QListWidget>
 #include "mrarticlemetadata.h"
@@ -9,6 +10,7 @@
 #include "window_global.h"
 #include "uiflowlayout.h"
 #include <QVBoxLayout>
+#include "mrarticleitem.h"
 class QGridLayout;
 class QImageTextWidget;
 class MRArticleScanner;
@@ -35,6 +37,9 @@ public slots:
 
 
 private:
+    void loadUI();
+
+
 //    QGridLayout *layout = nullptr;
 //    unsigned int rows = 0;
 //    unsigned int lastColumnIndex = 0;
@@ -45,7 +50,11 @@ private:
 //    QSize itemSize;
 //    QList<QImageTextWidget*> items;
     MRArticleScanner *scanner = nullptr;
-    UIFlowLayout *mainLayout = nullptr;
+    QVBoxLayout *mainLayout = nullptr;
+    UIFlowLayout *flow = nullptr;
+    QWidget *container = nullptr;
+    QScrollArea *scroll = nullptr;
+    QList<MRArticleItem*> items;
 };
 
 #endif // ARTICLESHELF_H
