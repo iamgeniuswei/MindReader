@@ -21,6 +21,7 @@ signals:
     void hideNoteClicked();
     void backLibraryClicked();
     void cursorType(CURSOR cursor);
+    void colorReady(const QColor& color);
 private slots:
 
     void on_hand_clicked();
@@ -32,6 +33,10 @@ private slots:
     void on_rectangle_clicked();
 
     void on_text_clicked();
+
+    void on_color_clicked();
+
+    void on_screenshot_clicked();
 
 private:
     Ui::MRReaderToolBar *ui;

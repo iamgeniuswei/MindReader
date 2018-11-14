@@ -231,9 +231,6 @@ QString MRPage::getSelection(const QRectF &rect, fz_quad *quads, int &num)
     top_left.y = r.y0 = rect.top();
     bottom_right.x = r.x1 = rect.right();
     bottom_right.y = r.y1 = rect.bottom();
-
-    std::cerr << d->context << std::endl;
-    std::cerr << d->textPage << std::endl;
     // get text
 
     fz_try(d->context)
@@ -260,6 +257,31 @@ QString MRPage::getSelection(const QRectF &rect, fz_quad *quads, int &num)
     return ret;
 }
 
+void MRPage::getSelectionQuads(const fz_rect &rect, fz_quad *quads, int &num)
+{
+    fz_point top_left{rect.x0, rect.y0};
+    fz_point bottom_right{rect.x1, rect.y1};
+
+    fz_try(d->context)
+    {
+        if (!fz_is_infinite_rect(rect))
+        {
+            num = fz_highlight_selection (d->context,
+                                              d->textPage,
+                                              top_left,
+                                              bottom_right,
+                                              quads,
+                                              200);
+        }
+    }
+
+    fz_catch(d->context)
+    {
+        std::cerr << fz_caught_message(d->context);
+        num = 0;
+    }
+}
+
 fz_context *MRPage::context() const
 {
     return d->context;
@@ -275,32 +297,59 @@ fz_page *MRPage::page() const
     return d->page;
 }
 
-void MRPage::addAnnotation(int type, const fz_rect& rect, const fz_point &start, const fz_point &end, const char *content)
+void MRPage::addAnnotation(int type, const fz_rect& rect, const fz_point &start, const fz_point &end, const fz_quad &quad, const char *content)
 {
     Q_ASSERT (d->context);
     Q_ASSERT (d->document);
     Q_ASSERT (d->page);
 
-    pdf_page *page = (pdf_page*)(d->page);
+    pdf_page *page = reinterpret_cast<pdf_page*>(d->page);
+    pdf_annot *annot = nullptr;
     Q_ASSERT (page);
-    pdf_annot *annot = pdf_create_annot(d->context,
-                                        page,
-                                       (enum pdf_annot_type) type);
-    Q_ASSERT (annot);
-    pdf_set_annot_flags (d->context,
-                         annot,
-                         type);
-    pdf_set_annot_rect(d->context,
-                       annot,
-                       rect);
-    pdf_set_annot_line (d->context,
-                        annot,
-                        start,
-                        end);
-    if(content != nullptr)
-        pdf_set_annot_contents (d->context,
-                                annot,
-                                content);
+    fz_try(d->context)
+    {
+        annot = pdf_create_annot(d->context,
+                                            page,
+                                           (enum pdf_annot_type) type);
+    }
+    fz_catch (d->context)
+    {
+        qDebug() << fz_caught_message (d->context);
+        return;
+    }
+    MRAnnotationCreator::appendAnnotation (type,
+                                           d->context,
+                                           annot,
+                                           rect,
+                                           start,
+                                           end,
+                                           quad,
+                                           content);
+}
+
+SPtrMRA MRPage::addAnnotation(int type, void *data, float *color)
+{
+    Q_ASSERT (d->context);
+    Q_ASSERT (d->document);
+    Q_ASSERT (d->page);
+
+    pdf_page *page = reinterpret_cast<pdf_page*>(d->page);
+    pdf_annot *annot = nullptr;
+    Q_ASSERT (page);
+    fz_try(d->context)
+    {
+        annot = pdf_create_annot(d->context,
+                                            page,
+                                           (enum pdf_annot_type) type);
+    }
+    fz_catch (d->context)
+    {
+        qDebug() << fz_caught_message (d->context);
+        return nullptr;
+    }
+    SPtrMRA annotaion = MRAnnotationCreator::createAnnotation (type);
+    annotaion->appendToPage (d->context, annot, data, color);
+    return annotaion;
 }
 
 void MRPage::addAnnotation(const MRAnnotation &annot)
@@ -312,12 +361,13 @@ void MRPage::addAnnotation(const MRAnnotation &annot)
 
 void MRPage::addAnnotation(std::shared_ptr<MRAnnotation> &annot)
 {
-    Q_ASSERT ( annot != nullptr );
-    addAnnotation (annot->type,
-                   annot->rect,
-                   annot->start,
-                   annot->end,
-                   annot->content);
+//    Q_ASSERT ( annot != nullptr );
+//    addAnnotation (annot->type,
+//                   annot->rect,
+//                   annot->start,
+//                   annot->end,
+//                   annot->quad,
+//                   annot->content);
 }
 
 void MRPage::getAnnotations(QList<std::shared_ptr<MRAnnotation>> &annotations)
@@ -325,64 +375,60 @@ void MRPage::getAnnotations(QList<std::shared_ptr<MRAnnotation>> &annotations)
     Q_ASSERT (d->context);
     Q_ASSERT (d->page);
     fz_annot *annot = fz_first_annot (d->context, d->page);
-
     while (annot != nullptr)
     {
-        fz_try(d->context)
-        {
-            pdf_annot *p_annot = (pdf_annot*)annot;
-            Q_ASSERT (p_annot);
-            int type = pdf_annot_type (d->context,
-                                               p_annot);
-            int flag = pdf_annot_type (d->context,
-                                               p_annot);
-            qDebug() << "index: " << d->index << ": " << "annot type: " << type << " flag: " << flag;
-            std::shared_ptr<MRAnnotation> annotation = MRAnnotationCreator::createAnnotation (type);
-            if(type != PDF_ANNOT_UNKNOWN)
-            {
-                annotation->rect = pdf_annot_rect (d->context,
-                                                   p_annot);
-                pdf_annot_line (d->context,
-                                p_annot,
-                                &(annotation->start),
-                                &(annotation->end));
-                annotation->content = pdf_annot_contents (d->context,
-                                                          p_annot);
-                annotations.append (annotation);
-            }
-
-
-        }
-        fz_catch (d->context)
-        {
-            qDebug() << fz_caught_message (d->context);
-        }
+        pdf_annot* p_annot = reinterpret_cast<pdf_annot*>(annot);
+        Q_ASSERT (p_annot);
+        int type = pdf_annot_type (d->context,
+                                           p_annot);
+        SPtrMRA&& annotation = MRAnnotationCreator::loadAnnotation (type,
+                                                                    d->context,
+                                                                    p_annot);
+        if(annotation != nullptr)
+            annotations.append (std::move(annotation));
         annot = fz_next_annot (d->context,
                                annot);
     }
 }
 
-QList<std::shared_ptr<MRAnnotation>> MRPage::getAnnotations()
+QList<SPtrMRA> MRPage::getAnnotations()
 {
-    QList<std::shared_ptr<MRAnnotation>> annotations;
+    QList<SPtrMRA> annotations;
     Q_ASSERT (d->context);
     Q_ASSERT (d->page);
-    fz_annot *annot = fz_first_annot (d->context, d->page);
+    fz_annot *annot = nullptr;
+    fz_try(d->context)
+    {
+        annot = fz_first_annot (d->context, d->page);
+    }
+    fz_catch (d->context)
+    {
+        qDebug() << fz_caught_message (d->context);
+        annot = nullptr;
+    }
 
     while (annot != nullptr)
-    {
-        pdf_annot *p_annot = (pdf_annot*)annot;
+    {        
+        pdf_annot* p_annot = reinterpret_cast<pdf_annot*>(annot);
         Q_ASSERT (p_annot);
-        int flage = pdf_annot_flags (d->context,
-                                           p_annot);
-        std::shared_ptr<MRAnnotation> annotation = MRAnnotationCreator::createAnnotation (flage);
-        annotation->rect = pdf_annot_rect (d->context,
-                                          p_annot);
-        annotation->content = pdf_annot_contents (d->context,
-                                                 p_annot);
-        annotations.append (annotation);
-        annot = fz_next_annot (d->context,
-                               annot);
+        fz_try(d->context)
+        {
+            int type = pdf_annot_type (d->context,
+                                               p_annot);
+            SPtrMRA&& annotation = MRAnnotationCreator::createAnnotation (type);
+            if(annotation != nullptr)
+            {
+                annotation->loadFromPage (d->context, p_annot);
+                annotations.append (std::move(annotation));
+            }
+            annot = fz_next_annot (d->context,
+                                   annot);
+        }
+        fz_catch (d->context)
+        {
+            qDebug() << fz_caught_message (d->context);
+            annot = nullptr;
+        }
     }
     return annotations;
 }

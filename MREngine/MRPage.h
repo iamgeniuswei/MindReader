@@ -22,13 +22,16 @@
 #include <memory>
 class MRDocument;
 class MRPagePrivate;
-class PDFCORESHARED_EXPORT MRPage {
+using SPtrMRA = std::shared_ptr<MRAnnotation>;
+class PDFCORESHARED_EXPORT MRPage
+{
 public:
     MRPage(MRDocument *document = nullptr, int index =0, int xscale = 1, int yscale = 1, int rotation = 0);
     virtual ~MRPage();
     QImage renderPage(float scaleX, float scaleY, float rotation);
     QString text(const QRectF& rect) const;
     QString getSelection(const QRectF& rect, fz_quad *quads, int& num);
+    void getSelectionQuads(const fz_rect& rect, fz_quad *quads, int& num);
     fz_context* context() const;
     fz_document* document() const;
     fz_page* page() const;
@@ -36,11 +39,13 @@ public:
                        const fz_rect &rect,
                        const fz_point &start,
                        const fz_point &end,
+                       const fz_quad &quad,
                        const char* content);
+    SPtrMRA addAnnotation(int type, void *data, float *color);
     void addAnnotation(const MRAnnotation &annot);
     void addAnnotation(std::shared_ptr<MRAnnotation> &annot);
     void getAnnotations(QList<std::shared_ptr<MRAnnotation> > &annotations);
-    QList<std::shared_ptr<MRAnnotation> > getAnnotations();
+    QList<SPtrMRA> getAnnotations();
 
 private:
     MRPagePrivate *d;

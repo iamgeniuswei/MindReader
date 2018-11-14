@@ -5,37 +5,37 @@ MRArticlePagePainter::MRArticlePagePainter()
 
 }
 
-void MRArticlePagePainter::drawFollowMouse(QPainter &painter, CURSOR cursor, const QPoint &start, const QPoint &end)
+void MRArticlePagePainter::drawFollowMouse(QPainter &painter, const QColor &color, CURSOR cursor, const QPoint &start, const QPoint &end)
 {
     switch (cursor)
     {
     case CURSOR::LINE:
-        drawLine (painter, start, end);
+        drawLine (painter, color, start, end);
         break;
     case CURSOR::RECTANGLE:
-        drawRectangle (painter, start, end);
+        drawRectangle (painter, color, start, end);
         break;
     case CURSOR::SELECT:
-        drawSelection (painter, start, end);
+        drawSelection (painter, color, start, end);
         break;
     }
 }
 
-void MRArticlePagePainter::drawLine(QPainter &painter, const QPoint &start, const QPoint &end)
+void MRArticlePagePainter::drawLine(QPainter &painter, const QColor &color, const QPoint &start, const QPoint &end)
 {
     //    QPainter painter;
         painter.save ();
-        QPen pen(Qt::red, 2);
+        QPen pen(color, 2);
         painter.setPen (pen);
         painter.setRenderHint (QPainter::Antialiasing);
         painter.drawLine (start, end);
         painter.restore ();
 }
 
-void MRArticlePagePainter::drawRectangle(QPainter &painter, const QPoint &start, const QPoint &end)
+void MRArticlePagePainter::drawRectangle(QPainter &painter, const QColor &color, const QPoint &start, const QPoint &end)
 {
     painter.save ();
-    QPen pen(Qt::red, 2);
+    QPen pen(color, 2);
     painter.setPen (pen);
     painter.setRenderHint (QPainter::Antialiasing);
     QRect rect(start, end);
@@ -43,10 +43,12 @@ void MRArticlePagePainter::drawRectangle(QPainter &painter, const QPoint &start,
     painter.restore ();
 }
 
-void MRArticlePagePainter::drawSelection(QPainter &painter, const QPoint &start, const QPoint &end)
+void MRArticlePagePainter::drawSelection(QPainter &painter,const QColor &color, const QPoint &start, const QPoint &end)
 {
+    QColor opacityColor{color};
+    opacityColor.setAlpha (100);
     painter.save ();
     QRect rect(start, end);
-    painter.fillRect (rect, QBrush(QColor(18, 150, 219, 100)));
+    painter.fillRect (rect, opacityColor);
     painter.restore ();
 }

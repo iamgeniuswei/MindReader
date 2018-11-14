@@ -24,7 +24,6 @@
         <file alias="zoomOut">img/zoom-out.png</file>
         <file alias="delete">img/delete.png</file>
         <file alias="save">img/save.png</file>
-        <file alias="line">img/line (1).png</file>
         <file alias="rectangle">img/rectangle.png</file>
         <file alias="select">img/select.png</file>
         <file alias="text">img/text.png</file>
@@ -39,6 +38,9 @@
         <file alias="pdf_s">img/pdf_s.png</file>
         <file alias="page">img/page.png</file>
         <file alias="page-break">img/page-break.png</file>
+        <file alias="line">img/line.png</file>
+        <file alias="color">img/color.png</file>
+        <file alias="screenshot">img/screenshot.png</file>
     </qresource>
     <qresource prefix="/qss">
         <file alias="default">qss/default.qss</file>

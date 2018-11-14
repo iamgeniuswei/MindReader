@@ -72,27 +72,31 @@ protected:
     virtual void keyPressEvent(QKeyEvent *event) override;
     virtual void keyReleaseEvent(QKeyEvent *event) override;
 
-    void drawAnnotations(QPainter &painter);
+//    void drawAnnotations(QPainter &painter);
 
 
 
-    void drawLine(QPainter &painter);
-    void drawLine(QPainter &painter, const MRAnnotation& annotation);
-    void drawSelectionFollowMouse(QPainter &painter);
-    void drawSelection(QPainter &painter, const MRAnnotation& annot );
+//    void drawLine(QPainter &painter);
+//    void drawLine(QPainter &painter, const MRAnnotation& annotation);
+//    void drawSelectionFollowMouse(QPainter &painter);
+//    void drawSelection(QPainter &painter, const MRAnnotation& annot );
 
-    void drawRectangleFollowMouse(QPainter &painter);
-    void drawRectangle(QPainter &painter, const MRAnnotation& annot);
-    void appendAnnotation(int type, const char *content=nullptr);
-    void appendAnnotation(int type, const fz_quad& quad, char *content = nullptr);
+//    void drawRectangleFollowMouse(QPainter &painter);
+//    void drawRectangle(QPainter &painter, const MRAnnotation& annot);
+//    void appendAnnotation(int type, const char *content=nullptr);
+//    void appendAnnotation(int type, const fz_quad& quad, char *content = nullptr);
     void appendAnnotation();
-    void appendAnnotation(const fz_quad& quad);
+//    void appendAnnotation(fz_quad &quad);
     QPixmap&& grabRectangle();
+    void appendLineToPage();
+    void appendSquareToPage();
+    void appendHighlightToPage();
 
 
 
 public slots:
     void handleCursorType(CURSOR cursor );
+    void updateColor(const QColor& color);
 
 signals:
     void selectionReady(int page, const QPixmap& pixmap);

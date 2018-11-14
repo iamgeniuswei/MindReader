@@ -53,7 +53,10 @@ SOURCES += \
     mrarticlepagepainter.cpp \
     mrocrrecognizer.cpp \
     mrarticledisplayer.cpp \
-    mrarticleloader.cpp
+    mrarticleloader.cpp \
+    mrsinglepagedisplayer.cpp \
+    mrseriespagedisplayer.cpp \
+    mrpageannotationhelper.cpp
 
 HEADERS += \
         window.h \
@@ -83,7 +86,10 @@ HEADERS += \
     mrarticlepagepainter.h \
     mrocrrecognizer.h \
     mrarticledisplayer.h \
-    mrarticleloader.h
+    mrarticleloader.h \
+    mrsinglepagedisplayer.h \
+    mrseriespagedisplayer.h \
+    mrpageannotationhelper.h
 
 unix {
     target.path = /usr/lib

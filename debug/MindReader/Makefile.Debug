@@ -162,41 +162,43 @@ compiler_rcc_clean:
 	-$(DEL_FILE) debug\qrc_resource.cpp
 debug\qrc_resource.cpp: ..\..\MindReader\res\resource.qrc \
 		C:\Qt\5.12.0\msvc2015\bin\rcc.exe \
-		..\..\MindReader\res\img\library.png \
-		..\..\MindReader\res\img\page-break.png \
-		..\..\MindReader\res\img\hand.png \
-		..\..\MindReader\res\img\list.png \
-		..\..\MindReader\res\img\warn.png \
-		..\..\MindReader\res\img\first.png \
-		..\..\MindReader\res\img\pdf_s.png \
-		..\..\MindReader\res\img\later.png \
-		..\..\MindReader\res\img\delete.png \
-		..\..\MindReader\res\img\error.png \
-		..\..\MindReader\res\img\pdf_t.png \
-		..\..\MindReader\res\img\forward.png \
-		..\..\MindReader\res\img\close.png \
-		..\..\MindReader\res\img\grid.png \
-		..\..\MindReader\res\img\last.png \
-		..\..\MindReader\res\img\backward.png \
-		..\..\MindReader\res\img\zoom-in.png \
-		..\..\MindReader\res\img\search.png \
-		..\..\MindReader\res\img\confirm.png \
-		..\..\MindReader\res\img\pdf.png \
 		..\..\MindReader\res\img\info.png \
 		..\..\MindReader\res\img\notes.png \
-		"..\..\MindReader\res\img\line (1).png" \
-		..\..\MindReader\res\img\page.png \
-		..\..\MindReader\res\img\files.png \
-		..\..\MindReader\res\img\save.png \
-		..\..\MindReader\res\img\rectangle.png \
-		..\..\MindReader\res\img\zoom-out.png \
-		..\..\MindReader\res\img\export.png \
+		..\..\MindReader\res\img\color.png \
+		..\..\MindReader\res\img\forward.png \
+		..\..\MindReader\res\img\warn.png \
 		..\..\MindReader\res\img\refresh.png \
+		..\..\MindReader\res\img\page-break.png \
+		..\..\MindReader\res\img\pdf_s.png \
+		..\..\MindReader\res\img\pdf_t.png \
+		..\..\MindReader\res\img\save.png \
+		..\..\MindReader\res\img\later.png \
+		..\..\MindReader\res\img\pdf.png \
+		..\..\MindReader\res\img\files.png \
+		..\..\MindReader\res\img\rectangle.png \
+		..\..\MindReader\res\img\list.png \
+		..\..\MindReader\res\img\grid.png \
+		..\..\MindReader\res\img\zoom-in.png \
+		..\..\MindReader\res\img\page.png \
+		..\..\MindReader\res\img\zoom-out.png \
 		..\..\MindReader\res\img\text.png \
+		..\..\MindReader\res\img\hand.png \
+		..\..\MindReader\res\img\select.png \
+		..\..\MindReader\res\img\last.png \
+		..\..\MindReader\res\img\backward.png \
 		..\..\MindReader\res\img\browser.png \
+		..\..\MindReader\res\img\confirm.png \
+		..\..\MindReader\res\img\screenshot.png \
+		..\..\MindReader\res\img\delete.png \
+		..\..\MindReader\res\img\search.png \
+		..\..\MindReader\res\img\line.png \
+		..\..\MindReader\res\img\close.png \
+		..\..\MindReader\res\img\first.png \
+		..\..\MindReader\res\img\error.png \
+		..\..\MindReader\res\img\export.png \
+		..\..\MindReader\res\img\library.png \
 		..\..\MindReader\res\img\background.jpg \
 		..\..\MindReader\res\img\ok.png \
-		..\..\MindReader\res\img\select.png \
 		..\..\MindReader\res\img\add_enter.png \
 		..\..\MindReader\res\img\add_normal.png \
 		..\..\MindReader\res\img\add_disable.png \

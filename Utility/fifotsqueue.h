@@ -59,7 +59,7 @@ public:
         std::unique_lock<std::mutex> lk(_queueLock);
         _dataCond.wait_for(lk, std::chrono::seconds(1), [this]{return !_dataQueue.empty();});
         if(_dataQueue.empty())
-            return 0;
+            return NULL;
         T value = _dataQueue.front();
         _dataQueue.pop();
         return value;

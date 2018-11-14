@@ -30,9 +30,11 @@ public:
     QFrame *line_2;
     QPushButton *hand;
     QPushButton *select;
+    QPushButton *screenshot;
     QPushButton *line;
     QPushButton *rectangle;
     QPushButton *text;
+    QPushButton *color;
     QSpacerItem *horizontalSpacer;
     QPushButton *note;
     QPushButton *exportNote;
@@ -84,7 +86,7 @@ public:
         QIcon icon2;
         icon2.addFile(QString::fromUtf8(":/img/hand"), QSize(), QIcon::Normal, QIcon::Off);
         hand->setIcon(icon2);
-        hand->setIconSize(QSize(24, 24));
+        hand->setIconSize(QSize(20, 20));
 
         horizontalLayout->addWidget(hand);
 
@@ -93,18 +95,28 @@ public:
         QIcon icon3;
         icon3.addFile(QString::fromUtf8(":/img/select"), QSize(), QIcon::Normal, QIcon::Off);
         select->setIcon(icon3);
-        select->setIconSize(QSize(24, 24));
+        select->setIconSize(QSize(20, 20));
         select->setCheckable(true);
         select->setChecked(false);
 
         horizontalLayout->addWidget(select);
 
+        screenshot = new QPushButton(MRReaderToolBar);
+        screenshot->setObjectName(QString::fromUtf8("screenshot"));
+        QIcon icon4;
+        icon4.addFile(QString::fromUtf8(":/img/screenshot"), QSize(), QIcon::Normal, QIcon::Off);
+        screenshot->setIcon(icon4);
+        screenshot->setIconSize(QSize(20, 20));
+        screenshot->setCheckable(true);
+
+        horizontalLayout->addWidget(screenshot);
+
         line = new QPushButton(MRReaderToolBar);
         line->setObjectName(QString::fromUtf8("line"));
-        QIcon icon4;
-        icon4.addFile(QString::fromUtf8(":/img/line"), QSize(), QIcon::Normal, QIcon::Off);
-        line->setIcon(icon4);
-        line->setIconSize(QSize(24, 24));
+        QIcon icon5;
+        icon5.addFile(QString::fromUtf8(":/img/line"), QSize(), QIcon::Normal, QIcon::Off);
+        line->setIcon(icon5);
+        line->setIconSize(QSize(20, 20));
         line->setCheckable(true);
         line->setChecked(false);
 
@@ -112,10 +124,10 @@ public:
 
         rectangle = new QPushButton(MRReaderToolBar);
         rectangle->setObjectName(QString::fromUtf8("rectangle"));
-        QIcon icon5;
-        icon5.addFile(QString::fromUtf8(":/img/rectangle"), QSize(), QIcon::Normal, QIcon::Off);
-        rectangle->setIcon(icon5);
-        rectangle->setIconSize(QSize(24, 24));
+        QIcon icon6;
+        icon6.addFile(QString::fromUtf8(":/img/rectangle"), QSize(), QIcon::Normal, QIcon::Off);
+        rectangle->setIcon(icon6);
+        rectangle->setIconSize(QSize(20, 20));
         rectangle->setCheckable(true);
         rectangle->setChecked(false);
 
@@ -123,13 +135,22 @@ public:
 
         text = new QPushButton(MRReaderToolBar);
         text->setObjectName(QString::fromUtf8("text"));
-        QIcon icon6;
-        icon6.addFile(QString::fromUtf8(":/img/text"), QSize(), QIcon::Normal, QIcon::Off);
-        text->setIcon(icon6);
-        text->setIconSize(QSize(24, 24));
+        QIcon icon7;
+        icon7.addFile(QString::fromUtf8(":/img/text"), QSize(), QIcon::Normal, QIcon::Off);
+        text->setIcon(icon7);
+        text->setIconSize(QSize(20, 20));
         text->setCheckable(true);
 
         horizontalLayout->addWidget(text);
+
+        color = new QPushButton(MRReaderToolBar);
+        color->setObjectName(QString::fromUtf8("color"));
+        QIcon icon8;
+        icon8.addFile(QString::fromUtf8(":/img/color"), QSize(), QIcon::Normal, QIcon::Off);
+        color->setIcon(icon8);
+        color->setIconSize(QSize(20, 20));
+
+        horizontalLayout->addWidget(color);
 
         horizontalSpacer = new QSpacerItem(173, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
@@ -137,18 +158,18 @@ public:
 
         note = new QPushButton(MRReaderToolBar);
         note->setObjectName(QString::fromUtf8("note"));
-        QIcon icon7;
-        icon7.addFile(QString::fromUtf8(":/img/notes"), QSize(), QIcon::Normal, QIcon::Off);
-        note->setIcon(icon7);
+        QIcon icon9;
+        icon9.addFile(QString::fromUtf8(":/img/notes"), QSize(), QIcon::Normal, QIcon::Off);
+        note->setIcon(icon9);
         note->setIconSize(QSize(32, 32));
 
         horizontalLayout->addWidget(note);
 
         exportNote = new QPushButton(MRReaderToolBar);
         exportNote->setObjectName(QString::fromUtf8("exportNote"));
-        QIcon icon8;
-        icon8.addFile(QString::fromUtf8(":/img/export"), QSize(), QIcon::Normal, QIcon::Off);
-        exportNote->setIcon(icon8);
+        QIcon icon10;
+        icon10.addFile(QString::fromUtf8(":/img/export"), QSize(), QIcon::Normal, QIcon::Off);
+        exportNote->setIcon(icon10);
         exportNote->setIconSize(QSize(32, 32));
 
         horizontalLayout->addWidget(exportNote);
@@ -170,6 +191,10 @@ public:
 #endif // QT_NO_TOOLTIP
         select->setText(QString());
 #ifndef QT_NO_TOOLTIP
+        screenshot->setToolTip(QApplication::translate("MRReaderToolBar", "<html><head/><body><p>\345\233\276\345\203\217\345\267\245\345\205\267</p><p>\346\210\252\345\217\226\345\233\276\345\203\217</p></body></html>", nullptr));
+#endif // QT_NO_TOOLTIP
+        screenshot->setText(QString());
+#ifndef QT_NO_TOOLTIP
         line->setToolTip(QApplication::translate("MRReaderToolBar", "<html><head/><body><p>\347\272\277\346\235\241\345\267\245\345\205\267</p><p><br/></p><p>\347\273\230\345\210\266\347\233\264\347\272\277\357\274\214\346\214\211\344\275\217shift\357\274\214\347\273\230\345\210\266\346\260\264\345\271\263\347\233\264\347\272\277</p></body></html>", nullptr));
 #endif // QT_NO_TOOLTIP
         line->setText(QString());
@@ -181,6 +206,7 @@ public:
         text->setToolTip(QApplication::translate("MRReaderToolBar", "<html><head/><body><p>\346\226\207\346\234\254\345\267\245\345\205\267</p><p><br/></p><p>\345\234\250\351\241\265\351\235\242\344\270\212\345\242\236\345\212\240\346\226\207\346\234\254</p></body></html>", nullptr));
 #endif // QT_NO_TOOLTIP
         text->setText(QString());
+        color->setText(QString());
         note->setText(QApplication::translate("MRReaderToolBar", "\351\232\220\350\227\217\347\254\224\350\256\260\346\234\254", nullptr));
         exportNote->setText(QApplication::translate("MRReaderToolBar", "\345\257\274\345\207\272\346\200\235\347\273\264\345\257\274\345\233\276", nullptr));
     } // retranslateUi

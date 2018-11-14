@@ -3,6 +3,7 @@
 #include "articledisplayercontroller.h"
 #include <QSplitter>
 #include "mrreadertoolbar.h"
+#include "mrsinglepagedisplayer.h"
 MRArticleReader::MRArticleReader(QWidget *parent) : UIWidget(parent)
 {
 //    layout = new QVBoxLayout(this);
@@ -51,6 +52,8 @@ void MRArticleReader::initializeSignals()
              this, &MRArticleReader::backToLibrary);
     connect (toolBar, &MRReaderToolBar::cursorType,
              this, &MRArticleReader::cursorType);
+    connect (toolBar, &MRReaderToolBar::colorReady,
+             displayer, &MRArticleDisplayer::colorReady);
 }
 
 bool MRArticleReader::setArticle(std::shared_ptr<MRArticleMetaData> article)
@@ -81,7 +84,7 @@ void MRArticleReader::loadUI()
     readerContainer = new QWidget(this);
     layout = new QVBoxLayout(readerContainer);
     layout->setMargin (0);
-    displayer = new MRArticleDisplayer(this);
+    displayer = new MRSinglePageDisplayer(this);
     controller = new ArticleDisplayerController(this);
     layout->addWidget (displayer, 1);
     layout->addWidget (controller, 0, Qt::AlignBottom);

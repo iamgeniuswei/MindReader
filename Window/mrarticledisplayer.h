@@ -36,25 +36,25 @@ public:
     bool setArticle(std::shared_ptr<MRArticleMetaData> article);
 protected:
     virtual void wheelEvent(QWheelEvent *event);
-//    virtual void paintEvent(QPaintEvent * event);
 
 protected:
-    void loadUI();
-    void loadSignals();
+    virtual void loadUI();
+    virtual void loadSignals();
 
 signals:
     void selectionReady(int page, const QPixmap& pixmap);
     void textReady(int page, const QString& text);
     void cursorType(CURSOR cursor);
+    void colorReady(const QColor& color);
     void ADCIndexItemsReady(const QStringList& items);
 public slots:
-    void displayFirstPage();
-    void displayPrevPage();
-    void displayNextPage();
-    void displayLastPage();
-    void zoomInPage();
-    void zoomOutPage();
-    void displayPage(float scaleX,
+    virtual void displayFirstPage();
+    virtual void displayPrevPage();
+    virtual void displayNextPage();
+    virtual void displayLastPage();
+    virtual void zoomInPage();
+    virtual void zoomOutPage();
+    virtual void displayPage(float scaleX,
                      float scaleY,
                      float rotation,
                      int index,
@@ -64,10 +64,10 @@ public slots:
     void updatePageForm(PAGEFORM value);
 
 private slots:
-    void handleDocReady(bool ret, std::shared_ptr<MRDocument> document);
+    virtual void handleDocReady(bool ret, std::shared_ptr<MRDocument> document);
     void handleScrollBarChanged(int value);
 
-private:
+    protected:
 //    QScrollArea *container = nullptr;
     QVBoxLayout *layout = nullptr;
     std::shared_ptr<MRDocument> doc = nullptr;

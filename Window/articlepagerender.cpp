@@ -10,32 +10,31 @@ ArticlePageRender::ArticlePageRender(QObject *parent) : QThread(parent)
 
 void ArticlePageRender::run()
 {
-    while (true) {
-        try
-        {
-            int i = pendingIndex.wait_and_pop ();
-            if(i == 0)
-                continue;
-            qDebug() << "i: " << i;
-            this->pageIndex = i;
-            std::shared_ptr<MRPage> page = doc->page (i);
-            const QImage &img = page->renderPage (scaleX, scaleY, rotation);
-            emit pageReady (scaleX, scaleY, rotation, i, img, page);
-        }
-        catch (std::exception &e)
-        {
-            qDebug() << e.what ();
-        }
-    }
-//    if(doc == nullptr)
-//        return;
+//    while (true) {
+//        try
+//        {
+//            int i = pendingIndex.wait_and_pop ();
+//            if(i == NULL)
+//                continue;
+//            this->pageIndex = i;
+//            std::shared_ptr<MRPage> page = doc->page (i-1);
+//            const QImage &img = page->renderPage (scaleX, scaleY, rotation);
+//            emit pageReady (scaleX, scaleY, rotation, i, img, page);
+//        }
+//        catch (std::exception &e)
+//        {
+//            qDebug() << e.what ();
+//        }
+//    }
+    if(doc == nullptr)
+        return;
 //    for(int i=sIndex; i<=eIndex; i++)
 //    {
 //        qDebug() << "i: " << i;
 //        this->pageIndex = i;
-//        std::shared_ptr<MRPage> page = doc->page (i);
-//        const QImage &img = page->renderPage (scaleX, scaleY, rotation);
-//        emit pageReady (scaleX, scaleY, rotation, i, img, page);
+        std::shared_ptr<MRPage> page = doc->page (pageIndex);
+        const QImage &img = page->renderPage (scaleX, scaleY, rotation);
+        emit pageReady (scaleX, scaleY, rotation, pageIndex, img, page);
 //    }
 
 }
@@ -58,7 +57,10 @@ void ArticlePageRender::requestPage(int sIndex, int eIndex, float scaleX, float 
 //    this->eIndex = eIndex;
 //    start();
     for(int i=sIndex; i<=eIndex; i++)
+    {
+        qDebug() << "Index: " << i;
         pendingIndex.push (i);
+    }
 }
 
 void ArticlePageRender::setPDFDocument(std::shared_ptr<MRDocument> document)

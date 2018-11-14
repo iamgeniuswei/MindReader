@@ -43,32 +43,21 @@ class PDFCORESHARED_EXPORT MRAnnotation
 public:
     MRAnnotation(int flag);
     virtual ~MRAnnotation(){}
-
+    virtual void loadFromPage(fz_context *ctx = nullptr,
+                              pdf_annot *annot = nullptr) = 0;
+    virtual void appendToPage(fz_context *ctx = nullptr,
+                              pdf_annot *annot = nullptr,
+                              void *data = nullptr,
+                              float *color = nullptr) = 0;
+    virtual void draw(QPainter& painter, float scaleX, float scaleY, float rotation)  = 0;
     int getType() const;
     void setType(int value);
 
-    fz_rect getRect() const;
-    void setRect(const fz_rect &value);
-
-    const char *getContent() const;
-    void setContent(const char *value);
-
-public:
-    virtual void draw(QPainter& painter, float scaleX, float scaleY, float rotation)  = 0;
-
-    fz_point getStart() const;
-    void setStart(const fz_point &value);
-
-    fz_point getEnd() const;
-    void setEnd(const fz_point &value);
-
 protected:
     int type;
-    fz_rect rect;
-    fz_point start;
-    fz_point end;
-    const char *content = nullptr;
+    float color[3];
     friend class MRPage;
+    friend class MRAnnotationCreator;
 };
 
 #endif // MRANNOTATION_H

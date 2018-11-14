@@ -35,7 +35,6 @@ MRArticlePageDisplayer::MRArticlePageDisplayer(QWidget *parent)
     setMouseTracking (true);
     grabKeyboard ();
     loadSignals ();
-
 }
 
 MRArticlePageDisplayer::~MRArticlePageDisplayer()
@@ -47,9 +46,11 @@ void MRArticlePageDisplayer::setMRPage(std::shared_ptr<MRPage> &src)
     Q_ASSERT (d != nullptr );
     d->page.reset ();
     d->page = src;
-    d->annotations.clear ();
+    d->annotsOnDraw.clear ();
+    d->annotsInPage.clear ();
     Q_ASSERT (d->page);
-    d->page->getAnnotations(d->annotations);
+    QList<SPtrMRA> &&annots = d->page->getAnnotations ();
+    d->annotsInPage = std::move(annots);
 }
 
 int MRArticlePageDisplayer::pageIndex() const
@@ -132,13 +133,13 @@ void MRArticlePageDisplayer::mouseReleaseEvent(QMouseEvent* event)
 
     if(d->cursor_ == CURSOR::SELECT)
     {
-        QString str = getTextFromSelection ();
-        if(!str.isEmpty ())
-            emit textReady (d->pageIndex, str);
-        else {
-            grabRectangle ();
-
-        }
+//        QString str = getTextFromSelection ();
+//        if(!str.isEmpty ())
+//            emit textReady (d->pageIndex, str);
+//        else {
+//            grabRectangle ();
+//        }
+        appendAnnotation ();
     }
     else
     {
@@ -150,22 +151,21 @@ void MRArticlePageDisplayer::mouseReleaseEvent(QMouseEvent* event)
 void MRArticlePageDisplayer::paintEvent(QPaintEvent *event)
 {
     QLabel::paintEvent (event);
-    QPainter painter(this);
+    QPainter painter(this);    
 
     if(d->isDrawFollowMouse)
     {
         MRArticlePagePainter::drawFollowMouse (painter,
+                                               d->curColor,
                                                d->cursor_,
                                                d->mouseStartPoint,
                                                d->mouseEndPoint);
     }
 
-//    qDebug() << d->annotations.size ();
-
-    for(int i=0; i< d->annotations.size (); i++)
+    for(int i=0; i< d->annotsOnDraw.size (); i++)
     {
 
-        std::shared_ptr<MRAnnotation> tmp = d->annotations.at (i);
+        std::shared_ptr<MRAnnotation> tmp = d->annotsOnDraw.at (i);
         Q_ASSERT (tmp != nullptr);
         tmp->draw (painter, d->scaleX, d->scaleY, d->rotation);
     }
@@ -187,201 +187,115 @@ void MRArticlePageDisplayer::keyReleaseEvent(QKeyEvent *event)
     d->isShiftDown = false;
 }
 
-void MRArticlePageDisplayer::drawAnnotations(QPainter &painter)
-{
-//    for(int i=0; i<annotations.size (); i++)
-//    {
-//        MRAnnotation tmp = annotations.at (i);
-//        switch (tmp.getType ())
-//        {
-//        case PDF_ANNOT_LINE:
-//            drawLine (painter, tmp);
-//            break;
-//        case PDF_ANNOT_SQUARE:
-//            break;
-//        case PDF_ANNOT_HIGHLIGHT:
-//            break;
-//        default:
-//            break;
-//        }
-//    }
-}
-
-void MRArticlePageDisplayer::drawLine(QPainter& painter)
-{
-////    QPainter painter;
-//    painter.begin (this);
-//    QPen pen(Qt::red, 2);
-//    painter.setPen (pen);
-//    painter.setRenderHint (QPainter::Antialiasing);
-//    painter.drawLine (startPoint, endPoint);
-//    painter.end ();
-}
-
-void MRArticlePageDisplayer::drawLine(QPainter &painter, const MRAnnotation &annotation)
-{
-
-//    fz_rect rect = mapFromOrigin (annotation.getRect (),
-//                                  scaleX,
-//                                  scaleY,
-//                                  rotation);
-
-//    QPointF start(rect.x0, rect.y0);
-//    QPointF end(rect.x1, rect.y1);
-
-////    QPainter painter;
-//    painter.begin (this);
-//    QPen pen(Qt::red, 2);
-//    painter.setPen (pen);
-//    painter.setRenderHint (QPainter::Antialiasing);
-//    painter.drawLine(start, end);
-//    painter.end ();
-}
-
-void MRArticlePageDisplayer::drawSelectionFollowMouse(QPainter &painter)
-{
-//    painter.begin (this);
-//    QRect rect(startPoint, endPoint);
-//    painter.fillRect (rect, QBrush(QColor(18, 150, 219, 100)));
-//    painter.end();
-}
-
-void MRArticlePageDisplayer::drawSelection(QPainter &painter, const MRAnnotation &annot)
-{
-
-//    painter.begin (this);
-//    fz_rect rect = mapFromOrigin (annot.getRect (),
-//                                  scaleX,
-//                                  scaleY,
-//                                  rotation);
-//    QRectF qrect(QPointF(rect.x0,rect.y0),
-//                QPointF(rect.x1, rect.y1));
-//    painter.fillRect (qrect,
-//                      QColor(18, 150, 219, 100));
-////    for(int i=0; i<quads_list.size (); i++)
-////    {
-////        fz_quad quad = quads_list.at (i);
-////        QRectF rect = QRectF(quad.ul.x, quad.ul.y, quad.lr.x - quad.ll.x, quad.lr.y - quad.ul.y);
-////        rect = mapFromOrigin (rect, scaleX, scaleY, rotation);
-////        painter.fillRect (rect,
-////                          QColor(18, 150, 219, 100));
-////    }
-//    painter.end ();
-}
-
-void MRArticlePageDisplayer::drawRectangleFollowMouse(QPainter &painter)
-{
-//    painter.begin (this);
-//    QPen pen(Qt::red, 2);
-//    painter.setPen (pen);
-//    painter.setRenderHint (QPainter::Antialiasing);
-//    QRect rect(startPoint, endPoint);
-//    painter.drawRect (rect);
-}
-
-void MRArticlePageDisplayer::drawRectangle(QPainter &painter, const MRAnnotation &annot)
-{
-//    fz_rect rect = mapFromOrigin (annot.getRect (),
-//                                  scaleX,
-//                                  scaleY,
-//                                  rotation);
-
-//    QRectF qrect(QPointF(rect.x0,rect.y0),
-//                QPointF(rect.x1, rect.y1));
-//    painter.begin (this);
-//    QPen pen(Qt::red, 2);
-//    painter.setPen (pen);
-//    painter.setRenderHint (QPainter::Antialiasing);
-//    painter.drawRect (qrect);
-}
-
-
-void MRArticlePageDisplayer::appendAnnotation(int type, const char* content)
-{
-//    MRAnnotation annotation;
-//    annotation.setType (type);
-//    fz_rect rect;
-//    rect.x0 = startPoint.x ();
-//    rect.y0 = startPoint.y ();
-//    rect.x1 = endPoint.x ();
-//    rect.y1 = endPoint.y ();
-//    annotation.setRect (rect);
-//    annotation.setContent (content);
-//    annotations.append (annotation);
-//    Q_ASSERT (page);
-//    page->addAnnotation (type,
-//                         rect,
-//                         content);
-}
-
-void MRArticlePageDisplayer::appendAnnotation(int type, const fz_quad &quad, char *content)
-{
-//    MRAnnotation annotation;
-//    annotation.setType (type);
-//    fz_rect rect;
-//    rect.x0 = quad.ul.x;
-//    rect.y0 = quad.ul.y;
-//    rect.x1 = quad.lr.x;
-//    rect.y1 = quad.lr.y;
-//    annotation.setRect (rect);
-//    annotation.setContent (content);
-//    annotations.append (annotation);
-//    Q_ASSERT (page);
-//    page->addAnnotation (type, rect,
-//                         content);
-}
-
 void MRArticlePageDisplayer::appendAnnotation()
 {
-    std::shared_ptr<MRAnnotation> annot = MRAnnotationCreator::createAnnotation (d->annotFlag);
-    Q_ASSERT (annot != nullptr );
-    Q_ASSERT ( d != nullptr );
-    fz_point start, end;
-    memset (&start, 0, sizeof(fz_point));
-    memset (&end, 0, sizeof(fz_point));
-    start.x = d->mouseStartPoint.x ();
-    start.y = d->mouseStartPoint.y ();
-    end.x = d->mouseEndPoint.x ();
-    end.y = d->mouseEndPoint.y ();
-    mapToOrigin (start, d->scaleX, d->scaleY, d->rotation);
-    mapToOrigin (end, d->scaleX, d->scaleY, d->rotation);
-    annot->setStart (start);
-    annot->setEnd (end);
-
-    fz_rect rect;
-    rect.x0 = d->mouseStartPoint.x ();
-    rect.y0 = d->mouseStartPoint.y ();
-    rect.x1 = d->mouseEndPoint.x ();
-    rect.y1 = d->mouseEndPoint.y ();
-    mapToOrigin (rect, d->scaleX, d->scaleY, d->rotation);
-    annot->setRect (rect);
-    Q_ASSERT (d->page != nullptr );
-    d->page->addAnnotation (annot);
-    d->annotations.append (annot);
+    switch (d->annotFlag)
+    {
+    case PDF_ANNOT_LINE:
+    {
+        appendLineToPage ();
+    }
+        break;
+    case PDF_ANNOT_SQUARE:
+    {
+        appendSquareToPage ();
+    }
+        break;
+    case PDF_ANNOT_HIGHLIGHT:
+    {
+        appendHighlightToPage ();
+    }
+        break;
+    case PDF_ANNOT_TEXT:
+        break;
+    }
 }
 
-void MRArticlePageDisplayer::appendAnnotation(const fz_quad &quad)
-{
-    std::shared_ptr<MRAnnotation> annot = MRAnnotationCreator::createAnnotation (d->annotFlag);
-    fz_rect rect;
-    rect.x0 = quad.ul.x;
-    rect.y0 = quad.ul.y;
-    rect.x1 = quad.lr.x;
-    rect.y1 = quad.lr.y;
-    mapToOrigin (rect, d->scaleX, d->scaleY, d->rotation);
-    annot->setRect (rect);
-    d->annotations.append (annot);
-    Q_ASSERT (d->page != nullptr );
-    d->page->addAnnotation (annot);
-}
+
 
 QPixmap &&MRArticlePageDisplayer::grabRectangle()
 {
     QRect rect = calculateSelectionRect ();
     QPixmap p = this->grab(rect);
     emit selectionReady (d->pageIndex, p);
-    d->ocr->addPendingPix (p);
+//    d->ocr->addPendingPix (p);
     return std::move(p);
+}
+
+void MRArticlePageDisplayer::appendLineToPage()
+{
+    SPtrMRA annotation = nullptr;
+    fz_point *points = new fz_point[2];
+    if(d->isShiftDown)
+    {
+        points[0].x = d->mouseStartPoint.x ();
+        points[0].y = d->mouseStartPoint.y ();
+        points[1].x = d->mouseEndPoint.x ();
+        points[1].y = d->mouseStartPoint.y ();
+    }
+    else
+    {
+        points[0].x = d->mouseStartPoint.x ();
+        points[0].y = d->mouseStartPoint.y ();
+        points[1].x = d->mouseEndPoint.x ();
+        points[1].y = d->mouseEndPoint.y ();
+    }
+
+    mapToOrigin (*points, d->scaleX, d->scaleY, d->rotation);
+    mapToOrigin (*(points+1), d->scaleX, d->scaleY, d->rotation);
+    float color[3] {static_cast<float>(d->curColor.redF ()),
+                static_cast<float>(d->curColor.greenF ()),
+                static_cast<float>(d->curColor.blueF ())};
+    annotation = d->page->addAnnotation (d->annotFlag, points, color);
+    delete [] points;
+    if(annotation != nullptr)
+        d->annotsOnDraw.append (annotation);
+}
+
+void MRArticlePageDisplayer::appendSquareToPage()
+{
+    SPtrMRA annotation = nullptr;
+    fz_rect *rect = new fz_rect;
+    rect->x0 = d->mouseStartPoint.x ();
+    rect->y0 = d->mouseStartPoint.y ();
+    rect->x1 = d->mouseEndPoint.x ();
+    rect->y1 = d->mouseEndPoint.y ();
+    mapToOrigin (*rect, d->scaleX, d->scaleY, d->rotation);
+    float color[3] {static_cast<float>(d->curColor.redF ()),
+                static_cast<float>(d->curColor.greenF ()),
+                static_cast<float>(d->curColor.blueF ())};
+    annotation = d->page->addAnnotation (d->annotFlag, rect, color);
+    delete rect;
+    if(annotation != nullptr)
+        d->annotsOnDraw.append (annotation);
+}
+
+void MRArticlePageDisplayer::appendHighlightToPage()
+{
+    SPtrMRA annotation = nullptr;
+    QRect srect = calculateSelectionRect ();
+    fz_rect *rect = new fz_rect;
+    rect->x0 = srect.topLeft ().x ();
+    rect->y0 = srect.topLeft ().y ();
+    rect->x1 = srect.bottomRight ().x ();
+    rect->y1 = srect.bottomRight ().y ();
+
+    mapToOrigin (*rect, d->scaleX, d->scaleY, d->rotation);
+    fz_quad *quad = new fz_quad[200];
+    int num = 0;
+    d->page->getSelectionQuads (*rect, quad, num);
+    float color[3] {static_cast<float>(d->curColor.redF ()),
+                static_cast<float>(d->curColor.greenF ()),
+                static_cast<float>(d->curColor.blueF ())};
+    for(int i=0; i<num; i++)
+    {
+        annotation = d->page->addAnnotation (d->annotFlag, (quad+i), color);
+        if(annotation != nullptr)
+            d->annotsOnDraw.append (annotation);
+    }
+    delete rect;
+    delete [] quad;
+
 }
 
 QSize MRArticlePageDisplayer::pageSize() const
@@ -394,10 +308,15 @@ void MRArticlePageDisplayer::handleCursorType(CURSOR cursor)
     MRCursor::setCursor (this, cursor);
 }
 
+void MRArticlePageDisplayer::updateColor(const QColor &color)
+{
+    if(color.isValid ())
+        d->curColor = color;
+}
+
 void MRArticlePageDisplayer::setImage(const QImage &img)
 {
     this->setPixmap (QPixmap::fromImage (img));
-//    qDebug() << "my size" << size ();
     update ();
 }
 
@@ -411,10 +330,10 @@ QString MRArticlePageDisplayer::getTextFromSelection()
     fz_quad quads[200];
     int num = 0;
     QString str = d->page->getSelection (rect, quads, num);
-    for(int i=0; i<num; i++)
-    {
-        appendAnnotation (PDF_ANNOT_HIGHLIGHT, quads[i]);
-    }
+//    for(int i=0; i<num; i++)
+//    {
+//        appendAnnotation (quads[i]);
+//    }
     return str;
 }
 

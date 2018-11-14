@@ -2,8 +2,10 @@
 #define MRARTICLEPAGEDISPLAYER_P_H
 #include <QPoint>
 #include <QList>
+#include <QColor>
 #include <memory>
 #include "mrwindowutility.h"
+#include "PDFUtil.h"
 class MRPage;
 class MRDocument;
 class MRAnnotation;
@@ -24,7 +26,8 @@ public:
     float scaleY = 1.0;
     float rotation = 0.0;
     volatile bool isDrawFollowMouse = false;
-    QList<std::shared_ptr<MRAnnotation>> annotations;
+    QList<std::shared_ptr<MRAnnotation>> annotsOnDraw;
+    QList<SPtrMRA> annotsInPage;
     CURSOR cursor_;
     int annotFlag;
     bool isShiftDown = false;
@@ -32,6 +35,7 @@ public:
     MROCRRecognizer *ocr = nullptr;
     std::shared_ptr<MRDocument> doc = nullptr;
     QSize pageSize;
+    QColor curColor{Qt::green};
 };
 
 #endif // MRARTICLEPAGEDISPLAYER_P_H

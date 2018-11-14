@@ -1,6 +1,7 @@
 #include "mrreadertoolbar.h"
 #include "ui_mrreadertoolbar.h"
 #include <QDebug>
+#include <QColorDialog>
 MRReaderToolBar::MRReaderToolBar(QWidget *parent) :
     UIWidget(parent),
     ui(new Ui::MRReaderToolBar)
@@ -12,6 +13,7 @@ MRReaderToolBar::MRReaderToolBar(QWidget *parent) :
     initializeSignals ();
     btn_group = new QButtonGroup(this);
     btn_group->addButton (ui->select);
+    btn_group->addButton (ui->screenshot);
     btn_group->addButton (ui->line);
     btn_group->addButton (ui->rectangle);
     btn_group->addButton (ui->text);
@@ -84,4 +86,19 @@ void MRReaderToolBar::on_text_clicked()
         qDebug() << "textPressed";
         emit cursorType (CURSOR::TEXT);
     }
+}
+
+void MRReaderToolBar::on_color_clicked()
+{
+
+   const QColor color = QColorDialog::getColor(Qt::red, this, "Select Color");
+   if(color.isValid ())
+   {
+       emit colorReady (color);
+   }
+}
+
+void MRReaderToolBar::on_screenshot_clicked()
+{
+
 }

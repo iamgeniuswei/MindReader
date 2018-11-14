@@ -266,6 +266,25 @@ debug\PDFUtil.obj: ..\..\MREngine\PDFUtil.cpp ..\..\MREngine\PDFUtil.h \
 		..\..\..\mupdf\include\mupdf\fitz\output-psd.h \
 		..\..\..\mupdf\include\mupdf\fitz\output-svg.h \
 		..\..\..\mupdf\include\mupdf\fitz\output-tga.h \
+		..\..\..\mupdf\include\mupdf\pdf.h \
+		..\..\..\mupdf\include\mupdf\pdf\object.h \
+		..\..\..\mupdf\include\mupdf\pdf\name-table.h \
+		..\..\..\mupdf\include\mupdf\pdf\document.h \
+		..\..\..\mupdf\include\mupdf\pdf\parse.h \
+		..\..\..\mupdf\include\mupdf\pdf\xref.h \
+		..\..\..\mupdf\include\mupdf\pdf\crypt.h \
+		..\..\..\mupdf\include\mupdf\pdf\page.h \
+		..\..\..\mupdf\include\mupdf\pdf\interpret.h \
+		..\..\..\mupdf\include\mupdf\pdf\font.h \
+		..\..\..\mupdf\include\mupdf\pdf\cmap.h \
+		..\..\..\mupdf\include\mupdf\pdf\resource.h \
+		..\..\..\mupdf\include\mupdf\pdf\annot.h \
+		..\..\..\mupdf\include\mupdf\pdf\field.h \
+		..\..\..\mupdf\include\mupdf\pdf\widget.h \
+		..\..\..\mupdf\include\mupdf\pdf\event.h \
+		..\..\..\mupdf\include\mupdf\pdf\javascript.h \
+		..\..\..\mupdf\include\mupdf\pdf\output-pdf.h \
+		..\..\..\mupdf\include\mupdf\pdf\clean.h \
 		C:\Qt\5.12.0\msvc2015\include\QtCore\QRectF \
 		C:\Qt\5.12.0\msvc2015\include\QtCore\qrect.h \
 		C:\Qt\5.12.0\msvc2015\include\QtCore\qmargins.h \
@@ -894,7 +913,9 @@ debug\mrpage.obj: ..\..\MREngine\mrpage.cpp ..\..\MREngine\mrpage.h \
 		..\..\MREngine\mrdocument.h \
 		C:\Qt\5.12.0\msvc2015\include\QtCore\QRect \
 		C:\Qt\5.12.0\msvc2015\include\QtCore\QPointF \
-		..\..\MREngine\mrannotationcreator.h
+		..\..\MREngine\mrannotationcreator.h \
+		..\..\MREngine\PDFUtil.h \
+		C:\Qt\5.12.0\msvc2015\include\QtCore\QRectF
 
 debug\mrlineannotation.obj: ..\..\MREngine\mrlineannotation.cpp ..\..\MREngine\mrlineannotation.h \
 		..\..\MREngine\mrannotation.h \
@@ -1073,7 +1094,18 @@ debug\mrlineannotation.obj: ..\..\MREngine\mrlineannotation.cpp ..\..\MREngine\m
 		C:\Qt\5.12.0\msvc2015\include\QtGui\qfont.h \
 		C:\Qt\5.12.0\msvc2015\include\QtGui\qfontmetrics.h \
 		..\..\MREngine\PDFUtil.h \
-		C:\Qt\5.12.0\msvc2015\include\QtCore\QRectF
+		C:\Qt\5.12.0\msvc2015\include\QtCore\QRectF \
+		C:\Qt\5.12.0\msvc2015\include\QtCore\QDebug \
+		C:\Qt\5.12.0\msvc2015\include\QtCore\qdebug.h \
+		C:\Qt\5.12.0\msvc2015\include\QtCore\qmap.h \
+		C:\Qt\5.12.0\msvc2015\include\QtCore\qtextstream.h \
+		C:\Qt\5.12.0\msvc2015\include\QtCore\qlocale.h \
+		C:\Qt\5.12.0\msvc2015\include\QtCore\qvariant.h \
+		"C:\Program Files (x86)\Windows Kits\10\Include\10.0.10150.0\ucrt\stdio.h" \
+		"C:\Program Files (x86)\Windows Kits\10\Include\10.0.10150.0\ucrt\corecrt_wstdio.h" \
+		"C:\Program Files (x86)\Windows Kits\10\Include\10.0.10150.0\ucrt\corecrt_stdio_config.h" \
+		C:\Qt\5.12.0\msvc2015\include\QtCore\qset.h \
+		C:\Qt\5.12.0\msvc2015\include\QtCore\qcontiguouscache.h
 
 debug\mrtextannotation.obj: ..\..\MREngine\mrtextannotation.cpp ..\..\MREngine\mrtextannotation.h \
 		..\..\MREngine\mrannotation.h \
@@ -1278,7 +1310,7 @@ debug\mrannotationcreator.obj: ..\..\MREngine\mrannotationcreator.cpp ..\..\MREn
 		C:\Qt\5.12.0\msvc2015\include\QtCore\qmutex.h \
 		C:\Qt\5.12.0\msvc2015\include\QtCore\qnumeric.h \
 		C:\Qt\5.12.0\msvc2015\include\QtCore\qversiontagging.h \
-		..\..\..\mupdf\include\mupdf\pdf.h \
+		..\..\MREngine\PDFUtil.h \
 		..\..\..\mupdf\include\mupdf\fitz.h \
 		..\..\..\mupdf\include\mupdf\fitz\version.h \
 		..\..\..\mupdf\include\mupdf\fitz\config.h \
@@ -1336,6 +1368,7 @@ debug\mrannotationcreator.obj: ..\..\MREngine\mrannotationcreator.cpp ..\..\MREn
 		..\..\..\mupdf\include\mupdf\fitz\output-psd.h \
 		..\..\..\mupdf\include\mupdf\fitz\output-svg.h \
 		..\..\..\mupdf\include\mupdf\fitz\output-tga.h \
+		..\..\..\mupdf\include\mupdf\pdf.h \
 		..\..\..\mupdf\include\mupdf\pdf\object.h \
 		..\..\..\mupdf\include\mupdf\pdf\name-table.h \
 		..\..\..\mupdf\include\mupdf\pdf\document.h \
@@ -1354,17 +1387,18 @@ debug\mrannotationcreator.obj: ..\..\MREngine\mrannotationcreator.cpp ..\..\MREn
 		..\..\..\mupdf\include\mupdf\pdf\javascript.h \
 		..\..\..\mupdf\include\mupdf\pdf\output-pdf.h \
 		..\..\..\mupdf\include\mupdf\pdf\clean.h \
+		C:\Qt\5.12.0\msvc2015\include\QtCore\QRectF \
+		C:\Qt\5.12.0\msvc2015\include\QtCore\qrect.h \
+		C:\Qt\5.12.0\msvc2015\include\QtCore\qmargins.h \
+		C:\Qt\5.12.0\msvc2015\include\QtCore\qnamespace.h \
+		C:\Qt\5.12.0\msvc2015\include\QtCore\qsize.h \
+		C:\Qt\5.12.0\msvc2015\include\QtCore\qpoint.h \
 		..\..\MREngine\mrlineannotation.h \
 		..\..\MREngine\mrannotation.h \
 		C:\Qt\5.12.0\msvc2015\include\QtGui\QPainter \
 		C:\Qt\5.12.0\msvc2015\include\QtGui\qpainter.h \
 		C:\Qt\5.12.0\msvc2015\include\QtGui\qtguiglobal.h \
 		C:\Qt\5.12.0\msvc2015\include\QtGui\qtgui-config.h \
-		C:\Qt\5.12.0\msvc2015\include\QtCore\qnamespace.h \
-		C:\Qt\5.12.0\msvc2015\include\QtCore\qrect.h \
-		C:\Qt\5.12.0\msvc2015\include\QtCore\qmargins.h \
-		C:\Qt\5.12.0\msvc2015\include\QtCore\qsize.h \
-		C:\Qt\5.12.0\msvc2015\include\QtCore\qpoint.h \
 		C:\Qt\5.12.0\msvc2015\include\QtCore\qscopedpointer.h \
 		"C:\Program Files (x86)\Windows Kits\10\Include\10.0.10150.0\ucrt\stdlib.h" \
 		"C:\Program Files (x86)\Windows Kits\10\Include\10.0.10150.0\ucrt\corecrt_malloc.h" \
@@ -1431,7 +1465,18 @@ debug\mrannotationcreator.obj: ..\..\MREngine\mrannotationcreator.cpp ..\..\MREn
 		C:\Qt\5.12.0\msvc2015\include\QtGui\qfontmetrics.h \
 		..\..\MREngine\mrsquareannotation.h \
 		..\..\MREngine\mrtextannotation.h \
-		..\..\MREngine\mrhighlightannotation.h
+		..\..\MREngine\mrhighlightannotation.h \
+		C:\Qt\5.12.0\msvc2015\include\QtCore\QDebug \
+		C:\Qt\5.12.0\msvc2015\include\QtCore\qdebug.h \
+		C:\Qt\5.12.0\msvc2015\include\QtCore\qmap.h \
+		C:\Qt\5.12.0\msvc2015\include\QtCore\qtextstream.h \
+		C:\Qt\5.12.0\msvc2015\include\QtCore\qlocale.h \
+		C:\Qt\5.12.0\msvc2015\include\QtCore\qvariant.h \
+		"C:\Program Files (x86)\Windows Kits\10\Include\10.0.10150.0\ucrt\stdio.h" \
+		"C:\Program Files (x86)\Windows Kits\10\Include\10.0.10150.0\ucrt\corecrt_wstdio.h" \
+		"C:\Program Files (x86)\Windows Kits\10\Include\10.0.10150.0\ucrt\corecrt_stdio_config.h" \
+		C:\Qt\5.12.0\msvc2015\include\QtCore\qset.h \
+		C:\Qt\5.12.0\msvc2015\include\QtCore\qcontiguouscache.h
 
 debug\mrhighlightannotation.obj: ..\..\MREngine\mrhighlightannotation.cpp ..\..\MREngine\mrhighlightannotation.h \
 		..\..\MREngine\mrannotation.h \
@@ -1608,7 +1653,20 @@ debug\mrhighlightannotation.obj: ..\..\MREngine\mrhighlightannotation.cpp ..\..\
 		C:\Qt\5.12.0\msvc2015\include\QtGui\qbrush.h \
 		C:\Qt\5.12.0\msvc2015\include\QtGui\qfontinfo.h \
 		C:\Qt\5.12.0\msvc2015\include\QtGui\qfont.h \
-		C:\Qt\5.12.0\msvc2015\include\QtGui\qfontmetrics.h
+		C:\Qt\5.12.0\msvc2015\include\QtGui\qfontmetrics.h \
+		..\..\MREngine\PDFUtil.h \
+		C:\Qt\5.12.0\msvc2015\include\QtCore\QRectF \
+		C:\Qt\5.12.0\msvc2015\include\QtCore\QDebug \
+		C:\Qt\5.12.0\msvc2015\include\QtCore\qdebug.h \
+		C:\Qt\5.12.0\msvc2015\include\QtCore\qmap.h \
+		C:\Qt\5.12.0\msvc2015\include\QtCore\qtextstream.h \
+		C:\Qt\5.12.0\msvc2015\include\QtCore\qlocale.h \
+		C:\Qt\5.12.0\msvc2015\include\QtCore\qvariant.h \
+		"C:\Program Files (x86)\Windows Kits\10\Include\10.0.10150.0\ucrt\stdio.h" \
+		"C:\Program Files (x86)\Windows Kits\10\Include\10.0.10150.0\ucrt\corecrt_wstdio.h" \
+		"C:\Program Files (x86)\Windows Kits\10\Include\10.0.10150.0\ucrt\corecrt_stdio_config.h" \
+		C:\Qt\5.12.0\msvc2015\include\QtCore\qset.h \
+		C:\Qt\5.12.0\msvc2015\include\QtCore\qcontiguouscache.h
 
 debug\mrsquareannotation.obj: ..\..\MREngine\mrsquareannotation.cpp ..\..\MREngine\mrsquareannotation.h \
 		..\..\MREngine\mrannotation.h \
@@ -1785,7 +1843,20 @@ debug\mrsquareannotation.obj: ..\..\MREngine\mrsquareannotation.cpp ..\..\MREngi
 		C:\Qt\5.12.0\msvc2015\include\QtGui\qbrush.h \
 		C:\Qt\5.12.0\msvc2015\include\QtGui\qfontinfo.h \
 		C:\Qt\5.12.0\msvc2015\include\QtGui\qfont.h \
-		C:\Qt\5.12.0\msvc2015\include\QtGui\qfontmetrics.h
+		C:\Qt\5.12.0\msvc2015\include\QtGui\qfontmetrics.h \
+		..\..\MREngine\PDFUtil.h \
+		C:\Qt\5.12.0\msvc2015\include\QtCore\QRectF \
+		C:\Qt\5.12.0\msvc2015\include\QtCore\QDebug \
+		C:\Qt\5.12.0\msvc2015\include\QtCore\qdebug.h \
+		C:\Qt\5.12.0\msvc2015\include\QtCore\qmap.h \
+		C:\Qt\5.12.0\msvc2015\include\QtCore\qtextstream.h \
+		C:\Qt\5.12.0\msvc2015\include\QtCore\qlocale.h \
+		C:\Qt\5.12.0\msvc2015\include\QtCore\qvariant.h \
+		"C:\Program Files (x86)\Windows Kits\10\Include\10.0.10150.0\ucrt\stdio.h" \
+		"C:\Program Files (x86)\Windows Kits\10\Include\10.0.10150.0\ucrt\corecrt_wstdio.h" \
+		"C:\Program Files (x86)\Windows Kits\10\Include\10.0.10150.0\ucrt\corecrt_stdio_config.h" \
+		C:\Qt\5.12.0\msvc2015\include\QtCore\qset.h \
+		C:\Qt\5.12.0\msvc2015\include\QtCore\qcontiguouscache.h
 
 debug\mrcontext.obj: ..\..\MREngine\mrcontext.cpp ..\..\MREngine\mrcontext.h \
 		..\..\..\mupdf\include\mupdf\fitz.h \

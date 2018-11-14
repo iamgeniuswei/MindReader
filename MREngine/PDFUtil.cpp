@@ -91,3 +91,29 @@ fz_point mapFromOrigin(fz_point &point, float scaleX, float scaleY, float rotati
     r = fz_transform_point (point, transform);
     return r;
 }
+
+fz_quad mapToOrigin(fz_quad &quad, float scaleX, float scaleY, float rotation)
+{
+    fz_matrix transform = fz_identity;
+    fz_matrix inverse;
+    // build matrix
+    transform = fz_rotate(rotation);
+    transform = fz_pre_scale(transform, scaleX, scaleY);
+
+    // invert matrix
+    inverse = fz_invert_matrix(transform);
+    quad = fz_transform_quad (quad, inverse);
+
+    return quad;
+}
+
+fz_quad mapFromOrigin(fz_quad &quad, float scaleX, float scaleY, float rotation)
+{
+    fz_matrix transform = fz_identity;
+    fz_quad r;
+    transform = fz_scale(scaleX, scaleY);
+    fz_pre_rotate(transform, rotation);
+//    r = fz_transform_rect (rect, transform);
+    r = fz_transform_quad (quad, transform);
+    return r;
+}

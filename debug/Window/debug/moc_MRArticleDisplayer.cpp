@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MRArticleDisplayer_t {
-    QByteArrayData data[35];
-    char stringdata0[395];
+    QByteArrayData data[37];
+    char stringdata0[412];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -41,44 +41,47 @@ QT_MOC_LITERAL(6, 57, 4), // "text"
 QT_MOC_LITERAL(7, 62, 10), // "cursorType"
 QT_MOC_LITERAL(8, 73, 6), // "CURSOR"
 QT_MOC_LITERAL(9, 80, 6), // "cursor"
-QT_MOC_LITERAL(10, 87, 18), // "ADCIndexItemsReady"
-QT_MOC_LITERAL(11, 106, 5), // "items"
-QT_MOC_LITERAL(12, 112, 16), // "displayFirstPage"
-QT_MOC_LITERAL(13, 129, 15), // "displayPrevPage"
-QT_MOC_LITERAL(14, 145, 15), // "displayNextPage"
-QT_MOC_LITERAL(15, 161, 15), // "displayLastPage"
-QT_MOC_LITERAL(16, 177, 10), // "zoomInPage"
-QT_MOC_LITERAL(17, 188, 11), // "zoomOutPage"
-QT_MOC_LITERAL(18, 200, 11), // "displayPage"
-QT_MOC_LITERAL(19, 212, 6), // "scaleX"
-QT_MOC_LITERAL(20, 219, 6), // "scaleY"
-QT_MOC_LITERAL(21, 226, 8), // "rotation"
-QT_MOC_LITERAL(22, 235, 5), // "index"
-QT_MOC_LITERAL(23, 241, 3), // "img"
-QT_MOC_LITERAL(24, 245, 23), // "std::shared_ptr<MRPage>"
-QT_MOC_LITERAL(25, 269, 3), // "src"
-QT_MOC_LITERAL(26, 273, 12), // "resetArticle"
-QT_MOC_LITERAL(27, 286, 14), // "updatePageForm"
-QT_MOC_LITERAL(28, 301, 8), // "PAGEFORM"
-QT_MOC_LITERAL(29, 310, 5), // "value"
-QT_MOC_LITERAL(30, 316, 14), // "handleDocReady"
-QT_MOC_LITERAL(31, 331, 3), // "ret"
-QT_MOC_LITERAL(32, 335, 27), // "std::shared_ptr<MRDocument>"
-QT_MOC_LITERAL(33, 363, 8), // "document"
-QT_MOC_LITERAL(34, 372, 22) // "handleScrollBarChanged"
+QT_MOC_LITERAL(10, 87, 10), // "colorReady"
+QT_MOC_LITERAL(11, 98, 5), // "color"
+QT_MOC_LITERAL(12, 104, 18), // "ADCIndexItemsReady"
+QT_MOC_LITERAL(13, 123, 5), // "items"
+QT_MOC_LITERAL(14, 129, 16), // "displayFirstPage"
+QT_MOC_LITERAL(15, 146, 15), // "displayPrevPage"
+QT_MOC_LITERAL(16, 162, 15), // "displayNextPage"
+QT_MOC_LITERAL(17, 178, 15), // "displayLastPage"
+QT_MOC_LITERAL(18, 194, 10), // "zoomInPage"
+QT_MOC_LITERAL(19, 205, 11), // "zoomOutPage"
+QT_MOC_LITERAL(20, 217, 11), // "displayPage"
+QT_MOC_LITERAL(21, 229, 6), // "scaleX"
+QT_MOC_LITERAL(22, 236, 6), // "scaleY"
+QT_MOC_LITERAL(23, 243, 8), // "rotation"
+QT_MOC_LITERAL(24, 252, 5), // "index"
+QT_MOC_LITERAL(25, 258, 3), // "img"
+QT_MOC_LITERAL(26, 262, 23), // "std::shared_ptr<MRPage>"
+QT_MOC_LITERAL(27, 286, 3), // "src"
+QT_MOC_LITERAL(28, 290, 12), // "resetArticle"
+QT_MOC_LITERAL(29, 303, 14), // "updatePageForm"
+QT_MOC_LITERAL(30, 318, 8), // "PAGEFORM"
+QT_MOC_LITERAL(31, 327, 5), // "value"
+QT_MOC_LITERAL(32, 333, 14), // "handleDocReady"
+QT_MOC_LITERAL(33, 348, 3), // "ret"
+QT_MOC_LITERAL(34, 352, 27), // "std::shared_ptr<MRDocument>"
+QT_MOC_LITERAL(35, 380, 8), // "document"
+QT_MOC_LITERAL(36, 389, 22) // "handleScrollBarChanged"
 
     },
     "MRArticleDisplayer\0selectionReady\0\0"
     "page\0pixmap\0textReady\0text\0cursorType\0"
-    "CURSOR\0cursor\0ADCIndexItemsReady\0items\0"
-    "displayFirstPage\0displayPrevPage\0"
-    "displayNextPage\0displayLastPage\0"
-    "zoomInPage\0zoomOutPage\0displayPage\0"
-    "scaleX\0scaleY\0rotation\0index\0img\0"
-    "std::shared_ptr<MRPage>\0src\0resetArticle\0"
-    "updatePageForm\0PAGEFORM\0value\0"
-    "handleDocReady\0ret\0std::shared_ptr<MRDocument>\0"
-    "document\0handleScrollBarChanged"
+    "CURSOR\0cursor\0colorReady\0color\0"
+    "ADCIndexItemsReady\0items\0displayFirstPage\0"
+    "displayPrevPage\0displayNextPage\0"
+    "displayLastPage\0zoomInPage\0zoomOutPage\0"
+    "displayPage\0scaleX\0scaleY\0rotation\0"
+    "index\0img\0std::shared_ptr<MRPage>\0src\0"
+    "resetArticle\0updatePageForm\0PAGEFORM\0"
+    "value\0handleDocReady\0ret\0"
+    "std::shared_ptr<MRDocument>\0document\0"
+    "handleScrollBarChanged"
 };
 #undef QT_MOC_LITERAL
 
@@ -88,37 +91,39 @@ static const uint qt_meta_data_MRArticleDisplayer[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-      15,   14, // methods
+      16,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-       4,       // signalCount
+       5,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    2,   89,    2, 0x06 /* Public */,
-       5,    2,   94,    2, 0x06 /* Public */,
-       7,    1,   99,    2, 0x06 /* Public */,
-      10,    1,  102,    2, 0x06 /* Public */,
+       1,    2,   94,    2, 0x06 /* Public */,
+       5,    2,   99,    2, 0x06 /* Public */,
+       7,    1,  104,    2, 0x06 /* Public */,
+      10,    1,  107,    2, 0x06 /* Public */,
+      12,    1,  110,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-      12,    0,  105,    2, 0x0a /* Public */,
-      13,    0,  106,    2, 0x0a /* Public */,
-      14,    0,  107,    2, 0x0a /* Public */,
-      15,    0,  108,    2, 0x0a /* Public */,
-      16,    0,  109,    2, 0x0a /* Public */,
-      17,    0,  110,    2, 0x0a /* Public */,
-      18,    6,  111,    2, 0x0a /* Public */,
-      26,    0,  124,    2, 0x0a /* Public */,
-      27,    1,  125,    2, 0x0a /* Public */,
-      30,    2,  128,    2, 0x08 /* Private */,
-      34,    1,  133,    2, 0x08 /* Private */,
+      14,    0,  113,    2, 0x0a /* Public */,
+      15,    0,  114,    2, 0x0a /* Public */,
+      16,    0,  115,    2, 0x0a /* Public */,
+      17,    0,  116,    2, 0x0a /* Public */,
+      18,    0,  117,    2, 0x0a /* Public */,
+      19,    0,  118,    2, 0x0a /* Public */,
+      20,    6,  119,    2, 0x0a /* Public */,
+      28,    0,  132,    2, 0x0a /* Public */,
+      29,    1,  133,    2, 0x0a /* Public */,
+      32,    2,  136,    2, 0x08 /* Private */,
+      36,    1,  141,    2, 0x08 /* Private */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::Int, QMetaType::QPixmap,    3,    4,
     QMetaType::Void, QMetaType::Int, QMetaType::QString,    3,    6,
     QMetaType::Void, 0x80000000 | 8,    9,
-    QMetaType::Void, QMetaType::QStringList,   11,
+    QMetaType::Void, QMetaType::QColor,   11,
+    QMetaType::Void, QMetaType::QStringList,   13,
 
  // slots: parameters
     QMetaType::Void,
@@ -127,11 +132,11 @@ static const uint qt_meta_data_MRArticleDisplayer[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::Float, QMetaType::Float, QMetaType::Float, QMetaType::Int, QMetaType::QImage, 0x80000000 | 24,   19,   20,   21,   22,   23,   25,
+    QMetaType::Void, QMetaType::Float, QMetaType::Float, QMetaType::Float, QMetaType::Int, QMetaType::QImage, 0x80000000 | 26,   21,   22,   23,   24,   25,   27,
     QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 28,   29,
-    QMetaType::Void, QMetaType::Bool, 0x80000000 | 32,   31,   33,
-    QMetaType::Void, QMetaType::Int,   29,
+    QMetaType::Void, 0x80000000 | 30,   31,
+    QMetaType::Void, QMetaType::Bool, 0x80000000 | 34,   33,   35,
+    QMetaType::Void, QMetaType::Int,   31,
 
        0        // eod
 };
@@ -145,18 +150,19 @@ void MRArticleDisplayer::qt_static_metacall(QObject *_o, QMetaObject::Call _c, i
         case 0: _t->selectionReady((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< const QPixmap(*)>(_a[2]))); break;
         case 1: _t->textReady((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< const QString(*)>(_a[2]))); break;
         case 2: _t->cursorType((*reinterpret_cast< CURSOR(*)>(_a[1]))); break;
-        case 3: _t->ADCIndexItemsReady((*reinterpret_cast< const QStringList(*)>(_a[1]))); break;
-        case 4: _t->displayFirstPage(); break;
-        case 5: _t->displayPrevPage(); break;
-        case 6: _t->displayNextPage(); break;
-        case 7: _t->displayLastPage(); break;
-        case 8: _t->zoomInPage(); break;
-        case 9: _t->zoomOutPage(); break;
-        case 10: _t->displayPage((*reinterpret_cast< float(*)>(_a[1])),(*reinterpret_cast< float(*)>(_a[2])),(*reinterpret_cast< float(*)>(_a[3])),(*reinterpret_cast< int(*)>(_a[4])),(*reinterpret_cast< QImage(*)>(_a[5])),(*reinterpret_cast< std::shared_ptr<MRPage>(*)>(_a[6]))); break;
-        case 11: _t->resetArticle(); break;
-        case 12: _t->updatePageForm((*reinterpret_cast< PAGEFORM(*)>(_a[1]))); break;
-        case 13: _t->handleDocReady((*reinterpret_cast< bool(*)>(_a[1])),(*reinterpret_cast< std::shared_ptr<MRDocument>(*)>(_a[2]))); break;
-        case 14: _t->handleScrollBarChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 3: _t->colorReady((*reinterpret_cast< const QColor(*)>(_a[1]))); break;
+        case 4: _t->ADCIndexItemsReady((*reinterpret_cast< const QStringList(*)>(_a[1]))); break;
+        case 5: _t->displayFirstPage(); break;
+        case 6: _t->displayPrevPage(); break;
+        case 7: _t->displayNextPage(); break;
+        case 8: _t->displayLastPage(); break;
+        case 9: _t->zoomInPage(); break;
+        case 10: _t->zoomOutPage(); break;
+        case 11: _t->displayPage((*reinterpret_cast< float(*)>(_a[1])),(*reinterpret_cast< float(*)>(_a[2])),(*reinterpret_cast< float(*)>(_a[3])),(*reinterpret_cast< int(*)>(_a[4])),(*reinterpret_cast< QImage(*)>(_a[5])),(*reinterpret_cast< std::shared_ptr<MRPage>(*)>(_a[6]))); break;
+        case 12: _t->resetArticle(); break;
+        case 13: _t->updatePageForm((*reinterpret_cast< PAGEFORM(*)>(_a[1]))); break;
+        case 14: _t->handleDocReady((*reinterpret_cast< bool(*)>(_a[1])),(*reinterpret_cast< std::shared_ptr<MRDocument>(*)>(_a[2]))); break;
+        case 15: _t->handleScrollBarChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -183,9 +189,16 @@ void MRArticleDisplayer::qt_static_metacall(QObject *_o, QMetaObject::Call _c, i
             }
         }
         {
+            using _t = void (MRArticleDisplayer::*)(const QColor & );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MRArticleDisplayer::colorReady)) {
+                *result = 3;
+                return;
+            }
+        }
+        {
             using _t = void (MRArticleDisplayer::*)(const QStringList & );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MRArticleDisplayer::ADCIndexItemsReady)) {
-                *result = 3;
+                *result = 4;
                 return;
             }
         }
@@ -221,13 +234,13 @@ int MRArticleDisplayer::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 15)
+        if (_id < 16)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 15;
+        _id -= 16;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 15)
+        if (_id < 16)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 15;
+        _id -= 16;
     }
     return _id;
 }
@@ -254,10 +267,17 @@ void MRArticleDisplayer::cursorType(CURSOR _t1)
 }
 
 // SIGNAL 3
-void MRArticleDisplayer::ADCIndexItemsReady(const QStringList & _t1)
+void MRArticleDisplayer::colorReady(const QColor & _t1)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
     QMetaObject::activate(this, &staticMetaObject, 3, _a);
+}
+
+// SIGNAL 4
+void MRArticleDisplayer::ADCIndexItemsReady(const QStringList & _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    QMetaObject::activate(this, &staticMetaObject, 4, _a);
 }
 QT_WARNING_POP
 QT_END_MOC_NAMESPACE

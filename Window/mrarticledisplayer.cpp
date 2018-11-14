@@ -31,8 +31,8 @@
 MRArticleDisplayer::MRArticleDisplayer(QWidget *parent)
 : QScrollArea(parent)
 {
-    loadUI();
-    loadSignals ();
+//    loadUI();
+//    loadSignals ();
 }
 
 MRArticleDisplayer::~MRArticleDisplayer()
@@ -43,13 +43,9 @@ void MRArticleDisplayer::loadUI()
 {
     setAlignment (Qt::AlignCenter);
     setBackgroundRole(QPalette::Dark);
-    container = new QWidget(this);
-    layout = new QVBoxLayout(container);
-    layout->setSizeConstraint (QLayout::SetMinAndMaxSize);
-    qDebug() << "layout default: " << layout->spacing () << " " << layout->margin ();
-
-//    content = new MRArticlePageDisplayer(this);
-//    setWidget (content);
+//    container = new QWidget(this);
+//    layout = new QVBoxLayout(container);
+//    layout->setSizeConstraint (QLayout::SetMinAndMaxSize);
 }
 
 
@@ -83,7 +79,6 @@ void MRArticleDisplayer::wheelEvent(QWheelEvent *event)
     int height = verticalScrollBar ()->value ();
     if(event->angleDelta ().y () < 0)
     {
-
             height += 20;
     }else if(event->angleDelta ().y () > 0)
     {
@@ -98,14 +93,12 @@ void MRArticleDisplayer::wheelEvent(QWheelEvent *event)
 
     if(height >= verticalScrollBar ()->maximum ())
     {
-        displayNextPage ();
-
+        displayNextPage ();        
     }
     else if(height == 0)
     {
-        displayPrevPage ();
+        displayPrevPage ();        
     }
-
 }
 
 void MRArticleDisplayer::loadSignals()
@@ -116,11 +109,11 @@ void MRArticleDisplayer::loadSignals()
 //            this, &MRArticleDisplayer::textReady);
 //    connect (this, &MRArticleDisplayer::cursorType,
 //             content, &MRArticlePageDisplayer::handleCursorType);
-    loader = new MRArticleLoader(this);
-    connect (loader, &MRArticleLoader::docReady,
-             this, &MRArticleDisplayer::handleDocReady);
-    connect (loader, &MRArticleLoader::indexReady,
-             this, &MRArticleDisplayer::ADCIndexItemsReady);
+//    loader = new MRArticleLoader(this);
+//    connect (loader, &MRArticleLoader::docReady,
+//             this, &MRArticleDisplayer::handleDocReady);
+//    connect (loader, &MRArticleLoader::indexReady,
+//             this, &MRArticleDisplayer::ADCIndexItemsReady);
 
     render = new ArticlePageRender(this);
     connect (render, &ArticlePageRender::pageReady,
@@ -132,38 +125,38 @@ void MRArticleDisplayer::loadSignals()
 
 void MRArticleDisplayer::displayFirstPage()
 {
-    Q_ASSERT (content);
-    int current = 0;
-    content->requestPage (current, 1.0, 1.0, 0.0);
+//    Q_ASSERT (content);
+//    int current = 0;
+//    content->requestPage (current, 1.0, 1.0, 0.0);
 }
 
 void MRArticleDisplayer::displayPrevPage()
 {
-    Q_ASSERT (content );
-    int current = content->pageIndex ();
-    float scaleX = content->getScaleX ();
-    float scaleY = content->getScaleY ();
-    if(current > 0)
-        content->requestPage (--current, scaleX, scaleY, 0.0);
+//    Q_ASSERT (content );
+//    int current = content->pageIndex ();
+//    float scaleX = content->getScaleX ();
+//    float scaleY = content->getScaleY ();
+//    if(current > 0)
+//        content->requestPage (--current, scaleX, scaleY, 0.0);
 }
 
 void MRArticleDisplayer::displayNextPage()
 {
-    Q_ASSERT (content );
-    int current = content->pageIndex ();
-    float scaleX = content->getScaleX ();
-    float scaleY = content->getScaleY ();
-    if(current < (doc->pageCount ()-1))
-        content->requestPage (++current, scaleX, scaleY, 0.0);
+//    Q_ASSERT (content );
+//    int current = content->pageIndex ();
+//    float scaleX = content->getScaleX ();
+//    float scaleY = content->getScaleY ();
+//    if(current < (doc->pageCount ()-1))
+//        content->requestPage (++current, scaleX, scaleY, 0.0);
 }
 
 void MRArticleDisplayer::displayLastPage()
 {
-    Q_ASSERT (content );
-    int current = doc->pageCount ();
-    float scaleX = content->getScaleX ();
-    float scaleY = content->getScaleY ();
-    content->requestPage (current-1, scaleX, scaleY, 0.0);
+//    Q_ASSERT (content );
+//    int current = doc->pageCount ();
+//    float scaleX = content->getScaleX ();
+//    float scaleY = content->getScaleY ();
+//    content->requestPage (current-1, scaleX, scaleY, 0.0);
 }
 
 void MRArticleDisplayer::zoomInPage()
@@ -236,35 +229,32 @@ void MRArticleDisplayer::updatePageForm(PAGEFORM value)
 
 void MRArticleDisplayer::handleDocReady(bool ret, std::shared_ptr<MRDocument> document)
 {
-    qDebug() << ret;
-    doc = document;
-    if(form == PAGEFORM::CONTINUOUS)
+    if(ret)
     {
-        for(int i=0; i<doc->pageCount (); i++)
+        doc = document;
+        if(form == PAGEFORM::CONTINUOUS)
         {
-            MRArticlePageDisplayer *page = new MRArticlePageDisplayer(container);
-            page->setDoc (doc);
-//            page->requestPage (i, 1.0, 1.0, 0.0);
-            pages << page;
-            layout->addWidget (page);
-//            setWidget (page);
+            for(int i=0; i<doc->pageCount (); i++)
+            {
+                MRArticlePageDisplayer *page = new MRArticlePageDisplayer(container);
+                page->setDoc (doc);
+                pages << page;
+                layout->addWidget (page);
+            }
+            container->setLayout (layout);
+            setWidget (container);
         }
-        container->setLayout (layout);
-        qDebug() << container->size () << container->sizeHint ();
-        setWidget (container);
+        render->setPDFDocument (doc);
+        render->requestPage (1, 10, 1.0, 1.0, 0.0);
     }
-
-    else if(form == PAGEFORM::SINGLE)
+    else
     {
-
+        qDebug() << "can not open file";
     }
-    render->setPDFDocument (doc);
-    render->requestPage (0, 9, 1.0, 1.0, 0.0);
 }
 
 void MRArticleDisplayer::handleScrollBarChanged(int value)
 {
-    qDebug() << "bar value: " << value;
     int total = 9;
     for(int i=0; i<=curIndexOnDisplay; i++)
     {
@@ -272,7 +262,7 @@ void MRArticleDisplayer::handleScrollBarChanged(int value)
         total += page->pageSize ().height ();
         total += 6;
     }
-    qDebug() << "total: " << total;
+//    qDebug() << "total: " << total;
     if((value - total) >= 0)
     {
         curIndexOnDisplay ++;
@@ -282,13 +272,12 @@ void MRArticleDisplayer::handleScrollBarChanged(int value)
         {
             MRArticlePageDisplayer *page = pages.at(curIndexOnDisplay-2);
             page->clear ();
-            page = pages.at (MAX_PAGE_ON_DISPLAY);
-            render->requestPage (MAX_PAGE_ON_DISPLAY,
-                                 MAX_PAGE_ON_DISPLAY+1,
+//            page = pages.at (MAX_PAGE_ON_DISPLAY);
+            render->requestPage (curIndexOnDisplay+9,
+                                 curIndexOnDisplay+9,
                                  1.0,
                                  1.0,
                                  0.0);
-            MAX_PAGE_ON_DISPLAY+=2;
 
         }
     }
