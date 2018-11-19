@@ -40,11 +40,11 @@ bool MRDocument::openDocument(const QString& file)
         fz_try(d->context)
         {
             d->document = fz_open_document(d->context, file.toUtf8().data());            
-//            for(int i=0; i<d->num_pages; i++)
-//            {
-//                std::shared_ptr<MRPage> page = std::make_shared<MRPage>(this, i);
-//                d->pages << page;
-//            }
+			for (int i = 0; i < d->num_pages; i++)
+			{
+				std::shared_ptr<MRPage> page = std::make_shared<MRPage>(this, i);
+				d->pages << page;
+			}
         }
         fz_catch(d->context)
         {

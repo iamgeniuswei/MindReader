@@ -1,0 +1,387 @@
+﻿生成启动时间为 2018/11/19 16:38:55。
+     1>项目“D:\Project\MindReader\MREngine\MREngine.vcxproj”在节点 2 上(Build 个目标)。
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(368,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
+     1>CustomBuild:
+         Generate moc_predefs.h
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /I.\GeneratedFiles\Debug /I.\GeneratedFiles /I. /I..\..\mupdf\include /I"C:\Program Files (x86)\Windows Kits\10\Include\10.0.10150.0\ucrt" /IC:\Qt\5.12.0\msvc2015\include /IC:\Qt\5.12.0\msvc2015\include\QtGui /IC:\Qt\5.12.0\msvc2015\include\QtANGLE /IC:\Qt\5.12.0\msvc2015\include\QtCore /Idebug /I\include /I"C:\Qt\5.12.0\msvc2015\mkspecs\win32-msvc" /Zi /nologo /W3 /WX- /MP /Od /Oy- /D _WINDOWS /D UNICODE /D _UNICODE /D WIN32 /D _ENABLE_EXTENDED_ALIGNED_STORAGE /D PDFCORE_LIBRARY /D QT_DEPRECATED_WARNINGS /D QT_GUI_LIB /D QT_CORE_LIB /D _WINDLL /Gm- /EHsc /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Win32\Debug\\" /Fd"Win32\Debug\vc140.pdb" /Gd /TP /wd4577 /wd4467 /analyze- /errorReport:prompt -Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 PDFUtil.cpp mrannotation.cpp mrannotationcreator.cpp mrcontext.cpp mrdocument.cpp mrengine.cpp mrhighlightannotation.cpp mrlineannotation.cpp mrpage.cpp mrsquareannotation.cpp mrtextannotation.cpp
+         PDFUtil.cpp
+         mrannotation.cpp
+         mrannotationcreator.cpp
+         mrcontext.cpp
+         mrdocument.cpp
+         mrengine.cpp
+         mrhighlightannotation.cpp
+         mrlineannotation.cpp
+     1>D:\Project\mupdf\include\mupdf/fitz/stream.h(430): warning C4100: “ctx”: 未引用的形参 (编译源文件 mrlineannotation.cpp)
+     1>D:\Project\mupdf\include\mupdf/fitz/stream.h(543): warning C4100: “ctx”: 未引用的形参 (编译源文件 mrlineannotation.cpp)
+     1>D:\Project\mupdf\include\mupdf/fitz/stream.h(430): warning C4100: “ctx”: 未引用的形参 (编译源文件 mrannotation.cpp)
+     1>D:\Project\mupdf\include\mupdf/fitz/stream.h(543): warning C4100: “ctx”: 未引用的形参 (编译源文件 mrannotation.cpp)
+     1>D:\Project\mupdf\include\mupdf/fitz/stream.h(430): warning C4100: “ctx”: 未引用的形参 (编译源文件 PDFUtil.cpp)
+     1>D:\Project\mupdf\include\mupdf/fitz/stream.h(543): warning C4100: “ctx”: 未引用的形参 (编译源文件 PDFUtil.cpp)
+     1>D:\Project\mupdf\include\mupdf/fitz/stream.h(430): warning C4100: “ctx”: 未引用的形参 (编译源文件 mrhighlightannotation.cpp)
+     1>D:\Project\mupdf\include\mupdf/fitz/stream.h(543): warning C4100: “ctx”: 未引用的形参 (编译源文件 mrhighlightannotation.cpp)
+     1>D:\Project\mupdf\include\mupdf/fitz/stream.h(430): warning C4100: “ctx”: 未引用的形参 (编译源文件 mrannotationcreator.cpp)
+     1>D:\Project\mupdf\include\mupdf/fitz/stream.h(543): warning C4100: “ctx”: 未引用的形参 (编译源文件 mrannotationcreator.cpp)
+         mrpage.cpp
+     1>D:\Project\mupdf\include\mupdf/fitz/stream.h(430): warning C4100: “ctx”: 未引用的形参 (编译源文件 mrcontext.cpp)
+     1>D:\Project\mupdf\include\mupdf/fitz/stream.h(543): warning C4100: “ctx”: 未引用的形参 (编译源文件 mrcontext.cpp)
+         mrsquareannotation.cpp
+     1>D:\Project\mupdf\include\mupdf/fitz/stream.h(430): warning C4100: “ctx”: 未引用的形参 (编译源文件 mrsquareannotation.cpp)
+     1>D:\Project\mupdf\include\mupdf/fitz/stream.h(543): warning C4100: “ctx”: 未引用的形参 (编译源文件 mrsquareannotation.cpp)
+     1>D:\Project\mupdf\include\mupdf/fitz/stream.h(430): warning C4100: “ctx”: 未引用的形参 (编译源文件 mrdocument.cpp)
+     1>D:\Project\mupdf\include\mupdf/fitz/stream.h(543): warning C4100: “ctx”: 未引用的形参 (编译源文件 mrdocument.cpp)
+     1>D:\Project\mupdf\include\mupdf/fitz/stream.h(430): warning C4100: “ctx”: 未引用的形参 (编译源文件 mrpage.cpp)
+     1>D:\Project\mupdf\include\mupdf/fitz/stream.h(543): warning C4100: “ctx”: 未引用的形参 (编译源文件 mrpage.cpp)
+     1>mrannotationcreator.cpp(36): warning C4100: “annot”: 未引用的形参
+     1>mrannotationcreator.cpp(36): warning C4100: “ctx”: 未引用的形参
+     1>mrannotationcreator.cpp(54): warning C4100: “annot”: 未引用的形参
+     1>mrannotationcreator.cpp(54): warning C4100: “ctx”: 未引用的形参
+     1>mrannotationcreator.cpp(72): warning C4100: “annot”: 未引用的形参
+     1>mrannotationcreator.cpp(72): warning C4100: “ctx”: 未引用的形参
+     1>mrannotationcreator.cpp(91): warning C4100: “annot”: 未引用的形参
+     1>mrannotationcreator.cpp(91): warning C4100: “ctx”: 未引用的形参
+     1>mrhighlightannotation.cpp(48): warning C4305: “参数”: 从“double”到“float”截断
+     1>mrpage.cpp(203): warning C4189: “num”: 局部变量已初始化但不引用
+     1>mrpage.cpp(349): warning C4100: “annot”: 未引用的形参
+     1>mrpage.cpp(356): warning C4100: “annot”: 未引用的形参
+         mrtextannotation.cpp
+     1>D:\Project\mupdf\include\mupdf/fitz/stream.h(430): warning C4100: “ctx”: 未引用的形参 (编译源文件 mrtextannotation.cpp)
+     1>D:\Project\mupdf\include\mupdf/fitz/stream.h(543): warning C4100: “ctx”: 未引用的形参 (编译源文件 mrtextannotation.cpp)
+     1>mrtextannotation.cpp(9): warning C4100: “annot”: 未引用的形参
+     1>mrtextannotation.cpp(9): warning C4100: “ctx”: 未引用的形参
+     1>mrtextannotation.cpp(14): warning C4100: “color”: 未引用的形参
+     1>mrtextannotation.cpp(14): warning C4100: “data”: 未引用的形参
+     1>mrtextannotation.cpp(14): warning C4100: “annot”: 未引用的形参
+     1>mrtextannotation.cpp(14): warning C4100: “ctx”: 未引用的形参
+     1>mrtextannotation.cpp(19): warning C4100: “rotation”: 未引用的形参
+     1>mrtextannotation.cpp(19): warning C4100: “scaleY”: 未引用的形参
+     1>mrtextannotation.cpp(19): warning C4100: “scaleX”: 未引用的形参
+     1>mrtextannotation.cpp(19): warning C4100: “painter”: 未引用的形参
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"..\debug\\MREngine.dll" /NOLOGO /LIBPATH:C:\Qt\5.12.0\msvc2015\lib /LIBPATH:C:\Qt\5.12.0\msvc2015\lib D:\Project\mupdf\lib\libmupdf.lib D:\Project\mupdf\lib\libthirdparty.lib D:\Project\mupdf\lib\libresources.lib "C:\Program Files (x86)\Windows Kits\10\Lib\10.0.10150.0\ucrt\x86\ucrtd.lib" C:\Qt\5.12.0\msvc2015\lib\Qt5Guid.lib C:\Qt\5.12.0\msvc2015\lib\Qt5Cored.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"..\debug\MREngine.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /MACHINE:X86 /SAFESEH /DLL Win32\Debug\PDFUtil.obj
+         Win32\Debug\mrannotation.obj
+         Win32\Debug\mrannotationcreator.obj
+         Win32\Debug\mrcontext.obj
+         Win32\Debug\mrdocument.obj
+         Win32\Debug\mrengine.obj
+         Win32\Debug\mrhighlightannotation.obj
+         Win32\Debug\mrlineannotation.obj
+         Win32\Debug\mrpage.obj
+         Win32\Debug\mrsquareannotation.obj
+         Win32\Debug\mrtextannotation.obj
+     1>libmupdf.lib(geometry.obj) : warning LNK4075: 忽略“/EDITANDCONTINUE”(由于“/SAFESEH”规范)
+           正在创建库 ..\debug\\MREngine.lib 和对象 ..\debug\\MREngine.exp
+     1>libmupdf.lib(mucbz.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(mucbz.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(muimg.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(muimg.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(archive.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(archive.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(bbox-device.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(bbox-device.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(bidi-std.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(bidi-std.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(bidi.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(bidi.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(bitmap.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(bitmap.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(buffer.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(buffer.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(color-icc-create.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(color-icc-create.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(color-lcms.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(color-lcms.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(colorspace.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(colorspace.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(compress.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(compress.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(compressed-buffer.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(compressed-buffer.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(context.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(context.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(crypt-aes.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(crypt-aes.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(crypt-arc4.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(crypt-arc4.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(crypt-md5.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(crypt-md5.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(crypt-sha2.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(crypt-sha2.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(device.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(device.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(directory.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(directory.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(document-all.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(document-all.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(document.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(document.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(draw-affine.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(draw-affine.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(draw-blend.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(draw-blend.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(draw-device.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(draw-device.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(draw-edge.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(draw-edge.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(draw-edgebuffer.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(draw-edgebuffer.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(draw-glyph.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(draw-glyph.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(draw-mesh.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(draw-mesh.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(draw-paint.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(draw-paint.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(draw-path.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(draw-path.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(draw-rasterize.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(draw-rasterize.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(draw-scale-simple.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(draw-scale-simple.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(draw-unpack.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(draw-unpack.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(error.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(error.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(filter-basic.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(filter-basic.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(filter-dct.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(filter-dct.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(filter-fax.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(filter-fax.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(filter-flate.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(filter-flate.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(filter-jbig2.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(filter-jbig2.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(filter-leech.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(filter-leech.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(filter-lzw.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(filter-lzw.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(filter-predict.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(filter-predict.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(filter-sgi.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(filter-sgi.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(filter-thunder.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(filter-thunder.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(font.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(font.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(ftoa.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(ftoa.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(geometry.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(geometry.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(glyph.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(glyph.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(halftone.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(halftone.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(harfbuzz.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(harfbuzz.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(hash.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(hash.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(image.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(image.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(jmemcust.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(jmemcust.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(link.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(link.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(list-device.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(list-device.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(load-bmp.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(load-bmp.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(load-gif.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(load-gif.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(load-jpeg.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(load-jpeg.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(load-jpx.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(load-jpx.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(load-jxr.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(load-jxr.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(load-png.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(load-png.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(load-pnm.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(load-pnm.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(load-tiff.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(load-tiff.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(memory.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(memory.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(noto.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(noto.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(outline.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(outline.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(output-cbz.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(output-cbz.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(output-pcl.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(output-pcl.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(output-pclm.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(output-pclm.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(output-png.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(output-png.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(output-pnm.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(output-pnm.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(output-ps.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(output-ps.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(output-pwg.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(output-pwg.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(output-svg.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(output-svg.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(output-tga.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(output-tga.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(output.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(output.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(path.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(path.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(pixmap.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(pixmap.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(pool.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(pool.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(printf.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(printf.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(random.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(random.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(separation.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(separation.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(shade.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(shade.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(stext-device.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(stext-device.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(stext-output.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(stext-output.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(stext-search.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(stext-search.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(store.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(store.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(stream-open.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(stream-open.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(stream-read.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(stream-read.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(string.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(string.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(strtof.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(strtof.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(svg-device.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(svg-device.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(text.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(text.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(time.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(time.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(tree.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(tree.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(ucdn.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(ucdn.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(untar.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(untar.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(unzip.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(unzip.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(util.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(util.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(writer.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(writer.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(xml.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(xml.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(zip.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(zip.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(css-apply.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(css-apply.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(css-parse.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(css-parse.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(epub-doc.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(epub-doc.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(html-doc.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(html-doc.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(html-font.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(html-font.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(html-layout.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(html-layout.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(pdf-annot.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(pdf-annot.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(pdf-appearance.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(pdf-appearance.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(pdf-clean.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(pdf-clean.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(pdf-cmap-load.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(pdf-cmap-load.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(pdf-cmap-parse.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(pdf-cmap-parse.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(pdf-cmap.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(pdf-cmap.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(pdf-colorspace.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(pdf-colorspace.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(pdf-crypt.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(pdf-crypt.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(pdf-device.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(pdf-device.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(pdf-encoding.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(pdf-encoding.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(pdf-event.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(pdf-event.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(pdf-field.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(pdf-field.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(pdf-font.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(pdf-font.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(pdf-form.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(pdf-form.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(pdf-function.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(pdf-function.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(pdf-image.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(pdf-image.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(pdf-interpret.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(pdf-interpret.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(pdf-js.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(pdf-js.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(pdf-layer.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(pdf-layer.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(pdf-lex.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(pdf-lex.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(pdf-link.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(pdf-link.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(pdf-metrics.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(pdf-metrics.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(pdf-nametree.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(pdf-nametree.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(pdf-object.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(pdf-object.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(pdf-op-buffer.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(pdf-op-buffer.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(pdf-op-filter.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(pdf-op-filter.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(pdf-op-run.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(pdf-op-run.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(pdf-outline.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(pdf-outline.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(pdf-page.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(pdf-page.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(pdf-parse.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(pdf-parse.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(pdf-pattern.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(pdf-pattern.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(pdf-portfolio.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(pdf-portfolio.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(pdf-repair.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(pdf-repair.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(pdf-resources.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(pdf-resources.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(pdf-run.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(pdf-run.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(pdf-shade.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(pdf-shade.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(pdf-signature.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(pdf-signature.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(pdf-store.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(pdf-store.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(pdf-stream.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(pdf-stream.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(pdf-type3.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(pdf-type3.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(pdf-unicode.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(pdf-unicode.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(pdf-write.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(pdf-write.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(pdf-xobject.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(pdf-xobject.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(pdf-xref.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(pdf-xref.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(svg-color.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(svg-color.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(svg-doc.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(svg-doc.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(svg-parse.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(svg-parse.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(svg-run.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(svg-run.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(xps-common.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(xps-common.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(xps-doc.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(xps-doc.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(xps-glyphs.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(xps-glyphs.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(xps-gradient.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(xps-gradient.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(xps-image.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(xps-image.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(xps-link.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(xps-link.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(xps-outline.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(xps-outline.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(xps-path.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(xps-path.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(xps-resource.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(xps-resource.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(xps-tile.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(xps-tile.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(xps-util.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(xps-util.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(xps-zip.obj) : warning LNK4099: 未找到 PDB“libmupdf.pdb”(使用“libmupdf.lib(xps-zip.obj)”或在“D:\Project\MindReader\debug\libmupdf.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(zutil.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(zutil.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(trees.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(trees.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(inftrees.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(inftrees.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(inflate.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(inflate.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(inffast.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(inffast.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(deflate.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(deflate.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(crc32.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(crc32.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(compress.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(compress.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(adler32.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(adler32.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(thread.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(thread.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(tgt.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(tgt.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(tcd.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(tcd.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(t2.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(t2.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(t1.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(t1.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(sparse_array.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(sparse_array.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(pi.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(pi.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(openjpeg.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(openjpeg.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(mqc.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(mqc.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(mct.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(mct.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(jp2.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(jp2.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(j2k.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(j2k.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(invert.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(invert.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(image.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(image.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(function_list.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(function_list.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(event.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(event.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(dwt.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(dwt.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(cio.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(cio.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(bio.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(bio.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(one.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(one.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(jutils.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(jutils.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(jquant2.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(jquant2.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(jquant1.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(jquant1.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(jmemmgr.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(jmemmgr.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(jidctint.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(jidctint.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(jidctfst.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(jidctfst.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(jidctflt.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(jidctflt.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(jerror.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(jerror.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(jdsample.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(jdsample.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(jdpostct.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(jdpostct.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(jdmerge.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(jdmerge.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(jdmaster.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(jdmaster.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(jdmarker.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(jdmarker.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(jdmainct.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(jdmainct.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(jdinput.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(jdinput.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(jdhuff.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(jdhuff.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(jddctmgr.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(jddctmgr.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(jdcolor.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(jdcolor.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(jdcoefct.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(jdcoefct.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(jdarith.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(jdarith.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(jdapistd.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(jdapistd.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(jdapimin.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(jdapimin.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(jcomapi.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(jcomapi.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(jaricom.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(jaricom.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(cmsxform.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(cmsxform.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(cmswtpnt.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(cmswtpnt.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(cmsvirt.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(cmsvirt.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(cmstypes.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(cmstypes.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(cmssamp.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(cmssamp.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(cmsplugin.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(cmsplugin.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(cmspcs.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(cmspcs.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(cmspack.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(cmspack.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(cmsopt.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(cmsopt.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(cmsnamed.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(cmsnamed.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(cmsmtrx.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(cmsmtrx.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(cmslut.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(cmslut.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(cmsio1.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(cmsio1.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(cmsio0.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(cmsio0.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(cmsintrp.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(cmsintrp.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(cmshalf.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(cmshalf.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(cmsgmt.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(cmsgmt.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(cmsgamma.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(cmsgamma.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(cmserr.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(cmserr.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(cmscnvrt.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(cmscnvrt.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(cmsalpha.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(cmsalpha.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(jbig2_text.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(jbig2_text.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(jbig2_symbol_dict.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(jbig2_symbol_dict.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(jbig2_segment.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(jbig2_segment.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(jbig2_refinement.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(jbig2_refinement.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(jbig2_page.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(jbig2_page.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(jbig2_mmr.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(jbig2_mmr.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(jbig2_image.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(jbig2_image.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(jbig2_huffman.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(jbig2_huffman.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(jbig2_halftone.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(jbig2_halftone.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(jbig2_generic.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(jbig2_generic.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(jbig2_arith_int.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(jbig2_arith_int.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(jbig2_arith_iaid.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(jbig2_arith_iaid.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(jbig2_arith.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(jbig2_arith.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(jbig2.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(jbig2.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(hb-unicode.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(hb-unicode.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(hb-ucdn.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(hb-ucdn.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(hb-shaper.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(hb-shaper.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(hb-shape.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(hb-shape.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(hb-shape-plan.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(hb-shape-plan.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(hb-set.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(hb-set.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(hb-ot-var.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(hb-ot-var.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(hb-ot-tag.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(hb-ot-tag.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(hb-ot-shape.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(hb-ot-shape.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(hb-ot-shape-normalize.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(hb-ot-shape-normalize.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(hb-ot-shape-fallback.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(hb-ot-shape-fallback.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(hb-ot-shape-complex-use.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(hb-ot-shape-complex-use.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(hb-ot-shape-complex-use-table.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(hb-ot-shape-complex-use-table.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(hb-ot-shape-complex-tibetan.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(hb-ot-shape-complex-tibetan.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(hb-ot-shape-complex-thai.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(hb-ot-shape-complex-thai.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(hb-ot-shape-complex-myanmar.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(hb-ot-shape-complex-myanmar.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(hb-ot-shape-complex-khmer.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(hb-ot-shape-complex-khmer.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(hb-ot-shape-complex-indic.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(hb-ot-shape-complex-indic.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(hb-ot-shape-complex-indic-table.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(hb-ot-shape-complex-indic-table.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(hb-ot-shape-complex-hebrew.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(hb-ot-shape-complex-hebrew.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(hb-ot-shape-complex-hangul.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(hb-ot-shape-complex-hangul.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(hb-ot-shape-complex-default.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(hb-ot-shape-complex-default.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(hb-ot-shape-complex-arabic.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(hb-ot-shape-complex-arabic.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(hb-ot-map.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(hb-ot-map.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(hb-ot-layout.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(hb-ot-layout.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(hb-ot-face.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(hb-ot-face.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(hb-ft.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(hb-ft.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(hb-font.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(hb-font.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(hb-fallback-shape.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(hb-fallback-shape.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(hb-face.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(hb-face.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(hb-common.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(hb-common.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(hb-buffer.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(hb-buffer.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(hb-blob.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(hb-blob.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(hb-aat-layout.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(hb-aat-layout.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(type1.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(type1.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(truetype.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(truetype.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(smooth.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(smooth.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(sfnt.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(sfnt.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(raster.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(raster.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(psnames.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(psnames.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(pshinter.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(pshinter.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(psaux.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(psaux.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(type1cid.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(type1cid.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(cff.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(cff.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(ftsystem.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(ftsystem.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(ftstroke.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(ftstroke.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(ftinit.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(ftinit.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(ftglyph.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(ftglyph.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(ftbitmap.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(ftbitmap.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libmupdf.lib(ftbase.obj) : warning LNK4099: 未找到 PDB“libthirdparty.pdb”(使用“libmupdf.lib(ftbase.obj)”或在“D:\Project\MindReader\debug\libthirdparty.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+         MREngine.vcxproj -> D:\Project\MindReader\MREngine\..\debug\MREngine.dll
+     1>已完成生成项目“D:\Project\MindReader\MREngine\MREngine.vcxproj”(Build 个目标)的操作。
+
+已成功生成。
+
+已用时间 00:00:19.39

@@ -1,0 +1,30 @@
+﻿生成启动时间为 2018/11/19 17:04:56。
+     1>项目“D:\Project\MindReader\MindReader\MindReader.vcxproj”在节点 3 上(Build 个目标)。
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(368,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /I..\MRMindMap /I.\GeneratedFiles\Debug /I.\GeneratedFiles /I. /I"C:\Program Files (x86)\Windows Kits\10\Include\10.0.10150.0\ucrt" /I..\UIControl /I..\Window /I..\..\mupdf\include /I..\Utility /I..\MRData /I..\..\..\lib\odb\include /I..\MREngine /IC:\Qt\5.12.0\msvc2015\include /IC:\Qt\5.12.0\msvc2015\include\QtWidgets /IC:\Qt\5.12.0\msvc2015\include\QtGui /IC:\Qt\5.12.0\msvc2015\include\QtANGLE /IC:\Qt\5.12.0\msvc2015\include\QtCore /Idebug /I\include /I"C:\Qt\5.12.0\msvc2015\mkspecs\win32-msvc" /Zi /nologo /W3 /WX- /MP /Od /Oy- /D _WINDOWS /D UNICODE /D _UNICODE /D WIN32 /D _ENABLE_EXTENDED_ALIGNED_STORAGE /D QT_DEPRECATED_WARNINGS /D QT_WIDGETS_LIB /D QT_GUI_LIB /D QT_CORE_LIB /Gm- /EHsc /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Win32\Debug\\" /Fd"Win32\Debug\vc140.pdb" /Gd /TP /wd4577 /wd4467 /analyze- /errorReport:prompt -Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 main.cpp
+         main.cpp
+     1>D:\Project\MindReader\MRData\mrarticlemetadata.h(6): warning C4068: 未知的杂注
+     1>D:\Project\MindReader\MRData\mrarticlemetadata.h(14): warning C4068: 未知的杂注
+     1>D:\Project\MindReader\MRData\mrarticlemetadata.h(18): warning C4068: 未知的杂注
+     1>d:\project\mindreader\window\mrarticlepagedisplayer.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>D:\Project\mupdf\include\mupdf/fitz/stream.h(430): warning C4100: “ctx”: 未引用的形参
+     1>D:\Project\mupdf\include\mupdf/fitz/stream.h(543): warning C4100: “ctx”: 未引用的形参
+     1>D:\Project\MindReader\Utility\fifotsqueue.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"..\debug\\MindReader.exe" /NOLOGO /LIBPATH:D:\Project\MindReader\debug /LIBPATH:C:\Qt\5.12.0\msvc2015\lib /LIBPATH:.. /LIBPATH:D:\Project\MindReader\Utility\debug /LIBPATH:D:\Project\MindReader\MRData\debug /LIBPATH:D:\Project\MindReader\MREngine\debug "C:\Program Files (x86)\Windows Kits\10\Lib\10.0.10150.0\ucrt\x86\ucrtd.lib" UIControl.lib Window.lib Utility.lib MRData.lib MRMindMap.lib "D:\lib\odb\lib\odb-d.lib" "D:\lib\odb\lib\odb-sqlite-d.lib" MREngine.lib C:\Qt\5.12.0\msvc2015\lib\Qt5Widgetsd.lib C:\Qt\5.12.0\msvc2015\lib\Qt5Guid.lib C:\Qt\5.12.0\msvc2015\lib\Qt5Cored.lib C:\Qt\5.12.0\msvc2015\lib\qtmaind.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"..\debug\MindReader.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /MACHINE:X86 /SAFESEH "/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'" Win32\Debug\main.obj
+         Win32\Debug\qrc_resource.obj
+         LINK : 没有找到 ..\debug\\MindReader.exe 或上一个增量链接没有生成它；正在执行完全链接
+           正在创建库 ..\debug\\MindReader.lib 和对象 ..\debug\\MindReader.exp
+         MindReader.vcxproj -> D:\Project\MindReader\MindReader\..\debug\MindReader.exe
+       PostBuildEvent:
+         editbin /SUBSYSTEM:CONSOLE ..\debug\\MindReader.exe
+         :VCEnd
+         Microsoft (R) COFF/PE Editor Version 14.00.23026.0
+         Copyright (C) Microsoft Corporation.  All rights reserved.
+         
+     1>已完成生成项目“D:\Project\MindReader\MindReader\MindReader.vcxproj”(Build 个目标)的操作。
+
+已成功生成。
+
+已用时间 00:00:03.86

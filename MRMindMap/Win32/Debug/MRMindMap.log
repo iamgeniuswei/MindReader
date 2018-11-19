@@ -1,0 +1,22 @@
+﻿生成启动时间为 2018/11/16 17:44:31。
+     1>项目“D:\Project\MindReader\MRMindMap\MRMindMap.vcxproj”在节点 4 上(Build 个目标)。
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(368,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /I.\GeneratedFiles\Debug /I.\GeneratedFiles /I. /IC:\Qt\5.12.0\msvc2015\include /IC:\Qt\5.12.0\msvc2015\include\QtWidgets /IC:\Qt\5.12.0\msvc2015\include\QtGui /IC:\Qt\5.12.0\msvc2015\include\QtANGLE /IC:\Qt\5.12.0\msvc2015\include\QtCore /Idebug /I\include /I"C:\Qt\5.12.0\msvc2015\mkspecs\win32-msvc" /Zi /nologo /W3 /WX- /MP /Od /Oy- /D _WINDOWS /D UNICODE /D _UNICODE /D WIN32 /D _ENABLE_EXTENDED_ALIGNED_STORAGE /D MRMINDMAP_LIBRARY /D QT_DEPRECATED_WARNINGS /D QT_WIDGETS_LIB /D QT_GUI_LIB /D QT_CORE_LIB /D _WINDLL /Gm- /EHsc /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Win32\Debug\\" /Fd"Win32\Debug\vc140.pdb" /Gd /TP /wd4577 /wd4467 /analyze- /errorReport:prompt -Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 mrtextitem.cpp
+         mrtextitem.cpp
+     1>mrtextitem.cpp(43): warning C4100: “widget”: 未引用的形参
+     1>mrtextitem.cpp(43): warning C4100: “option”: 未引用的形参
+     1>mrtextitem.cpp(43): warning C4100: “painter”: 未引用的形参
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"..\debug\\MRMindMap.dll" /NOLOGO /LIBPATH:C:\Qt\5.12.0\msvc2015\lib /LIBPATH:C:\Qt\5.12.0\msvc2015\lib C:\Qt\5.12.0\msvc2015\lib\Qt5Widgetsd.lib C:\Qt\5.12.0\msvc2015\lib\Qt5Guid.lib C:\Qt\5.12.0\msvc2015\lib\Qt5Cored.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"..\debug\MRMindMap.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /MACHINE:X86 /SAFESEH /DLL Win32\Debug\moc_mritemconnector.obj
+         Win32\Debug\moc_mrmapview.obj
+         Win32\Debug\mritemconnector.obj
+         Win32\Debug\mrmapview.obj
+         Win32\Debug\mrmindmap.obj
+         Win32\Debug\mrtextitem.obj
+         MRMindMap.vcxproj -> D:\Project\MindReader\MRMindMap\..\debug\MRMindMap.dll
+     1>已完成生成项目“D:\Project\MindReader\MRMindMap\MRMindMap.vcxproj”(Build 个目标)的操作。
+
+已成功生成。
+
+已用时间 00:00:01.75

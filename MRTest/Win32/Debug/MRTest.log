@@ -1,0 +1,11 @@
+﻿生成启动时间为 2018/11/19 17:01:56。
+     1>项目“D:\Project\MindReader\MRTest\MRTest.vcxproj”在节点 2 上(Build 个目标)。
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(368,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
+     1>Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"..\debug\\MRTest.exe" /NOLOGO /LIBPATH:D:\Project\MindReader\debug /LIBPATH:C:\Qt\5.12.0\msvc2015\lib /LIBPATH:.. /LIBPATH:D:\Project\MindReader\Utility\debug /LIBPATH:D:\Project\MindReader\MRData\debug /LIBPATH:D:\Project\MindReader\MREngine\debug "C:\Program Files (x86)\Windows Kits\10\Lib\10.0.10150.0\ucrt\x86\ucrtd.lib" UIControl.lib Utility.lib MRData.lib "D:\lib\odb\lib\odb-d.lib" "D:\lib\odb\lib\odb-sqlite-d.lib" D:\Project\mupdf\lib\libmupdf.lib D:\Project\mupdf\lib\libthirdparty.lib D:\Project\mupdf\lib\libresources.lib MREngine.lib Window.lib D:\lib\tesseract\lib\tesseract40d.lib "D:\lib\tesseract\lib\pvt.cppan.demo.danbloomberg.leptonica-1.76.0.lib" C:\Qt\5.12.0\msvc2015\lib\Qt5Widgetsd.lib C:\Qt\5.12.0\msvc2015\lib\Qt5Guid.lib C:\Qt\5.12.0\msvc2015\lib\Qt5Testd.lib C:\Qt\5.12.0\msvc2015\lib\Qt5Cored.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"..\debug\MRTest.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /MACHINE:X86 /SAFESEH "/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'" Win32\Debug\tst_testmradc.obj
+         MRTest.vcxproj -> D:\Project\MindReader\MRTest\..\debug\MRTest.exe
+     1>已完成生成项目“D:\Project\MindReader\MRTest\MRTest.vcxproj”(Build 个目标)的操作。
+
+已成功生成。
+
+已用时间 00:00:00.96

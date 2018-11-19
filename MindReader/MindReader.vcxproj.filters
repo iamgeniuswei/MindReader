@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;moc;h;def;odl;idl;res;</Extensions>
+    </Filter>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;moc;h;def;odl;idl;res;</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}</UniqueIdentifier>
+      <Extensions>qrc;*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}</UniqueIdentifier>
+      <Extensions>qrc;*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="debug\moc_predefs.h.cbt">
+      <Filter>Generated Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="release\moc_predefs.h.cbt">
+      <Filter>Generated Files</Filter>
+    </CustomBuild>
+    
+    
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\img\add_disable.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\img\add_enter.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\img\add_normal.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\img\add_press.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\img\background.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\img\backward.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\img\browser.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\img\close.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\img\color.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\img\confirm.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\qss\default.qss">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\img\delete.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\img\error.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\img\export.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\img\files.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\img\first.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\img\forward.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\img\grid.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\img\hand.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\img\info.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\img\last.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\img\later.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\img\library.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\img\line.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\img\list.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\img\notes.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\img\ok.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\img\page-break.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\img\page.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\img\pdf.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\img\pdf_s.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\img\pdf_t.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\img\rectangle.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\img\refresh.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <QtRcc Include="res\resource.qrc">
+      <Filter>Resource Files</Filter>
+    </QtRcc>
+    <None Include="res\img\save.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\img\screenshot.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\img\search.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\img\select.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\img\text.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\img\warn.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\img\zoom-in.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\img\zoom-out.png">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,32 @@
+﻿生成启动时间为 2018/11/15 11:39:49。
+     1>项目“D:\Project\MindReader\UIControls\uilabelplugin.vcxproj”在节点 4 上(Build 个目标)。
+     1>CustomBuild:
+         Generate moc_predefs.h
+       QtFinalize:
+         Moc'ing uilabel.h...
+         Moc'ing uilabelplugin.h...
+         Rcc'ing icons.qrc...
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /I.\GeneratedFiles\Debug /I.\GeneratedFiles /I. /I"C:\Program Files (x86)\Windows Kits\10\Include\10.0.10150.0\ucrt" /IC:\Qt\5.12.0\msvc2015\include /IC:\Qt\5.12.0\msvc2015\include\QtDesigner /IC:\Qt\5.12.0\msvc2015\include\QtUiPlugin /IC:\Qt\5.12.0\msvc2015\include\QtWidgets /IC:\Qt\5.12.0\msvc2015\include\QtGui /IC:\Qt\5.12.0\msvc2015\include\QtANGLE /IC:\Qt\5.12.0\msvc2015\include\QtXml /IC:\Qt\5.12.0\msvc2015\include\QtCore /Idebug /I\include /I"C:\Qt\5.12.0\msvc2015\mkspecs\win32-msvc" /Zi /nologo /W3 /WX- /MP /Od /Oy- /D _WINDOWS /D UNICODE /D _UNICODE /D WIN32 /D _ENABLE_EXTENDED_ALIGNED_STORAGE /D QT_PLUGIN /D QT_DESIGNER_LIB /D QT_UIPLUGIN_LIB /D QT_WIDGETS_LIB /D QT_GUI_LIB /D QT_XML_LIB /D QT_CORE_LIB /D QDESIGNER_EXPORT_WIDGETS /D _WINDLL /Gm- /EHsc /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Win32\Debug\\" /Fd"Win32\Debug\vc140.pdb" /Gd /TP /wd4577 /wd4467 /analyze- /errorReport:prompt -Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 uilabel.cpp uilabelplugin.cpp .\GeneratedFiles\Debug\moc_uilabel.cpp .\GeneratedFiles\Debug\moc_uilabelplugin.cpp .\GeneratedFiles\qrc_icons.cpp
+         uilabel.cpp
+         uilabelplugin.cpp
+         moc_uilabel.cpp
+         moc_uilabelplugin.cpp
+         qrc_icons.cpp
+         Header <QtDesigner/QDesignerCustomWidgetInterface> is deprecated. Please include <QtUiPlugin/QDesignerCustomWidgetInterface> instead.
+         Header <QtDesigner/QDesignerCustomWidgetInterface> is deprecated. Please include <QtUiPlugin/QDesignerCustomWidgetInterface> instead.
+     1>uilabel.cpp(8): warning C4100: “ev”: 未引用的形参
+     1>uilabel.cpp(13): warning C4100: “event”: 未引用的形参
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"..\\uilabelplugind.dll" /NOLOGO /LIBPATH:C:\Qt\5.12.0\msvc2015\lib /LIBPATH:. /LIBPATH:C:\Qt\5.12.0\msvc2015\lib "C:\Program Files (x86)\Windows Kits\10\Lib\10.0.10150.0\ucrt\x86\ucrtd.lib" "C:\Program Files (x86)\Windows Kits\10\Lib\10.0.10150.0\ucrt\x86\ucrt.lib" C:\Qt\5.12.0\msvc2015\lib\Qt5Designerd.lib C:\Qt\5.12.0\msvc2015\lib\Qt5Widgetsd.lib C:\Qt\5.12.0\msvc2015\lib\Qt5Guid.lib C:\Qt\5.12.0\msvc2015\lib\Qt5Xmld.lib C:\Qt\5.12.0\msvc2015\lib\Qt5Cored.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"..\uilabelplugind.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /MACHINE:X86 /SAFESEH /DLL Win32\Debug\uilabel.obj
+         Win32\Debug\uilabelplugin.obj
+         Win32\Debug\moc_uilabel.obj
+         Win32\Debug\moc_uilabelplugin.obj
+         Win32\Debug\qrc_icons.obj
+           正在创建库 ..\\uilabelplugind.lib 和对象 ..\\uilabelplugind.exp
+         uilabelplugin.vcxproj -> D:\Project\MindReader\UIControls\..\uilabelplugind.dll
+     1>已完成生成项目“D:\Project\MindReader\UIControls\uilabelplugin.vcxproj”(Build 个目标)的操作。
+
+已成功生成。
+
+已用时间 00:00:08.24
