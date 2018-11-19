@@ -1,7 +1,7 @@
 #include "mrmainwindow.h"
 #include "ui_mrmainwindow.h"
 #include "mrlibrary.h"
-#include "mrarticledisplayer.h"
+#include "mrarticlecanvas.h"
 #include "mrarticlereader.h"
 #include "mrmessagebox.h"
 MRMainWindow::MRMainWindow(QWidget *parent) :

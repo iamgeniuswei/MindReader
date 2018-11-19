@@ -30,11 +30,12 @@ public:
     virtual ~MRPage();
     QImage renderPage(float scaleX, float scaleY, float rotation);
     QString text(const QRectF& rect) const;
-    QString getSelection(const QRectF& rect, fz_quad *quads, int& num);
+    QString getSelectionText(const fz_rect& rect);
     void getSelectionQuads(const fz_rect& rect, fz_quad *quads, int& num);
     fz_context* context() const;
     fz_document* document() const;
     fz_page* page() const;
+	QSizeF size() const;
     void addAnnotation(int type,
                        const fz_rect &rect,
                        const fz_point &start,

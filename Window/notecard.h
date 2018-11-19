@@ -5,6 +5,7 @@
 #include "uiwidget.h"
 #include <memory>
 #include "window_global.h"
+#include "uitextedit.h"
 namespace Ui {
 class NoteCard;
 }
@@ -25,6 +26,11 @@ public:
 
 public slots:
     void test();
+    void test1();
+
+public slots:
+	void updateTitleInDB();
+	void updateNoteInDB();
 protected:
     virtual void mousePressEvent(QMouseEvent *event);
     virtual void mouseReleaseEvent(QMouseEvent *event);

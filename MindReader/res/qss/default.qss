@@ -1,12 +1,12 @@
 /**QLineEdit**/
-
+/*
 QLineEdit#note
 {
     border-radius: 4px;
     height: 32px;
     border: 1px solid rgb(100, 100, 100);
     border:none;
-/*    background: rgb(72, 72, 73);*/
+    background: rgb(72, 72, 73);
 }
 QLineEdit#note:enabled {
         color: black;
@@ -17,7 +17,7 @@ QLineEdit#note:enabled:hover, QLineEdit:enabled:focus {
 QLineEdit#note:!enabled {
         color: rgb(155, 155, 155);
 }
-
+*/
 QLineEdit#search
 {
     border-radius: 4px;

@@ -64,10 +64,9 @@ void MRWorkDirSettingWindow::on_confirm_clicked()
     //TODO:将MRSetting修改为单例模式
     if(!ui->lineEdit->text ().isEmpty ())
     {
-        MRSetting set;
-        set.initializeSetting ("config.ini");
-        set.setWorkDirectory (ui->lineEdit->text ());
-        set.setFirstUseage ();
+		MRSetting *set = MRSetting::instance();
+        set->setWorkDirectory (ui->lineEdit->text ());
+        set->setFirstUseage ();
     }
     MRArticleShelf *w = new MRArticleShelf;
     w->show ();

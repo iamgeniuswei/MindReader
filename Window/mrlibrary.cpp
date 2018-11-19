@@ -5,9 +5,8 @@ MRLibrary::MRLibrary(QWidget *parent) : UIWidget(parent)
     loadUI ();
     loadThreads ();
     loadSignals ();
-    MRSetting set;
-    set.initializeSetting ("config.ini");
-    QString working_dir = set.getWorkDirectory ();
+    MRSetting *set = MRSetting::instance();
+    QString working_dir = set->getWorkDirectory ();
     scanner->startScan (working_dir);
 }
 

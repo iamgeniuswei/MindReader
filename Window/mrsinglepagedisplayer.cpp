@@ -2,7 +2,7 @@
 #include "mrarticleloader.h"
 #include <QDebug>
 #include <QScrollBar>
-MRSinglePageDisplayer::MRSinglePageDisplayer(QWidget *parent) : MRArticleDisplayer(parent)
+MRSinglePageDisplayer::MRSinglePageDisplayer(QWidget *parent) : MRArticleCanvas(parent)
 {
     loadUI ();
     loadSignals ();
@@ -10,22 +10,24 @@ MRSinglePageDisplayer::MRSinglePageDisplayer(QWidget *parent) : MRArticleDisplay
 
 void MRSinglePageDisplayer::loadUI()
 {
-    MRArticleDisplayer::loadUI ();
-    page = new MRArticlePageDisplayer(this);
-    setWidget (page);
+    //MRArticleCanvas::loadUI ();
+    //page = new MRArticlePageDisplayer(this);
+    //setWidget (page);
 }
 
 void MRSinglePageDisplayer::loadSignals()
 {
-    connect (this, &MRArticleDisplayer::cursorType,
+    connect (this, &MRArticleCanvas::cursorReady,
              page, &MRArticlePageDisplayer::handleCursorType);
-    connect (this, &MRArticleDisplayer::colorReady,
+    connect (this, &MRArticleCanvas::colorReady,
              page, &MRArticlePageDisplayer::updateColor);
+    connect (page, &MRArticlePageDisplayer::textReady,
+             this, &MRArticleCanvas::textReady);
     loader = new MRArticleLoader(this);
     connect (loader, &MRArticleLoader::docReady,
              this, &MRSinglePageDisplayer::handleDocReady);
     connect (loader, &MRArticleLoader::indexReady,
-             this, &MRArticleDisplayer::ADCIndexItemsReady);
+             this, &MRArticleCanvas::ADCIndexItemsReady);
     render = new ArticlePageRender(this);
     connect (render, &ArticlePageRender::pageReady,
              this, &MRSinglePageDisplayer::displayPage);
@@ -48,14 +50,14 @@ void MRSinglePageDisplayer::handleDocReady(bool ret, std::shared_ptr<MRDocument>
     }
 }
 
-void MRSinglePageDisplayer::displayFirstPage()
+void MRSinglePageDisplayer::firstPage()
 {
     Q_ASSERT (page);
     int current = 0;
     render->requestPage (current, 1.0, 1.0, 0.0);
 }
 
-void MRSinglePageDisplayer::displayPrevPage()
+void MRSinglePageDisplayer::prevPage()
 {
     Q_ASSERT (page != nullptr);
     int current = page->pageIndex ();
@@ -65,7 +67,7 @@ void MRSinglePageDisplayer::displayPrevPage()
         render->requestPage (--current, scaleX, scaleY, 0.0);
 }
 
-void MRSinglePageDisplayer::displayNextPage()
+void MRSinglePageDisplayer::nextPage()
 {
     Q_ASSERT (page != nullptr );
     int current = page->pageIndex ();
@@ -75,7 +77,7 @@ void MRSinglePageDisplayer::displayNextPage()
         render->requestPage (++current, scaleX, scaleY, 0.0);
 }
 
-void MRSinglePageDisplayer::displayLastPage()
+void MRSinglePageDisplayer::lastPage()
 {
     Q_ASSERT (page != nullptr );
     int current = doc->pageCount ();
@@ -110,9 +112,9 @@ void MRSinglePageDisplayer::zoomOutPage()
 
 void MRSinglePageDisplayer::displayPage(float scaleX, float scaleY, float rotation, int index, QImage img, std::shared_ptr<MRPage> src)
 {
-    Q_ASSERT (page != nullptr);
-    current = index;
-    page->displayPage (scaleX, scaleY, rotation, index, img, src);
-    verticalScrollBar ()->setValue (0);
+    //Q_ASSERT (page != nullptr);
+    //current = index;
+    //page->displayPage (scaleX, scaleY, rotation, index, img, src);
+    //verticalScrollBar ()->setValue (0);
 
 }

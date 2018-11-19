@@ -4,11 +4,14 @@
 #include "uilabel.h"
 #include <QDebug>
 #include "mrnotedata.h"
+#include <QScrollBar>
+#include "uitextedit.h"
 NoteCard::NoteCard(QWidget *parent) :
     UIWidget(parent),
     ui(new Ui::NoteCard)
 {
     ui->setupUi(this);
+	//grabKeyboard();
 //    ui->content->setGeometry(QRect(328, 240, 329, 27*10));  //四倍行距
 
     ui->content->setWordWrap(true);
@@ -20,6 +23,16 @@ NoteCard::NoteCard(QWidget *parent) :
     ui->note->setObjectName ("note");
     connect (ui->index, &UILabel::clicked,
              this, &NoteCard::test);
+    connect (ui->note, &UITextEdit::sizeChanged,
+             this, &NoteCard::test1);
+	//connect(ui->title, &QLineEdit::returnPressed,
+	//	this, &NoteCard::updateTitleInDB);
+	//connect(ui->title, &QLineEdit::textChanged,
+	//	this, &NoteCard::updateTitleInDB);
+	connect(ui->title, &QLineEdit::editingFinished,
+		this, &NoteCard::updateTitleInDB);
+	connect(ui->note, &UITextEdit::editingFinished,
+		this, &NoteCard::updateNoteInDB);
 
 }
 
@@ -32,8 +45,17 @@ void NoteCard::setTitle(const QString &title)
 {
     ui->title->setText (title);
     ui->title->adjustSize ();
-
     data->update ();
+	//qDebug() << "text changed";
+}
+
+void NoteCard::updateTitleInDB()
+{
+	qDebug() << "title update!";
+	if (data == nullptr)
+		return;
+	data->setTitle(ui->title->text().toStdString());
+	data->update();
 }
 
 void NoteCard::setText(const QString &text)
@@ -66,6 +88,20 @@ void NoteCard::setArticle(std::shared_ptr<MRArticleMetaData> article)
 void NoteCard::test()
 {
     qDebug() << "label clicked";
+}
+
+void NoteCard::test1()
+{
+//    resize (this->width (), this->height ()+14);
+}
+
+void NoteCard::updateNoteInDB()
+{
+	qDebug() << "note update!";
+	if (data == nullptr)
+		return;
+	data->setNote(ui->note->toPlainText().toStdString());
+	data->update();
 }
 
 void NoteCard::mousePressEvent(QMouseEvent *event)

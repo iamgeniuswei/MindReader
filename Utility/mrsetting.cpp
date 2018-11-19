@@ -1,8 +1,17 @@
 #include "mrsetting.h"
 #include <QDebug>
+MRSetting* MRSetting::_instance = nullptr;
 MRSetting::MRSetting()
 {
+	//setting = new QSettings;
+}
 
+//TODO:待修改成线程安全版本
+MRSetting * MRSetting::instance()
+{
+	if (_instance == nullptr)
+		_instance = new MRSetting;
+	return _instance;
 }
 
 MRSetting::~MRSetting()
@@ -36,11 +45,13 @@ void MRSetting::setValue(const QString &group, const QString &key, const QString
     }
 }
 
-bool MRSetting::initializeSetting(const QString &ini)
+bool MRSetting::initializeSetting(const QString & app_dir, const QString & ini)
 {
+	appDir = app_dir;
+	QString ini_path = appDir + "/" + ini;
     try
     {
-        setting = new(std::nothrow) QSettings(ini, QSettings::IniFormat);
+        setting = new(std::nothrow) QSettings(ini_path, QSettings::IniFormat);
     }
     catch (std::exception &e)
     {

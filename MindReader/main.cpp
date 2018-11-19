@@ -5,7 +5,7 @@
 #include <QListWidget>
 #include <QListWidgetItem>
 #include "mrmainwindow.h"
-#include "mrarticledisplayer.h"
+#include "mrarticlecanvas.h"
 #include <QDebug>
 //#include "ArticlePage.h"
 #include "mrarticlereader.h"
@@ -24,6 +24,8 @@
 #include <QGraphicsItem>
 #include <QGraphicsTextItem>
 #include "mrlibrarytree.h"
+#include "uitextedit.h"
+#include "notecard.h"
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
@@ -32,9 +34,10 @@ int main(int argc, char *argv[])
     qRegisterMetaType<std::shared_ptr<MRPage>>("std::shared_ptr<MRPage>");
     qRegisterMetaType<std::shared_ptr<MRDocument>>("std::shared_ptr<MRDocument>");
 
-    MRSetting set;
-    set.initializeSetting ("config.ini");
-    QString qss = set.getStyleSheet ();
+	MRSetting *set = MRSetting::instance();
+	QString path = QApplication::applicationDirPath();
+    set->initializeSetting (path, "/config.ini");
+    QString qss = set->getStyleSheet ();
     if(!qss.isEmpty ())
     {
         qss.insert (0, ":/qss/");
@@ -43,13 +46,13 @@ int main(int argc, char *argv[])
         qApp->setStyleSheet (qssFile.readAll ());
         qssFile.close ();
     }
-    QString isNew = set.getFirstUseage ();
+    QString isNew = set->getFirstUseage ();
     QWidget *w = nullptr;
 //    NoteCard *w = nullptr;
-    qDebug() << set.getWorkDirectory ();
+    qDebug() << set->getWorkDirectory ();
 
-    QString dbname = set.getDatabaseName ();
-    QString sqlite_path = set.getWorkDirectory () + "/" + dbname;
+    QString dbname = set->getDatabaseName ();
+    QString sqlite_path = set->getWorkDirectory () + "/" + dbname;
     ORMHelper::initializeSqlite (sqlite_path.toStdString ());
     ORMHelper::initializeTables ();
 
@@ -65,6 +68,9 @@ int main(int argc, char *argv[])
 //        w = new MRArticleItem;
         w = new MRMainWindow;
 //        w = new MRLibraryTree;
+        //w = new UITextEdit;
+		//w = new NoteCard;
+		//w = new MRMapView;
         w->show ();
     }
 

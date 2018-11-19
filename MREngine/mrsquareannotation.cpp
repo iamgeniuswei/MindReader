@@ -66,3 +66,4 @@ void MRSquareAnnotation::draw(QPainter &painter, float scaleX, float scaleY, flo
         painter.drawRect (qrect);
         painter.restore ();
 }
+

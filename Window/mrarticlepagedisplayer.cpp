@@ -33,7 +33,7 @@ MRArticlePageDisplayer::MRArticlePageDisplayer(QWidget *parent)
 {
     setScaledContents (true);
     setMouseTracking (true);
-    grabKeyboard ();
+    //grabKeyboard ();
     loadSignals ();
 }
 
@@ -133,13 +133,16 @@ void MRArticlePageDisplayer::mouseReleaseEvent(QMouseEvent* event)
 
     if(d->cursor_ == CURSOR::SELECT)
     {
-//        QString str = getTextFromSelection ();
+        appendAnnotation ();
+        QString str = getTextFromSelection ();
+        if(!str.isEmpty ())
+            emit textReady (d->pageIndex, str);
 //        if(!str.isEmpty ())
 //            emit textReady (d->pageIndex, str);
 //        else {
 //            grabRectangle ();
 //        }
-        appendAnnotation ();
+
     }
     else
     {
@@ -324,16 +327,15 @@ QString MRArticlePageDisplayer::getTextFromSelection()
 {
     Q_ASSERT (d != nullptr );
     Q_ASSERT ( d->page != nullptr );
+    QRect srect = calculateSelectionRect ();
+    fz_rect rect;
+    rect.x0 = srect.topLeft ().x ();
+    rect.y0 = srect.topLeft ().y ();
+    rect.x1 = srect.bottomRight ().x ();
+    rect.y1 = srect.bottomRight ().y ();
 
-    QRectF rect = calculateSelectionRectF ();
     rect = mapToOrigin (rect, d->scaleX, d->scaleY, d->rotation);
-    fz_quad quads[200];
-    int num = 0;
-    QString str = d->page->getSelection (rect, quads, num);
-//    for(int i=0; i<num; i++)
-//    {
-//        appendAnnotation (quads[i]);
-//    }
+    QString str = d->page->getSelectionText (rect);
     return str;
 }
 

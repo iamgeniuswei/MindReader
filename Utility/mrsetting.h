@@ -7,11 +7,11 @@
 class UTILITYSHARED_EXPORT MRSetting
 {
 public:
-    MRSetting();
+	static MRSetting* instance();
     ~MRSetting();
     QString getValue(const QString& group, const QString& key);
     void setValue(const QString& group, const QString& key, const QString& value);
-    bool initializeSetting(const QString& ini);
+    bool initializeSetting(const QString& app_dir, const QString& ini);
     QString getStyleSheet();
     void setStyleSheet(const QString& stylesheet);
     QString getWorkDirectory();
@@ -21,7 +21,11 @@ public:
     QString getDatabaseName();
 
 private:
-    QSettings *setting = nullptr;
+	explicit MRSetting();
+    QSettings *setting;
+	static MRSetting *_instance;
+	QString appDir;
+	
 };
 
 #endif // MRSETTING_H

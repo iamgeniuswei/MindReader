@@ -1,9 +1,9 @@
 #ifndef MRSINGLEPAGEDISPLAYER_H
 #define MRSINGLEPAGEDISPLAYER_H
 
-#include "mrarticledisplayer.h"
+#include "mrarticlecanvas.h"
 #include "mrarticlepagedisplayer.h"
-class MRSinglePageDisplayer : public MRArticleDisplayer
+class MRSinglePageDisplayer : public MRArticleCanvas
 {
     Q_OBJECT
 public:
@@ -15,10 +15,10 @@ signals:
 
 public slots:
     virtual void handleDocReady(bool ret, std::shared_ptr<MRDocument> document);
-    virtual void displayFirstPage();
-    virtual void displayPrevPage();
-    virtual void displayNextPage();
-    virtual void displayLastPage();
+    virtual void firstPage();
+    virtual void prevPage();
+    virtual void nextPage();
+    virtual void lastPage();
     virtual void zoomInPage();
     virtual void zoomOutPage();
     virtual void displayPage(float scaleX,

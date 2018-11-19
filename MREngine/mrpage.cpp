@@ -218,33 +218,19 @@ QString MRPage::text(const QRectF& rect) const
     return ret;
 }
 
-QString MRPage::getSelection(const QRectF &rect, fz_quad *quads, int &num)
+QString MRPage::getSelectionText(const fz_rect &rect)
 {
     QString ret;
-    fz_rect r;
-    fz_point top_left;
-    fz_point bottom_right;
-    char *str;
+    fz_point top_left{rect.x0, rect.y0};
+    fz_point bottom_right{rect.x1, rect.y1};
+    char *str = nullptr;
 
-    // build fz_rect
-    top_left.x = r.x0 = rect.left();
-    top_left.y = r.y0 = rect.top();
-    bottom_right.x = r.x1 = rect.right();
-    bottom_right.y = r.y1 = rect.bottom();
     // get text
-
     fz_try(d->context)
     {
-        if (!fz_is_infinite_rect(r))
+        if (!fz_is_infinite_rect(rect))
         {
             str = fz_copy_selection(d->context, d->textPage, top_left, bottom_right, 1);
-
-            num = fz_highlight_selection (d->context,
-                                              d->textPage,
-                                              top_left,
-                                              bottom_right,
-                                              quads,
-                                              200);
             ret = QString::fromUtf8(str);
             free(str);
         }
@@ -295,6 +281,14 @@ fz_document *MRPage::document() const
 fz_page *MRPage::page() const
 {
     return d->page;
+}
+
+
+QSizeF MRPage::size() const
+{
+	fz_rect rect;
+	rect = fz_bound_page(d->context, d->page);
+	return QSizeF(rect.x1 - rect.x0, rect.y1 - rect.y0);
 }
 
 void MRPage::addAnnotation(int type, const fz_rect& rect, const fz_point &start, const fz_point &end, const fz_quad &quad, const char *content)

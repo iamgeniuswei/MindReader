@@ -31,7 +31,8 @@ SOURCES += \
     uiwidget.cpp \
     uilabel.cpp \
     uidialog.cpp \
-    uiflowlayout.cpp
+    uiflowlayout.cpp \
+    uitextedit.cpp
 
 HEADERS += \
         uicontrol.h \
@@ -43,7 +44,8 @@ HEADERS += \
     uiwidget.h \
     uilabel.h \
     uidialog.h \
-    uiflowlayout.h
+    uiflowlayout.h \
+    uitextedit.h
 
 unix {
     target.path = /usr/lib

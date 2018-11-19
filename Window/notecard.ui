@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>320</width>
-    <height>189</height>
+    <height>103</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -35,6 +35,9 @@
       <widget class="QLineEdit" name="title">
        <property name="placeholderText">
         <string>未命名笔记</string>
+       </property>
+       <property name="clearButtonEnabled">
+        <bool>false</bool>
        </property>
       </widget>
      </item>
@@ -107,7 +110,7 @@
    <item>
     <widget class="QLabel" name="content">
      <property name="sizePolicy">
-      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
@@ -140,7 +143,13 @@
     </widget>
    </item>
    <item>
-    <widget class="QLineEdit" name="note">
+    <widget class="UITextEdit" name="note">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
      <property name="placeholderText">
       <string>添加笔记...</string>
      </property>
@@ -153,6 +162,11 @@
    <class>UILabel</class>
    <extends>QLabel</extends>
    <header>uilabel.h</header>
+  </customwidget>
+  <customwidget>
+   <class>UITextEdit</class>
+   <extends>QLineEdit</extends>
+   <header location="global">uitextedit.h</header>
   </customwidget>
  </customwidgets>
  <resources>

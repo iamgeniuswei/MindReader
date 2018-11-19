@@ -4,48 +4,55 @@
 #include <QWidget>
 #include <QVBoxLayout>
 #include <QHBoxLayout>
+#include <QScrollArea>
 #include "uiwidget.h"
 #include "window_global.h"
 #include "notedisplayer.h"
 #include <memory>
 #include "mrwindowutility.h"
-class MRArticleDisplayer;
+#include "mrseriespagedisplayer.h"
+class MRArticleCanvas;
 class ArticleDisplayerController;
 class MRArticleMetaData;
 class MRReaderToolBar;
 class QSplitter;
 class WINDOWSHARED_EXPORT MRArticleReader : public UIWidget
 {
-    Q_OBJECT
+	Q_OBJECT
 public:
-    explicit MRArticleReader(QWidget *parent = nullptr);
+	explicit MRArticleReader(QWidget *parent = nullptr);
 
-    std::shared_ptr<MRArticleMetaData> article() const;
+	std::shared_ptr<MRArticleMetaData> article() const;
 
 protected:
-    void loadUI();
-    void initializeSignals();
+	void loadUI();
+	void initializeSignals();
 
 signals:
-    void selectionReady(int page, const QPixmap& pixmap);
-    void textReady(int page, const QString& text);
-    void cursorType(CURSOR cursor);
+	void selectionReady(int page, const QPixmap& pixmap);
+	void textReady(int page, const QString& text);
+	void cursorType(CURSOR cursor);
 signals:
-    void backToLibrary();
+	void backToLibrary();
 public slots:
-    bool setArticle(std::shared_ptr<MRArticleMetaData> article);
-    void resetArticle();
+	bool setArticle(std::shared_ptr<MRArticleMetaData> article);
+	void resetArticle();
+	void displayFirstPage();
+	void displayPrevPage();
+	void displayNextPage();
+	void displayLastPage();
 private:
-    QVBoxLayout *layout = nullptr;
-    MRArticleDisplayer *displayer = nullptr ;
-    ArticleDisplayerController *controller = nullptr;
-    std::shared_ptr<MRArticleMetaData> article_;
-    MRReaderToolBar *toolBar = nullptr;
-    QVBoxLayout *mainLayout = nullptr;
-    QHBoxLayout *subLayout = nullptr;
-    QSplitter *splitter = nullptr;
-    QWidget *readerContainer = nullptr;
-    NoteDisplayer *note = nullptr;
+	QVBoxLayout *layout = nullptr;
+	QScrollArea *canvasContainer = nullptr;
+	MRArticleCanvas *canvas = nullptr ;
+	ArticleDisplayerController *controller = nullptr;
+	std::shared_ptr<MRArticleMetaData> article_;
+	MRReaderToolBar *toolBar = nullptr;
+	QVBoxLayout *mainLayout = nullptr;
+	QHBoxLayout *subLayout = nullptr;
+	QSplitter *splitter = nullptr;
+	QWidget *readerContainer = nullptr;
+	NoteDisplayer *note = nullptr;
 };
 
 #endif // ARTICLEREADER_H
